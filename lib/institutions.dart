@@ -194,21 +194,26 @@ class _InstitutionsState extends State<Institutions> {
                         const SizedBox(
                           height: 80,
                         ),
-                        Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: 50,
-                          child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.black,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            height: 50,
+                            child: Container(
+                                padding: const EdgeInsets.all(15),
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: const Color(0xFF2E38FF),
                                 ),
-                              ),
-                              child: const Text(
-                                "Continue",
-                                style: TextStyle(color: Colors.white),
-                              )),
+                                height: 50,
+                                child: const Center(
+                                  child: Text(
+                                    "Continue",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                )),
+                          ),
                         ),
                       ],
                     ),
