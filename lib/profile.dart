@@ -523,32 +523,39 @@ class _ProfileState extends State<Profile> {
                                     height: 10,
                                   ),
                                   const Text(
-                                      "Reach out to us via email earnmate@outlook.com",
+                                      "Reach out to us via email mamaaservice@outlook.com",
                                       style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w300,
                                         color: Colors.grey,
                                       )),
                                   const Spacer(),
-                                  SizedBox(
-                                    width: double.infinity,
-                                    height: 50,
-                                    child: ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          primary: Colors.black,
-                                          shape: RoundedRectangleBorder(
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      height: 50,
+                                      child: Container(
+                                          padding: const EdgeInsets.all(15),
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(20),
+                                                BorderRadius.circular(10),
+                                            color: const Color(0xFF2E38FF),
                                           ),
-                                        ),
-                                        child: const Text(
-                                          "Got it",
-                                          style: TextStyle(color: Colors.white),
-                                        )),
-                                  )
+                                          height: 50,
+                                          child: const Center(
+                                            child: Text(
+                                              "Sign Up",
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          )),
+                                    ),
+                                  ),
                                 ],
                               ),
                             );
