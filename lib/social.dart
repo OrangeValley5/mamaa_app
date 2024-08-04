@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mamaa_app/socialpacks.dart';
 import 'package:mamaa_app/membership.dart';
 import 'package:mamaa_app/adspage.dart';
-import 'package:mamaa_app/taskpage.dart';
 
 class Social extends StatefulWidget {
   const Social({Key? key}) : super(key: key);
@@ -53,13 +52,7 @@ class _SocialState extends State<Social> {
                     height: 40,
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const TaskPage()),
-                      );
-                    },
+                    onTap: () {},
                     child: Container(
                       padding: const EdgeInsets.all(18),
                       height: 125,

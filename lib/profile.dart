@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:mamaa_app/updateprofile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mamaa_app/profiledetails.dart';
-import 'package:mamaa_app/createorder.dart';
 import 'package:mamaa_app/institutions.dart';
 import 'colors.dart' as color;
 
@@ -72,23 +71,27 @@ class _ProfileState extends State<Profile> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 80,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.black,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                        ),
-                        child: const Text(
-                          "No",
-                          style: TextStyle(fontSize: 12),
-                        ),
-                        onPressed: () {
-                          // Handle subscription logic here
-                          Navigator.of(context).pop();
-                        },
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 50,
+                        child: Container(
+                            padding: const EdgeInsets.all(15),
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: const Color(0xFF2E38FF),
+                            ),
+                            height: 50,
+                            child: const Center(
+                              child: Text(
+                                "Got it",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            )),
                       ),
                     ),
                     const SizedBox(
@@ -401,12 +404,7 @@ class _ProfileState extends State<Profile> {
                     height: 20,
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Orders()),
-                      );
-                    },
+                    onTap: () {},
                     child: Container(
                       padding: const EdgeInsets.all(18),
                       width: MediaQuery.of(context).size.width,

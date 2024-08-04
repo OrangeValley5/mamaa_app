@@ -380,23 +380,29 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              height: 50,
-                              child: ElevatedButton(
-                                  onPressed: () async {
-                                    await _saveData();
-                                    Navigator.of(context).pop();
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.black,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20))),
-                                  child: const Text(
-                                    "Continue",
-                                    style: TextStyle(color: Colors.white),
-                                  )),
+                            GestureDetector(
+                              onTap: () async {
+                                await _saveData();
+                                Navigator.of(context).pop();
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 50,
+                                child: Container(
+                                    padding: const EdgeInsets.all(15),
+                                    width: MediaQuery.of(context).size.width,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: const Color(0xFF2E38FF),
+                                    ),
+                                    height: 50,
+                                    child: const Center(
+                                      child: Text(
+                                        "Continue",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    )),
+                              ),
                             ),
                           ],
                         ),

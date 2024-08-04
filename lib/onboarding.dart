@@ -96,32 +96,36 @@ class _OnboardingState extends State<Onboarding> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    height: 50,
-                                    child: ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const Register()),
-                                          );
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          primary: Color(0xFF0E0AEC),
-                                          shape: RoundedRectangleBorder(
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Register()),
+                                      );
+                                    },
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      height: 50,
+                                      child: Container(
+                                          padding: const EdgeInsets.all(15),
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(10),
+                                            color: const Color(0xFF2E38FF),
                                           ),
-                                        ),
-                                        child: const Text(
-                                          "Get started",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: 'Montserrat Medium',
-                                          ),
-                                        )),
+                                          height: 50,
+                                          child: const Center(
+                                            child: Text(
+                                              "Get started",
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          )),
+                                    ),
                                   ),
                                 ],
                               ),

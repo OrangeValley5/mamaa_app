@@ -69,27 +69,16 @@ class SplashView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 50,
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const Register()),
-                                  );
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.black,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                ),
-                                child: const Text(
-                                  "Get started",
-                                  style: TextStyle(color: Colors.white),
-                                )),
-                          ),
+                              padding: EdgeInsets.all(15),
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                color: Color(0xFF2E38FF),
+                              ),
+                              height: 50,
+                              child: const Text(
+                                "Get started",
+                                style: TextStyle(color: Colors.white),
+                              )),
                         ],
                       ),
                     ],

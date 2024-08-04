@@ -251,31 +251,36 @@ class _MembershipState extends State<Membership> {
                                       )
                                     ],
                                   ),
-                                  Container(
-                                    height: 45,
-                                    width: 100,
-                                    child: ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const Membership()),
-                                          );
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          primary: Color(0xFFFFAC58),
-                                          shape: RoundedRectangleBorder(
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Membership()),
+                                      );
+                                    },
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      height: 50,
+                                      child: Container(
+                                          padding: const EdgeInsets.all(15),
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                                BorderRadius.circular(10),
+                                            color: const Color(0xFF2E38FF),
                                           ),
-                                        ),
-                                        child: const Text(
-                                          "Pay Now",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 14),
-                                        )),
+                                          height: 50,
+                                          child: const Center(
+                                            child: Text(
+                                              "Pay Now",
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          )),
+                                    ),
                                   ),
                                 ],
                               ),

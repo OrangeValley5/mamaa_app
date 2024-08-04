@@ -180,56 +180,31 @@ class _ReferralState extends State<Referral> {
                       ),
                       Row(
                         children: [
-                          Expanded(
-                            child: ElevatedButton(
-                              onPressed: _copyToClipboard,
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.orange,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 12),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: const [
-                                  Icon(Icons.copy, size: 20),
-                                  SizedBox(width: 8),
-                                  Text(
-                                    'Copy',
-                                    style: TextStyle(fontSize: 14),
+                          GestureDetector(
+                            onTap: () {
+                              _copyToClipboard();
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              height: 50,
+                              child: Container(
+                                  padding: const EdgeInsets.all(15),
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: const Color(0xFF2E38FF),
                                   ),
-                                ],
-                              ),
+                                  height: 50,
+                                  child: const Center(
+                                    child: Text(
+                                      "Copy",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  )),
                             ),
                           ),
                           const SizedBox(
                             width: 20,
-                          ),
-                          Expanded(
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.black,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 12),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: const [
-                                  Icon(Icons.share, size: 20),
-                                  SizedBox(width: 8),
-                                  Text(
-                                    'Share',
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ],
-                              ),
-                            ),
                           ),
                         ],
                       ),

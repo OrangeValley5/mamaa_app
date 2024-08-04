@@ -115,20 +115,28 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width,
-                                height: 50,
-                                child: ElevatedButton(
-                                    onPressed: verifyEmail,
-                                    style: ElevatedButton.styleFrom(
-                                        primary: Colors.black,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20))),
-                                    child: const Text(
-                                      "Reset password",
-                                      style: TextStyle(color: Colors.white),
-                                    )),
+                              GestureDetector(
+                                onTap: () {
+                                  verifyEmail();
+                                },
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 50,
+                                  child: Container(
+                                      padding: const EdgeInsets.all(15),
+                                      width: MediaQuery.of(context).size.width,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: const Color(0xFF2E38FF),
+                                      ),
+                                      height: 50,
+                                      child: const Center(
+                                        child: Text(
+                                          "Reset password",
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      )),
+                                ),
                               ),
                             ],
                           ),

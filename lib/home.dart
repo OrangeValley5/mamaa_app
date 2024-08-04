@@ -76,23 +76,27 @@ class _HomeState extends State<Home> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 100,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.black,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                        ),
-                        child: const Text(
-                          "Got it",
-                          style: TextStyle(fontSize: 12),
-                        ),
-                        onPressed: () {
-                          // Handle subscription logic here
-                          Navigator.of(context).pop();
-                        },
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 50,
+                        child: Container(
+                            padding: const EdgeInsets.all(15),
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: const Color(0xFF2E38FF),
+                            ),
+                            height: 50,
+                            child: const Center(
+                              child: Text(
+                                "Got it",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            )),
                       ),
                     ),
                   ],

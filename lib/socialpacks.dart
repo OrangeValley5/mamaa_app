@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mamaa_app/createorder.dart';
 import 'package:mamaa_app/membership.dart';
 import 'colors.dart' as color;
 
@@ -59,27 +58,26 @@ class _SocialPacksState extends State<SocialPacks> {
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.w600),
                       ),
-                      Container(
-                        height: 30,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Orders()),
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 0, 0, 0),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          child: Container(
+                              padding: const EdgeInsets.all(15),
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: const Color(0xFF2E38FF),
                               ),
-                            ),
-                            child: const Text(
-                              "Create order",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 10),
-                            )),
+                              height: 50,
+                              child: const Center(
+                                child: Text(
+                                  "Got it",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              )),
+                        ),
                       ),
                     ],
                   ),

@@ -332,20 +332,32 @@ class _MoreInfoState extends State<MoreInfo> {
                               SizedBox(
                                 width: MediaQuery.of(context).size.width,
                                 height: 50,
-                                child: ElevatedButton(
-                                    onPressed: () async {
-                                      await _saveData();
-                                      // Perform any additional actions if needed
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                        primary: Color(0xFF0E0AEC),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(10))),
-                                    child: const Text(
-                                      "Continue",
-                                      style: TextStyle(color: Colors.white),
-                                    )),
+                                child: GestureDetector(
+                                  onTap: () async {
+                                    await _saveData();
+                                  },
+                                  child: Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 50,
+                                    child: Container(
+                                        padding: const EdgeInsets.all(15),
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: const Color(0xFF2E38FF),
+                                        ),
+                                        height: 50,
+                                        child: const Center(
+                                          child: Text(
+                                            "Continue",
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        )),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
