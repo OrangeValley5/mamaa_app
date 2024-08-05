@@ -16,7 +16,7 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   final String message = '';
   int myIndex = 0;
-  List<Widget> widgetList = const [Home(), Social(), Referral(), Profile()];
+  List<Widget> widgetList = const [Home(), Social(), Profile()];
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +37,6 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: Icon(Icons.wallet),
             label: 'History',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Referrals',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
         ],
