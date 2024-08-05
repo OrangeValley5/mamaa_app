@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mamaa_app/Track.dart';
+import 'package:mamaa_app/track.dart';
 import 'colors.dart' as color;
 
 class SocialPacks extends StatefulWidget {

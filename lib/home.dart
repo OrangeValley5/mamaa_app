@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mamaa_app/Givers.dart';
-import 'package:mamaa_app/Track.dart';
+import 'package:mamaa_app/givers.dart';
+import 'package:mamaa_app/track.dart';
 import 'package:mamaa_app/transactions.dart';
 import 'package:mamaa_app/notifications.dart';
 import 'package:mamaa_app/airtimeconvert.dart';

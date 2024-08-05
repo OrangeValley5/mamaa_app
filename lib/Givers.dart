@@ -13,11 +13,13 @@ class _GiversState extends State<Givers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              decoration: BoxDecoration(color: Colors.white),
               padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
               alignment: Alignment.center,
               child: Column(
@@ -110,6 +112,9 @@ class _GiversState extends State<Givers> {
                             )
                           ],
                         ),
+                      ),
+                      const SizedBox(
+                        height: 20,
                       ),
                     ],
                   ),
