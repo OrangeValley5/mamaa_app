@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mamaa_app/membership.dart';
+import 'package:mamaa_app/Track.dart';
 import 'colors.dart' as color;
 
 class SocialPacks extends StatefulWidget {
@@ -107,8 +107,7 @@ class _SocialPacksState extends State<SocialPacks> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Membership()),
+                        MaterialPageRoute(builder: (context) => const Track()),
                       );
                     },
                     child: Container(
@@ -173,8 +172,7 @@ class _SocialPacksState extends State<SocialPacks> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Membership()),
+                        MaterialPageRoute(builder: (context) => const Track()),
                       );
                     },
                     child: Container(
@@ -239,8 +237,7 @@ class _SocialPacksState extends State<SocialPacks> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Membership()),
+                        MaterialPageRoute(builder: (context) => const Track()),
                       );
                     },
                     child: Container(
@@ -305,8 +302,7 @@ class _SocialPacksState extends State<SocialPacks> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Membership()),
+                        MaterialPageRoute(builder: (context) => const Track()),
                       );
                     },
                     child: Container(
@@ -369,8 +365,7 @@ class _SocialPacksState extends State<SocialPacks> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Membership()),
+                        MaterialPageRoute(builder: (context) => const Track()),
                       );
                     },
                     child: Container(
@@ -433,8 +428,7 @@ class _SocialPacksState extends State<SocialPacks> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Membership()),
+                        MaterialPageRoute(builder: (context) => const Track()),
                       );
                     },
                     child: Container(

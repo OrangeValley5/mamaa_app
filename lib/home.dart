@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mamaa_app/membership.dart';
+import 'package:mamaa_app/Track.dart';
 import 'package:mamaa_app/transactions.dart';
 import 'package:mamaa_app/notifications.dart';
 import 'package:mamaa_app/airtimeconvert.dart';
@@ -427,8 +427,7 @@ class _HomeState extends State<Home> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Membership()),
+                        MaterialPageRoute(builder: (context) => const Track()),
                       );
                     },
                     child: Padding(

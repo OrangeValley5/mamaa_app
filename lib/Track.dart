@@ -3,14 +3,14 @@ import 'dart:async';
 
 import 'colors.dart' as color;
 
-class Membership extends StatefulWidget {
-  const Membership({Key? key}) : super(key: key);
+class Track extends StatefulWidget {
+  const Track({Key? key}) : super(key: key);
 
   @override
-  State<Membership> createState() => _MembershipState();
+  State<Track> createState() => _TrackState();
 }
 
-class _MembershipState extends State<Membership> {
+class _TrackState extends State<Track> {
   @override
   void initState() {
     super.initState();
@@ -25,7 +25,7 @@ class _MembershipState extends State<Membership> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: const EdgeInsets.only(left: 20, top: 50, right: 20),
+              padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
               alignment: Alignment.center,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,14 +52,14 @@ class _MembershipState extends State<Membership> {
                     height: 10,
                   ),
                   const Text(
-                    'Become a member',
+                    'Track Loan',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(
                     height: 4,
                   ),
                   const Text(
-                    'Buy real social media enegagements eg likes, comments, followers',
+                    'Track your loan in progress',
                     style: TextStyle(
                         fontSize: 12,
                         color: Colors.black45,
@@ -257,7 +257,7 @@ class _MembershipState extends State<Membership> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const Membership()),
+                                                const Track()),
                                       );
                                     },
                                     child: Container(

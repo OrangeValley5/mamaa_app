@@ -31,14 +31,25 @@ class _DashboardState extends State<Dashboard> {
         currentIndex: myIndex,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_rounded),
+            icon: Icon(
+              Icons.home_rounded,
+              size: 18,
+            ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.wallet),
+            icon: Icon(
+              Icons.wallet,
+              size: 18,
+            ),
             label: 'History',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                size: 18,
+              ),
+              label: 'Account'),
         ],
         selectedItemColor: Colors.black, // Set selected item color
         unselectedItemColor: Colors.grey,
