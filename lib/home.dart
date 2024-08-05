@@ -347,10 +347,14 @@ class _HomeState extends State<Home> {
                                   padding: const EdgeInsets.all(20),
                                   margin: const EdgeInsets.symmetric(
                                       horizontal: 10),
-                                  decoration: const BoxDecoration(
-                                    color: Colors.orange,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
+                                  decoration: BoxDecoration(
+                                    image: const DecorationImage(
+                                      image: AssetImage(
+                                          'lib/images/dashbox2.png'), // Path to your image
+                                      fit: BoxFit
+                                          .cover, // Adjust the image to cover the entire container
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Column(
                                     crossAxisAlignment:
