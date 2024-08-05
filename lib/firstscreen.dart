@@ -29,6 +29,7 @@ class _FirstScreenState extends State<FirstScreen> {
     ScaffoldMessengerKey:
     Utils.messengerKey;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
