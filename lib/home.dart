@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mamaa_app/Givers.dart';
 import 'package:mamaa_app/Track.dart';
 import 'package:mamaa_app/transactions.dart';
 import 'package:mamaa_app/notifications.dart';
@@ -423,21 +424,22 @@ class _HomeState extends State<Home> {
                           fontFamily: 'Montserrat Medium'),
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Track()),
-                      );
-                    },
-                    child: Padding(
-                      padding:
-                          const EdgeInsets.only(left: 20, right: 20, top: 10),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 20, right: 20, top: 10),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Track()),
+                                  );
+                                },
                                 child: Container(
                                   padding: const EdgeInsets.all(16),
                                   height: 100,
@@ -477,10 +479,19 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              Expanded(
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Expanded(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Givers()),
+                                  );
+                                },
                                 child: Container(
                                   padding: const EdgeInsets.all(16),
                                   height: 100,
@@ -520,100 +531,98 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  padding: const EdgeInsets.all(16),
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                      color: Color(0xFFEDC6FF),
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                          width: 18,
-                                          height: 18,
-                                          child: Image.asset(
-                                              'lib/images/historys.png')),
-                                      const Expanded(
-                                        child: SizedBox(
-                                          height: 2,
-                                        ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                padding: const EdgeInsets.all(16),
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color(0xFFEDC6FF),
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                        width: 18,
+                                        height: 18,
+                                        child: Image.asset(
+                                            'lib/images/historys.png')),
+                                    const Expanded(
+                                      child: SizedBox(
+                                        height: 2,
                                       ),
-                                      const Text(
-                                        'Airtime to Cash',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 12),
-                                      ),
-                                      const SizedBox(
-                                        height: 4,
-                                      ),
-                                      const Text(
-                                        'Convert airtime to cash',
-                                        style: TextStyle(
-                                            fontSize: 10,
-                                            color: Color(0xFFBB2DFF)),
-                                      )
-                                    ],
-                                  ),
+                                    ),
+                                    const Text(
+                                      'Airtime to Cash',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 4,
+                                    ),
+                                    const Text(
+                                      'Convert airtime to cash',
+                                      style: TextStyle(
+                                          fontSize: 10,
+                                          color: Color(0xFFBB2DFF)),
+                                    )
+                                  ],
                                 ),
                               ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              Expanded(
-                                child: Container(
-                                  padding: const EdgeInsets.all(16),
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                      color: Color(0xFFFFF4B8),
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                          width: 18,
-                                          height: 18,
-                                          child: Image.asset(
-                                              'lib/images/scores.png')),
-                                      const Expanded(
-                                        child: SizedBox(
-                                          height: 2,
-                                        ),
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Expanded(
+                              child: Container(
+                                padding: const EdgeInsets.all(16),
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Color(0xFFFFF4B8),
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                        width: 18,
+                                        height: 18,
+                                        child: Image.asset(
+                                            'lib/images/scores.png')),
+                                    const Expanded(
+                                      child: SizedBox(
+                                        height: 2,
                                       ),
-                                      const Text(
-                                        'Credit Score',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 12),
-                                      ),
-                                      const SizedBox(
-                                        height: 4,
-                                      ),
-                                      const Text(
-                                        'Check credit score',
-                                        style: TextStyle(
-                                            fontSize: 10,
-                                            color: Color(0xFFEDC600)),
-                                      )
-                                    ],
-                                  ),
+                                    ),
+                                    const Text(
+                                      'Credit Score',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 4,
+                                    ),
+                                    const Text(
+                                      'Check credit score',
+                                      style: TextStyle(
+                                          fontSize: 10,
+                                          color: Color(0xFFEDC600)),
+                                    )
+                                  ],
                                 ),
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
 

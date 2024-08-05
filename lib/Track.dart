@@ -65,12 +65,8 @@ class _TrackState extends State<Track> {
                         color: Colors.black45,
                         fontWeight: FontWeight.w300),
                   ),
-                  Center(
-                    child: Container(
-                      height: 200,
-                      width: 250,
-                      child: Image.asset('lib/images/celebs.png'),
-                    ),
+                  const SizedBox(
+                    height: 20,
                   ),
                   Column(
                     children: [
@@ -78,236 +74,111 @@ class _TrackState extends State<Track> {
                         padding: const EdgeInsets.all(18),
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 255, 128, 0),
-                            borderRadius: BorderRadius.circular(20)),
+                            color: Color.fromARGB(255, 246, 246, 246),
+                            borderRadius: BorderRadius.circular(10)),
                         child: Column(
                           children: [
-                            const Text(
-                              'Earn Big! Turn your social media into a money making machine',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 17,
-                                  color: Color.fromARGB(255, 255, 255, 255)),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
                             Container(
                               padding: const EdgeInsets.all(8),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: const [
-                                  Icon(
-                                    Icons.check_circle,
-                                    color: Colors.white,
-                                    size: 12,
-                                  ),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
                                   Text(
-                                    '24hours money back guarantee',
+                                    'Amount',
                                     style: TextStyle(
                                       fontSize: 12,
-                                      color: Colors.white,
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                    ),
+                                  ),
+                                  Text(
+                                    'N0.00',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color.fromARGB(255, 164, 164, 164),
                                     ),
                                   )
                                 ],
                               ),
                             ),
                             const SizedBox(
-                              height: 0,
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(8),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: const [
-                                  Icon(
-                                    Icons.check_circle,
-                                    color: Colors.white,
-                                    size: 12,
-                                  ),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      'Instant N5000 activation bonus once you activate your membership',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(8),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: const [
-                                  Icon(
-                                    Icons.check_circle,
-                                    color: Colors.white,
-                                    size: 12,
-                                  ),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      'Earn residual income using your social media platforms. Perform simple social media task eg repost, comments, likes, follow e.t.c. The more task you are willing to perform the more money you earn',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(8),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: const [
-                                  Icon(
-                                    Icons.check_circle,
-                                    color: Colors.white,
-                                    size: 12,
-                                  ),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      'Refer you friends to join and earn instant N1500 when they activate their membership, and 20% when they purchase our social boost package. With this alone, you could earn up to N10,000 on a daily basis',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(8),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: const [
-                                  Icon(
-                                    Icons.check_circle,
-                                    color: Colors.white,
-                                    size: 12,
-                                  ),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      'Instant withdrawal to all Nigerian banks',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
+                              height: 8,
                             ),
                             Container(
                               padding: const EdgeInsets.all(8),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        'Membership fee',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Text(
-                                        'N2500',
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w800,
-                                          color: Colors.white,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const Track()),
-                                      );
-                                    },
-                                    child: Container(
-                                      width: MediaQuery.of(context).size.width,
-                                      height: 50,
-                                      child: Container(
-                                          padding: const EdgeInsets.all(15),
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            color: const Color(0xFF2E38FF),
-                                          ),
-                                          height: 50,
-                                          child: const Center(
-                                            child: Text(
-                                              "Pay Now",
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            ),
-                                          )),
+                                children: const [
+                                  Text(
+                                    'Status',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color.fromARGB(255, 0, 0, 0),
                                     ),
                                   ),
+                                  Text(
+                                    'No loans',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color.fromARGB(255, 164, 164, 164),
+                                    ),
+                                  )
                                 ],
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: const [
+                                  Text(
+                                    'Date',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                    ),
+                                  ),
+                                  Text(
+                                    '-',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color.fromARGB(255, 164, 164, 164),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 80,
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 50,
+                                child: Container(
+                                    padding: const EdgeInsets.all(15),
+                                    width: MediaQuery.of(context).size.width,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: const Color(0xFF2E38FF),
+                                    ),
+                                    height: 50,
+                                    child: const Center(
+                                      child: Text(
+                                        "Confirm Status",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    )),
                               ),
                             ),
                           ],
                         ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  'Later',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w600),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
                       ),
                     ],
                   ),
