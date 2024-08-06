@@ -118,6 +118,43 @@ class _GiversState extends State<Givers> {
                       ),
                     ],
                   ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          decoration: (BoxDecoration(
+                              color: Color(0xFF2E38FF),
+                              borderRadius: BorderRadius.circular(10))),
+                          child: const Center(
+                              child: (Text(
+                            'Repay',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ))),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          decoration: (BoxDecoration(
+                              color: Color(0xFFEBEBEB),
+                              borderRadius: BorderRadius.circular(10))),
+                          child: const Center(
+                              child: (Text(
+                            'Extend',
+                            style: TextStyle(
+                              color: Color(0xFF939393),
+                            ),
+                          ))),
+                        ),
+                      ),
+                    ],
+                  ),
                   const SizedBox(
                     height: 100,
                   ),

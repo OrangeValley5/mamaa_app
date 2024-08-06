@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mamaa_app/airtime.dart';
+import 'package:mamaa_app/coupons.dart';
 import 'package:mamaa_app/giving.dart';
 import 'package:mamaa_app/tacks.dart';
 import 'package:mamaa_app/transactions.dart';
@@ -544,41 +546,51 @@ class _HomeState extends State<Home> {
                         Row(
                           children: [
                             Expanded(
-                              child: Container(
-                                padding: const EdgeInsets.all(16),
-                                height: 100,
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFEDC6FF),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                        width: 18,
-                                        height: 18,
-                                        child: Image.asset(
-                                            'lib/images/historys.png')),
-                                    const Expanded(
-                                      child: SizedBox(
-                                        height: 2,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Airtime()),
+                                  );
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(16),
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      color: Color(0xFFEDC6FF),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                          width: 18,
+                                          height: 18,
+                                          child: Image.asset(
+                                              'lib/images/historys.png')),
+                                      const Expanded(
+                                        child: SizedBox(
+                                          height: 2,
+                                        ),
                                       ),
-                                    ),
-                                    const Text(
-                                      'Airtime to Cash',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12),
-                                    ),
-                                    const SizedBox(
-                                      height: 4,
-                                    ),
-                                    const Text(
-                                      'Convert airtime to cash',
-                                      style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFBB2DFF)),
-                                    )
-                                  ],
+                                      const Text(
+                                        'Airtime to Cash',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 12),
+                                      ),
+                                      const SizedBox(
+                                        height: 4,
+                                      ),
+                                      const Text(
+                                        'Convert airtime to cash',
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            color: Color(0xFFBB2DFF)),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -586,41 +598,51 @@ class _HomeState extends State<Home> {
                               width: 20,
                             ),
                             Expanded(
-                              child: Container(
-                                padding: const EdgeInsets.all(16),
-                                height: 100,
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFFFF4B8),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                        width: 18,
-                                        height: 18,
-                                        child: Image.asset(
-                                            'lib/images/scores.png')),
-                                    const Expanded(
-                                      child: SizedBox(
-                                        height: 2,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Coupons()),
+                                  );
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(16),
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      color: Color(0xFFFFF4B8),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                          width: 18,
+                                          height: 18,
+                                          child: Image.asset(
+                                              'lib/images/scores.png')),
+                                      const Expanded(
+                                        child: SizedBox(
+                                          height: 2,
+                                        ),
                                       ),
-                                    ),
-                                    const Text(
-                                      'Credit Score',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12),
-                                    ),
-                                    const SizedBox(
-                                      height: 4,
-                                    ),
-                                    const Text(
-                                      'Check credit score',
-                                      style: TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFFEDC600)),
-                                    )
-                                  ],
+                                      const Text(
+                                        'Coupons',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 12),
+                                      ),
+                                      const SizedBox(
+                                        height: 4,
+                                      ),
+                                      const Text(
+                                        'Check credit score',
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            color: Color(0xFFEDC600)),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
