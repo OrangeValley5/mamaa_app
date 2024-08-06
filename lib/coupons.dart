@@ -54,22 +54,27 @@ class _CouponsState extends State<Coupons> {
             const SizedBox(
               height: 10,
             ),
-            const Text(
-              'Coupon not available',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600),
+            const Center(
+              child: Text(
+                'Coupon not available',
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600),
+              ),
             ),
             const SizedBox(
               height: 6,
             ),
-            const Text(
-              'Get free coupons whenever you repay your loan before due date',
-              style: TextStyle(
-                  fontSize: 14,
-                  color: Color.fromARGB(255, 178, 178, 178),
-                  fontWeight: FontWeight.w300),
+            const Center(
+              child: Text(
+                'Get free coupons whenever you repay your loan before due date',
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Color.fromARGB(255, 178, 178, 178),
+                    fontWeight: FontWeight.w300),
+                textAlign: TextAlign.center,
+              ),
             )
           ],
         ),
