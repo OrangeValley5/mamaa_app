@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mamaa_app/socialpacks.dart';
-import 'package:mamaa_app/track.dart';
 import 'package:mamaa_app/adspage.dart';
 
 class Social extends StatefulWidget {
