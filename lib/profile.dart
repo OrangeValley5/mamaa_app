@@ -275,10 +275,12 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
+              decoration: BoxDecoration(color: Colors.white),
               padding: const EdgeInsets.only(left: 20, top: 50, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
