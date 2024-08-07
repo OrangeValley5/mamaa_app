@@ -44,7 +44,7 @@ class _FaqsState extends State<Faqs> {
                         child: Icon(
                           Icons.arrow_back_ios,
                           size: 16,
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 0, 0, 0),
                         ),
                       ),
                     ),
@@ -93,7 +93,7 @@ class _FaqsState extends State<Faqs> {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: ExpansionPanelList(
-            elevation: 1,
+            elevation: 0,
             expansionCallback: (int index, bool isExpanded) {
               setState(() {
                 item.isExpanded = !isExpanded;
