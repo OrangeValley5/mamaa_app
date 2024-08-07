@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mamaa_app/faqs.dart';
 import 'package:mamaa_app/updateprofile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mamaa_app/profiledetails.dart';
@@ -317,14 +318,17 @@ class _ProfileState extends State<Profile> {
                               fontSize: 18, fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(
-                          height: 5,
+                          height: 4,
                         ),
                         const Text(
-                          'Welcome back !',
+                          'REF ID: XH398Q9C47NDS',
                           style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 10,
                               fontWeight: FontWeight.w300,
                               color: Colors.grey),
+                        ),
+                        const SizedBox(
+                          height: 4,
                         ),
                       ],
                     ),
@@ -344,7 +348,7 @@ class _ProfileState extends State<Profile> {
                       padding: const EdgeInsets.all(18),
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 238, 238, 238),
+                          color: Color(0xFFF3F3F3),
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
                         children: const [
@@ -358,7 +362,7 @@ class _ProfileState extends State<Profile> {
                           ),
                           Expanded(
                             child: Text(
-                              'Update Profile',
+                              'Application Information',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14,
@@ -389,7 +393,52 @@ class _ProfileState extends State<Profile> {
                       padding: const EdgeInsets.all(18),
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 238, 238, 238),
+                          color: Color(0xFFF3F3F3),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        children: const [
+                          Icon(
+                            Icons.people,
+                            color: Colors.black,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Work Information',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: Color.fromARGB(255, 25, 25, 25)),
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Color.fromARGB(255, 163, 163, 163),
+                            size: 15,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Institutions()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(18),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFF3F3F3),
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
                         children: const [
@@ -423,12 +472,17 @@ class _ProfileState extends State<Profile> {
                     height: 20,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Faqs()),
+                      );
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(18),
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 238, 238, 238),
+                          color: Color(0xFFF3F3F3),
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
                         children: const [
@@ -442,7 +496,7 @@ class _ProfileState extends State<Profile> {
                           ),
                           Expanded(
                             child: Text(
-                              'My Orders',
+                              'Faqs',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14,
@@ -465,7 +519,7 @@ class _ProfileState extends State<Profile> {
                     padding: const EdgeInsets.all(18),
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 238, 238, 238),
+                        color: Color(0xFFF3F3F3),
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(
                       children: const [
@@ -479,7 +533,7 @@ class _ProfileState extends State<Profile> {
                         ),
                         Expanded(
                           child: Text(
-                            'Change Password',
+                            'Terms & Agreement',
                             style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 14,
@@ -565,7 +619,7 @@ class _ProfileState extends State<Profile> {
                       padding: const EdgeInsets.all(18),
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 238, 238, 238),
+                          color: Color(0xFFF3F3F3),
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
                         children: const [
@@ -606,7 +660,48 @@ class _ProfileState extends State<Profile> {
                       padding: const EdgeInsets.all(18),
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 238, 238, 238),
+                          color: Color(0xFFFF3F3F3),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        children: const [
+                          Icon(
+                            Icons.people,
+                            color: Colors.black,
+                            size: 20,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Terms & Agreement',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: Color.fromARGB(255, 25, 25, 25)),
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Color.fromARGB(255, 163, 163, 163),
+                            size: 15,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _showCustomDialog();
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(18),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFFF3F3F3),
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
                         children: const [

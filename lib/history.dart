@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as color;
 
-class Coupons extends StatefulWidget {
-  const Coupons({Key? key}) : super(key: key);
+class History extends StatefulWidget {
+  const History({Key? key}) : super(key: key);
 
   @override
-  State<Coupons> createState() => _CouponsState();
+  State<History> createState() => _HistoryState();
 }
 
-class _CouponsState extends State<Coupons> {
+class _HistoryState extends State<History> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,29 +18,11 @@ class _CouponsState extends State<Coupons> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                width: 30,
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: color.AppColor.lightgray),
-                child: const Center(
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    size: 20,
-                  ),
-                ),
-              ),
-            ),
             const SizedBox(
               height: 10,
             ),
             const Text(
-              'Coupons',
+              'History',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 80),
@@ -56,7 +38,7 @@ class _CouponsState extends State<Coupons> {
             ),
             const Center(
               child: Text(
-                'Coupon not available',
+                'No History',
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,
@@ -66,15 +48,18 @@ class _CouponsState extends State<Coupons> {
             const SizedBox(
               height: 6,
             ),
-            const Center(
-              child: Text(
-                'Get free coupons whenever you repay your loan before due date',
-                style: TextStyle(
-                    fontSize: 12,
-                    color: Color.fromARGB(255, 178, 178, 178),
-                    fontWeight: FontWeight.w300),
-                textAlign: TextAlign.center,
-              ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const [
+                Text(
+                  'You haven\'t made any trasactions yet. Any transaction made will show up here',
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Color.fromARGB(255, 178, 178, 178),
+                      fontWeight: FontWeight.w300),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             )
           ],
         ),

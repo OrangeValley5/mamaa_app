@@ -1,3 +1,4 @@
+import 'package:mamaa_app/history.dart';
 import 'package:mamaa_app/referral.dart';
 import 'package:mamaa_app/social.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   final String message = '';
   int myIndex = 0;
-  List<Widget> widgetList = const [Home(), Social(), Profile()];
+  List<Widget> widgetList = const [Home(), History(), Profile()];
 
   @override
   Widget build(BuildContext context) {
