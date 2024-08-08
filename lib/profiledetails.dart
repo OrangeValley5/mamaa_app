@@ -71,9 +71,15 @@ class _ProfileDetailsState extends State<ProfileDetails> {
   // The currently selected state
   String? _selectedStatez;
 
+  final List<String> _age = ['20-35yrs', '35-45yrs', '45-55yrs'];
+// The currently selected state
+  String? _selectedAge;
+
   // Controller for phone number input
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
+  final TextEditingController lastnameController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
 
   @override
   void initState() {
@@ -86,11 +92,14 @@ class _ProfileDetailsState extends State<ProfileDetails> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
     setState(() {
+      _selectedAge = prefs.getString('age') ?? '';
       _selectedGender = prefs.getString('gender') ?? '';
       _selectedReligion = prefs.getString('religion') ?? '';
       _selectedStatez = prefs.getString('state') ?? '';
       _phoneController.text = prefs.getString('phone') ?? '';
+      _addressController.text = prefs.getString('address') ?? '';
       usernameController.text = prefs.getString('username') ?? '';
+      lastnameController.text = prefs.getString('lastname') ?? '';
     });
   }
 
@@ -101,6 +110,9 @@ class _ProfileDetailsState extends State<ProfileDetails> {
     await prefs.setString('religion', _selectedReligion ?? '');
     await prefs.setString('state', _selectedStatez ?? '');
     await prefs.setString('phone', _phoneController.text);
+    await prefs.setString('age', _selectedAge ?? '');
+    await prefs.setString('address', _addressController.text);
+    await prefs.setString('lastname', lastnameController.text);
   }
 
   @override
@@ -116,7 +128,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     padding:
-                        const EdgeInsets.only(left: 25, top: 50, right: 25),
+                        const EdgeInsets.only(left: 25, top: 20, right: 25),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -154,7 +166,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                         const Text(
                           "Let us know more about you so we can personalise your experience while performing task",
                           style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 10,
                               color: Colors.grey,
                               fontWeight: FontWeight.w300),
                         ),
@@ -166,15 +178,73 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                               left: 12, top: 0, right: 12),
                           decoration: BoxDecoration(
                               color: color.AppColor.lightgray,
-                              borderRadius: BorderRadius.circular(20)),
+                              borderRadius: BorderRadius.circular(10)),
                           child: TextFormField(
                             controller: usernameController,
                             style: const TextStyle(
                               fontSize: 14,
                             ),
                             decoration: const InputDecoration(
-                              hintText: 'Enter your username',
-                              labelText: 'Username',
+                              hintText: 'Enter your First Name',
+                              labelText: 'First Name',
+                              labelStyle:
+                                  TextStyle(fontSize: 14, color: Colors.grey),
+                              border: InputBorder.none,
+                            ),
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (value) =>
+                                value != null && value.length < 6
+                                    ? 'Required'
+                                    : null,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              left: 12, top: 0, right: 12),
+                          decoration: BoxDecoration(
+                              color: color.AppColor.lightgray,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: TextFormField(
+                            controller: lastnameController,
+                            style: const TextStyle(
+                              fontSize: 14,
+                            ),
+                            decoration: const InputDecoration(
+                              hintText: 'Enter your Last Name',
+                              labelText: 'Last Name',
+                              labelStyle:
+                                  TextStyle(fontSize: 14, color: Colors.grey),
+                              border: InputBorder.none,
+                            ),
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (value) =>
+                                value != null && value.length < 6
+                                    ? 'Required'
+                                    : null,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              left: 12, top: 0, right: 12),
+                          decoration: BoxDecoration(
+                              color: color.AppColor.lightgray,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: TextFormField(
+                            controller: _addressController,
+                            style: const TextStyle(
+                              fontSize: 14,
+                            ),
+                            decoration: const InputDecoration(
+                              hintText: 'Enter your home address',
+                              labelText: 'Home Address',
                               labelStyle:
                                   TextStyle(fontSize: 14, color: Colors.grey),
                               border: InputBorder.none,
@@ -192,7 +262,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(10),
                               color: color.AppColor.lightgray),
                           child: InputDecorator(
                             decoration: const InputDecoration(
@@ -249,7 +319,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(10),
                               color: color.AppColor.lightgray),
                           child: InputDecorator(
                             decoration: const InputDecoration(
@@ -261,7 +331,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                               child: DropdownButton<String>(
                                 isExpanded: true,
                                 hint: const Text(
-                                  "Select a religion",
+                                  "Age",
                                   style: TextStyle(
                                       color: Colors
                                           .grey), // Custom hint text color
@@ -299,7 +369,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(10),
                               color: color.AppColor.lightgray),
                           child: InputDecorator(
                             decoration: const InputDecoration(
@@ -352,7 +422,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                               left: 12, top: 0, right: 12),
                           decoration: BoxDecoration(
                               color: color.AppColor.lightgray,
-                              borderRadius: BorderRadius.circular(20)),
+                              borderRadius: BorderRadius.circular(10)),
                           child: TextFormField(
                             controller: _phoneController,
                             keyboardType: TextInputType.number,

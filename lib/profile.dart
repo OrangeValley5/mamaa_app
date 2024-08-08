@@ -281,7 +281,7 @@ class _ProfileState extends State<Profile> {
           children: [
             Container(
               decoration: BoxDecoration(color: Colors.white),
-              padding: const EdgeInsets.only(left: 20, top: 50, right: 20),
+              padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
