@@ -141,7 +141,7 @@ class _WorkState extends State<Work> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               Container(
                 padding: const EdgeInsets.only(left: 12, top: 0, right: 12),
@@ -165,7 +165,7 @@ class _WorkState extends State<Work> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               Container(
                 padding: const EdgeInsets.only(left: 12, top: 0, right: 12),
@@ -215,7 +215,7 @@ class _WorkState extends State<Work> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               Container(
                 padding: const EdgeInsets.only(left: 12, top: 0, right: 12),
@@ -265,7 +265,7 @@ class _WorkState extends State<Work> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               Container(
                 padding: const EdgeInsets.only(left: 12, top: 0, right: 12),
@@ -315,7 +315,7 @@ class _WorkState extends State<Work> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               Container(
                 padding: const EdgeInsets.only(left: 12, top: 0, right: 12),
