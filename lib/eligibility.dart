@@ -112,7 +112,7 @@ class _EligibilityState extends State<Eligibility> {
                         children: [
                           Container(
                             width: 8,
-                            height: 2.5,
+                            height: 2.0,
                             color: Colors.white,
                           ),
                         ],
