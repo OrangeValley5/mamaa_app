@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as color;
-import 'package:iconsax/iconsax.dart';
+//import 'package:iconsax/iconsax.dart';
 
 class Eligibility extends StatefulWidget {
   const Eligibility({Key? key}) : super(key: key);
@@ -84,32 +84,162 @@ class _EligibilityState extends State<Eligibility> {
                     fontWeight: FontWeight.w300),
               ),
               const SizedBox(
+                height: 10,
+              ),
+              Container(
+                padding: const EdgeInsets.only(
+                    top: 30, bottom: 30, left: 10, right: 10),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 67, 74, 255),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        border: Border.all(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          width: 2,
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 8,
+                            height: 2.5,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                            height: 18,
+                            width: 18,
+                            child: Image.asset(
+                              'lib/images/naira.png',
+                            )),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Text(
+                          '90,000',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 24,
+                              color: Color.fromARGB(255, 255, 255, 255)),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                      height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        border: Border.all(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          width: 2,
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.add,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            size: 16,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
                 height: 20,
               ),
               Container(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(18),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 222, 223, 255),
+                    color: Color(0xFFF3F3F3),
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(
-                  children: const [
-                    Icon(
-                      Icons.plus_one_rounded,
-                      color: Colors.black,
-                      size: 20,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        const Text(
+                          'Interest',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 8,
+                              color: Color.fromARGB(255, 25, 25, 25)),
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        Container(
+                          height: 12,
+                          width: 1,
+                          decoration: const BoxDecoration(
+                              color: Color.fromARGB(255, 144, 136, 255)),
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Text(
+                          '1.5%',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 8,
+                              color: Color.fromARGB(255, 25, 25, 25)),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Expanded(
-                      child: Text(
-                        '',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 10,
-                            color: Color.fromARGB(255, 72, 82, 255)),
-                      ),
+                    Row(
+                      children: [
+                        const Text(
+                          'Service Charge',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 8,
+                              color: Color.fromARGB(255, 25, 25, 25)),
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        Container(
+                          height: 12,
+                          width: 1,
+                          decoration: const BoxDecoration(
+                              color: Color.fromARGB(255, 144, 136, 255)),
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Text(
+                          'N500',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 8,
+                              color: Color.fromARGB(255, 25, 25, 25)),
+                        ),
+                      ],
                     ),
                   ],
                 ),
