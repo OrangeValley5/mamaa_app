@@ -70,6 +70,7 @@ class _WorkState extends State<Work> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
