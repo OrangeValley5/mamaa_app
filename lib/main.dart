@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mamaa_app/congratulations.dart';
 import 'package:mamaa_app/dashboard.dart';
+import 'package:mamaa_app/eligibility.dart';
 import 'package:mamaa_app/firstscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mamaa_app/institutions.dart';
@@ -31,7 +32,7 @@ class App extends StatelessWidget {
     navigatorKey:
     navigatorKey;
     return const MaterialApp(
-      home: Congratulations(),
+      home: Eligibility(),
     );
   }
 }

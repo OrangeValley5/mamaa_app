@@ -151,41 +151,44 @@ class _InstitutionsState extends State<Institutions> {
                                       border: InputBorder.none,
                                     ),
                                     child: DropdownButtonHideUnderline(
-                                      child: DropdownButton<String>(
-                                        isExpanded: true,
-                                        hint: const Text(
-                                          "Select bank",
-                                          style: TextStyle(
+                                      child: Container(
+                                        child: DropdownButton<String>(
+                                          isExpanded: true,
+                                          hint: const Text(
+                                            "Select bank",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors
+                                                    .grey), // Custom hint text color
+                                          ),
+                                          value: _selectedDay,
+                                          icon:
+                                              const Icon(Icons.arrow_drop_down),
+                                          iconSize: 20,
+                                          elevation: 16,
+                                          style: const TextStyle(
                                               fontSize: 12,
                                               color: Colors
-                                                  .grey), // Custom hint text color
+                                                  .black), // Dropdown list values color
+                                          onChanged: (String? newValue) {
+                                            setState(() {
+                                              _selectedDay = newValue;
+                                            });
+                                          },
+                                          items: _daysOfWeek
+                                              .map<DropdownMenuItem<String>>(
+                                                  (String value) {
+                                            return DropdownMenuItem<String>(
+                                              value: value,
+                                              child: Text(
+                                                value,
+                                                style: const TextStyle(
+                                                    color: Colors
+                                                        .black), // Dropdown list values color
+                                              ),
+                                            );
+                                          }).toList(),
                                         ),
-                                        value: _selectedDay,
-                                        icon: const Icon(Icons.arrow_drop_down),
-                                        iconSize: 20,
-                                        elevation: 16,
-                                        style: const TextStyle(
-                                            fontSize: 12,
-                                            color: Colors
-                                                .black), // Dropdown list values color
-                                        onChanged: (String? newValue) {
-                                          setState(() {
-                                            _selectedDay = newValue;
-                                          });
-                                        },
-                                        items: _daysOfWeek
-                                            .map<DropdownMenuItem<String>>(
-                                                (String value) {
-                                          return DropdownMenuItem<String>(
-                                            value: value,
-                                            child: Text(
-                                              value,
-                                              style: const TextStyle(
-                                                  color: Colors
-                                                      .black), // Dropdown list values color
-                                            ),
-                                          );
-                                        }).toList(),
                                       ),
                                     ),
                                   ),
