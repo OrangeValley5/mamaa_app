@@ -55,7 +55,7 @@ class _InstitutionsState extends State<Institutions> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: const EdgeInsets.only(left: 20, top: 50, right: 20),
+              padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
               alignment: Alignment.center,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +73,7 @@ class _InstitutionsState extends State<Institutions> {
                       child: const Center(
                         child: Icon(
                           Icons.arrow_back_ios,
-                          size: 20,
+                          size: 18,
                         ),
                       ),
                     ),
@@ -116,17 +116,17 @@ class _InstitutionsState extends State<Institutions> {
                               left: 12, top: 0, right: 12),
                           decoration: BoxDecoration(
                               color: color.AppColor.lightgray,
-                              borderRadius: BorderRadius.circular(20)),
+                              borderRadius: BorderRadius.circular(10)),
                           child: const TextField(
                             keyboardType: TextInputType.number,
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                             ),
                             decoration: InputDecoration(
                               hintText: 'Enter your account number',
                               labelText: 'Account Number',
                               labelStyle:
-                                  TextStyle(fontSize: 14, color: Colors.grey),
+                                  TextStyle(fontSize: 12, color: Colors.grey),
                               border: InputBorder.none,
                             ),
                           ),
@@ -137,7 +137,7 @@ class _InstitutionsState extends State<Institutions> {
                         Center(
                           child: Container(
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(10),
                                 color: color.AppColor.lightgray),
                             padding: const EdgeInsets.symmetric(horizontal: 0),
                             child: Row(
@@ -155,14 +155,16 @@ class _InstitutionsState extends State<Institutions> {
                                         hint: const Text(
                                           "Select bank",
                                           style: TextStyle(
+                                              fontSize: 12,
                                               color: Colors
                                                   .grey), // Custom hint text color
                                         ),
                                         value: _selectedDay,
                                         icon: const Icon(Icons.arrow_drop_down),
-                                        iconSize: 24,
+                                        iconSize: 20,
                                         elevation: 16,
                                         style: const TextStyle(
+                                            fontSize: 12,
                                             color: Colors
                                                 .black), // Dropdown list values color
                                         onChanged: (String? newValue) {
@@ -188,6 +190,29 @@ class _InstitutionsState extends State<Institutions> {
                                   ),
                                 ),
                               ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              left: 12, top: 0, right: 12),
+                          decoration: BoxDecoration(
+                              color: color.AppColor.lightgray,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: const TextField(
+                            keyboardType: TextInputType.number,
+                            style: TextStyle(
+                              fontSize: 12,
+                            ),
+                            decoration: InputDecoration(
+                              hintText: 'Enter your BVN number',
+                              labelText: 'Bvn (Bank Verification Number)',
+                              labelStyle:
+                                  TextStyle(fontSize: 12, color: Colors.grey),
+                              border: InputBorder.none,
                             ),
                           ),
                         ),

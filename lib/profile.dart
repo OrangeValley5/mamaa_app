@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mamaa_app/faqs.dart';
 import 'package:mamaa_app/updateprofile.dart';
+import 'package:mamaa_app/work.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mamaa_app/profiledetails.dart';
 import 'package:mamaa_app/institutions.dart';
@@ -387,8 +388,7 @@ class _ProfileState extends State<Profile> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Institutions()),
+                        MaterialPageRoute(builder: (context) => const Work()),
                       );
                     },
                     child: Container(
