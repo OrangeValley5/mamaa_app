@@ -152,8 +152,7 @@ List<Item> generateItems() {
   return [
     Item(
       headerValue: 'What is Xcoin?',
-      expandedValue:
-          'XCoin is an innovative project introducing a refreshed Tap-to-Earn feature on TON, tailored for the crypto community. With this platform, you can tap to receive USDT, a widely-used stablecoin that can be easily withdrawn, as well as xUSD, the project\'s own token that grants eligibility for airdrops. The app will soon be available not just on TON but also across various other networks.',
+      expandedValue: 'X',
     ),
     Item(
       headerValue: 'How to earn USDT',
