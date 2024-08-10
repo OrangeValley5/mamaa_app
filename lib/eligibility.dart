@@ -32,7 +32,7 @@ class _EligibilityState extends State<Eligibility> {
                   child: const Center(
                     child: Icon(
                       Icons.arrow_back_ios,
-                      size: 20,
+                      size: 16,
                     ),
                   ),
                 ),
@@ -243,6 +243,19 @@ class _EligibilityState extends State<Eligibility> {
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Text(
+                "Over how many days ?",
+                style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w300),
+              ),
+              const SizedBox(
+                height: 10,
               ),
             ],
           ),
