@@ -117,7 +117,7 @@ class _WorkState extends State<Work> {
                     fontWeight: FontWeight.w300),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
               Container(
                 padding: const EdgeInsets.only(left: 12, top: 0, right: 12),
