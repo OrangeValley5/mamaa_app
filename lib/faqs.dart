@@ -88,50 +88,48 @@ class _FaqsState extends State<Faqs> {
   }
 
   Widget _buildPanel() {
-    return SingleChildScrollView(
-      child: Column(
-        children: _data.map<Widget>((Item item) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: ExpansionPanelList(
-              elevation: 0,
-              expansionCallback: (int index, bool isExpanded) {
-                setState(() {
-                  item.isExpanded = !isExpanded;
-                });
-              },
-              children: [
-                ExpansionPanel(
-                  backgroundColor: Color(0xFFF3F3F3),
-                  headerBuilder: (BuildContext context, bool isExpanded) {
-                    return ListTile(
-                      title: Text(
-                        item.headerValue,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                          color: Color.fromARGB(255, 0, 0, 0),
-                        ),
-                      ),
-                    );
-                  },
-                  body: ListTile(
+    return Column(
+      children: _data.map<Widget>((Item item) {
+        return SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: ExpansionPanelList(
+            elevation: 0,
+            expansionCallback: (int index, bool isExpanded) {
+              setState(() {
+                item.isExpanded = !isExpanded;
+              });
+            },
+            children: [
+              ExpansionPanel(
+                backgroundColor: Color(0xFFF3F3F3),
+                headerBuilder: (BuildContext context, bool isExpanded) {
+                  return ListTile(
                     title: Text(
-                      item.expandedValue,
+                      item.headerValue,
                       style: const TextStyle(
-                        fontWeight: FontWeight.w300,
+                        fontWeight: FontWeight.w400,
                         fontSize: 12,
-                        color: Color.fromARGB(255, 159, 159, 159),
+                        color: Color.fromARGB(255, 0, 0, 0),
                       ),
                     ),
+                  );
+                },
+                body: ListTile(
+                  title: Text(
+                    item.expandedValue,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w300,
+                      fontSize: 12,
+                      color: Color.fromARGB(255, 159, 159, 159),
+                    ),
                   ),
-                  isExpanded: item.isExpanded,
                 ),
-              ],
-            ),
-          );
-        }).toList(),
-      ),
+                isExpanded: item.isExpanded,
+              ),
+            ],
+          ),
+        );
+      }).toList(),
     );
   }
 }
