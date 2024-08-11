@@ -90,7 +90,7 @@ class _RegisterState extends State<Register> {
                             height: 5,
                           ),
                           const Text(
-                            "Enter your email address and password to continue",
+                            "Enter your email address and password to create an account",
                             style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
@@ -120,7 +120,7 @@ class _RegisterState extends State<Register> {
                                       hintText: 'Enter your Name',
                                       labelText: 'Name',
                                       labelStyle: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontFamily: 'Montserrat Regular',
                                           color: Colors.grey),
                                       border: InputBorder.none,
@@ -128,7 +128,7 @@ class _RegisterState extends State<Register> {
                                     autovalidateMode:
                                         AutovalidateMode.onUserInteraction,
                                     validator: (value) =>
-                                        value != null && value.length < 6
+                                        value != null && value.length < 3
                                             ? 'Required'
                                             : null,
                                   ),
