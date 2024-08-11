@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as color;
 import 'package:intl/intl.dart';
-
-//import 'package:iconsax/iconsax.dart';
+import 'calculator.dart'; // Import the new file
 
 class Eligibility extends StatefulWidget {
   const Eligibility({Key? key}) : super(key: key);
@@ -12,23 +11,14 @@ class Eligibility extends StatefulWidget {
 }
 
 class _EligibilityState extends State<Eligibility> {
-  int _amount = 90000; // Initial value of the amount
+  final NumberFormat currencyFormat = NumberFormat("#,##0");
+  late Calculator loanCalculator;
 
-  // Function to decrease the amount
-  void _decreaseAmount() {
-    setState(() {
-      if (_amount > 10000) {
-        _amount -= 10000;
-      }
-    });
-  }
-
-  void _increaseAmount() {
-    setState(() {
-      if (_amount < 90000) {
-        _amount += 10000;
-      }
-    });
+  @override
+  void initState() {
+    super.initState();
+    loanCalculator =
+        Calculator(amount: 70000); // Initialize with default amount
   }
 
   @override
@@ -75,7 +65,7 @@ class _EligibilityState extends State<Eligibility> {
                 padding: const EdgeInsets.all(10),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 222, 223, 255),
+                    color: const Color.fromARGB(255, 222, 223, 255),
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(
                   children: const [
@@ -112,14 +102,16 @@ class _EligibilityState extends State<Eligibility> {
                     top: 30, bottom: 30, left: 10, right: 10),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 67, 74, 255),
+                    color: const Color.fromARGB(255, 67, 74, 255),
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
                       onTap: () {
-                        _decreaseAmount();
+                        setState(() {
+                          loanCalculator.decreaseAmount();
+                        });
                       },
                       child: Container(
                         height: 20,
@@ -127,20 +119,16 @@ class _EligibilityState extends State<Eligibility> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
                           border: Border.all(
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             width: 2,
                           ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 8,
-                              height: 2.0,
-                              color: Colors.white,
-                            ),
-                          ],
+                        child: Center(
+                          child: Container(
+                            width: 8,
+                            height: 2.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
@@ -159,7 +147,7 @@ class _EligibilityState extends State<Eligibility> {
                           width: 4,
                         ),
                         Text(
-                          '$_amount',
+                          currencyFormat.format(loanCalculator.amount),
                           style: const TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 24,
@@ -172,7 +160,9 @@ class _EligibilityState extends State<Eligibility> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        _increaseAmount();
+                        setState(() {
+                          loanCalculator.increaseAmount();
+                        });
                       },
                       child: Container(
                         height: 20,
@@ -180,20 +170,16 @@ class _EligibilityState extends State<Eligibility> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
                           border: Border.all(
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             width: 2,
                           ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(
-                              Icons.add,
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              size: 16,
-                            ),
-                          ],
+                        child: const Center(
+                          child: Icon(
+                            Icons.add,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            size: 16,
+                          ),
                         ),
                       ),
                     ),
@@ -207,7 +193,7 @@ class _EligibilityState extends State<Eligibility> {
                 padding: const EdgeInsets.all(18),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    color: Color(0xFFF3F3F3),
+                    color: const Color(0xFFF3F3F3),
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -242,33 +228,206 @@ class _EligibilityState extends State<Eligibility> {
                         ),
                       ],
                     ),
+                    const Text(
+                      'Service Charge',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 8,
+                          color: Color.fromARGB(255, 25, 25, 25)),
+                    ),
+                    const Text(
+                      '₦500',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 8,
+                          color: Color.fromARGB(255, 25, 25, 25)),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        loanCalculator.updateDueDate(91);
+                      });
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.only(
+                          top: 10, bottom: 10, left: 12, right: 12),
+                      decoration: BoxDecoration(
+                          color: loanCalculator.selectedDuration == 91
+                              ? const Color.fromARGB(255, 67, 74, 255)
+                              : const Color(0xFFF3F3F3),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text(
+                        '91 days',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 10,
+                            color: loanCalculator.selectedDuration == 91
+                                ? Colors.white
+                                : const Color.fromARGB(255, 25, 25, 25)),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        loanCalculator.updateDueDate(120);
+                      });
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.only(
+                          top: 10, bottom: 10, left: 12, right: 12),
+                      decoration: BoxDecoration(
+                          color: loanCalculator.selectedDuration == 120
+                              ? const Color.fromARGB(255, 67, 74, 255)
+                              : const Color(0xFFF3F3F3),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text(
+                        '120 days',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 10,
+                            color: loanCalculator.selectedDuration == 120
+                                ? Colors.white
+                                : const Color.fromARGB(255, 25, 25, 25)),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        loanCalculator.updateDueDate(180);
+                      });
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.only(
+                          top: 10, bottom: 10, left: 12, right: 12),
+                      decoration: BoxDecoration(
+                          color: loanCalculator.selectedDuration == 180
+                              ? const Color.fromARGB(255, 67, 74, 255)
+                              : const Color(0xFFF3F3F3),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text(
+                        '180 days',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 10,
+                            color: loanCalculator.selectedDuration == 180
+                                ? Colors.white
+                                : const Color.fromARGB(255, 25, 25, 25)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: const EdgeInsets.all(20),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    color: const Color(0xFFF3F3F3),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Reference No.',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10,
+                          color: Color.fromARGB(255, 25, 25, 25)),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      loanCalculator.referenceNumber,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10,
+                          color: Color.fromARGB(255, 67, 74, 255)),
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    const Text(
+                      'Application Date',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10,
+                          color: Color.fromARGB(255, 25, 25, 25)),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      loanCalculator.getFormattedApplicationDate(),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10,
+                          color: Color.fromARGB(255, 67, 74, 255)),
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    const Text(
+                      'Payback Date',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10,
+                          color: Color.fromARGB(255, 25, 25, 25)),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      loanCalculator.getFormattedDueDate(),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10,
+                          color: Color.fromARGB(255, 67, 74, 255)),
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    const Text(
+                      'Payback Amount',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 10,
+                          color: Color.fromARGB(255, 25, 25, 25)),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     Row(
                       children: [
-                        const Text(
-                          'Service Charge',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 8,
-                              color: Color.fromARGB(255, 25, 25, 25)),
-                        ),
-                        const SizedBox(
-                          width: 4,
-                        ),
                         Container(
-                          height: 12,
-                          width: 1,
-                          decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 144, 136, 255)),
-                        ),
+                            height: 10,
+                            width: 10,
+                            child: Image.asset(
+                              'lib/images/naira.png',
+                              color: Color.fromARGB(255, 74, 46, 255),
+                            )),
                         const SizedBox(
                           width: 4,
                         ),
-                        const Text(
-                          'N500',
-                          style: TextStyle(
+                        Text(
+                          currencyFormat.format(loanCalculator.paybackAmount),
+                          style: const TextStyle(
                               fontWeight: FontWeight.w400,
-                              fontSize: 8,
-                              color: Color.fromARGB(255, 25, 25, 25)),
+                              fontSize: 10,
+                              color: Color.fromARGB(255, 67, 74, 255)),
                         ),
                       ],
                     ),
@@ -276,203 +435,33 @@ class _EligibilityState extends State<Eligibility> {
                 ),
               ),
               const SizedBox(
-                height: 30,
-              ),
-              const Text(
-                "Over how many days ?",
-                style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w300),
-              ),
-              const SizedBox(
-                height: 14,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(
-                        top: 10, bottom: 10, left: 20, right: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: const Color(0xFF2E38FF),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          '91 Days',
-                          style: TextStyle(fontSize: 10, color: Colors.white),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.only(
-                        top: 10, bottom: 10, left: 20, right: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: const Color(0xFF2E38FF),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          '120 Days',
-                          style: TextStyle(fontSize: 10, color: Colors.white),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.only(
-                        top: 10, bottom: 10, left: 20, right: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: const Color(0xFF2E38FF),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          '180 Days',
-                          style: TextStyle(fontSize: 10, color: Colors.white),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 239, 239, 239),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(4),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                'Reference No',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                ),
-                              ),
-                              Text(
-                                'ZX43BH8S',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Color.fromARGB(255, 164, 164, 164),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(4),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                'Payback Amount',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                ),
-                              ),
-                              Text(
-                                'No loans',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Color.fromARGB(255, 164, 164, 164),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(4),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                'Duration',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                ),
-                              ),
-                              Text(
-                                '-',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Color.fromARGB(255, 164, 164, 164),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(4),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                'Date',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                ),
-                              ),
-                              Text(
-                                '-',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Color.fromARGB(255, 164, 164, 164),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 50,
+                height: 20,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  // Handle the Apply Now button tap
+                  print("Apply Now tapped");
+                },
                 child: Container(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
                   width: MediaQuery.of(context).size.width,
-                  height: 50,
-                  child: Container(
-                      padding: const EdgeInsets.all(15),
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFF2E38FF),
-                      ),
-                      height: 50,
-                      child: const Center(
-                        child: Text(
-                          "Submit",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      )),
+                  height: 60,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 67, 74, 255),
+                      borderRadius: BorderRadius.circular(100)),
+                  child: const Center(
+                    child: Text(
+                      'Apply Now',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          color: Color.fromARGB(255, 255, 255, 255)),
+                    ),
+                  ),
                 ),
+              ),
+              const SizedBox(
+                height: 30,
               ),
             ],
           ),
