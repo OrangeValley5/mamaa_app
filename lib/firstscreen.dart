@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mamaa_app/splashscreen.dart';
 import 'package:mamaa_app/onboarding.dart';
 import 'dart:async';
-import 'package:mamaa_app/utils.dart';
+//import 'package:mamaa_app/utils.dart';
 
 class FirstScreen extends StatefulWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     ScaffoldMessengerKey:
-    Utils.messengerKey;
+    //Utils.messengerKey;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(

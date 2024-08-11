@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mamaa_app/signup.dart';
 import 'package:mamaa_app/dashboard.dart';
-import 'package:mamaa_app/utils.dart';
+//import 'package:mamaa_app/utils.dart';
 import 'colors.dart' as color;
 
 class ForgotPassword extends StatefulWidget {
@@ -187,7 +187,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       await FirebaseAuth.instance
           .sendPasswordResetEmail(email: emailController.text.trim());
 
-      Utils.showSnackBar('Password reset email sent');
+      //Utils.showSnackBar('Password reset email sent');
       const AlertDialog alert = AlertDialog(
         title: Text("My title"),
         content: Text("This is my message."),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart' as color;
 import 'package:intl/intl.dart';
 import 'calculator.dart'; // Import the new file
+import 'utils/dialog_util.dart';
 
 class Eligibility extends StatefulWidget {
   const Eligibility({Key? key}) : super(key: key);
@@ -10,15 +11,179 @@ class Eligibility extends StatefulWidget {
   State<Eligibility> createState() => _EligibilityState();
 }
 
-class _EligibilityState extends State<Eligibility> {
+class _EligibilityState extends State<Eligibility>
+    with TickerProviderStateMixin {
   final NumberFormat currencyFormat = NumberFormat("#,##0");
   late Calculator loanCalculator;
+  late AnimationController _slideController;
+  late Animation<Offset> _offsetAnimation;
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
     loanCalculator =
         Calculator(amount: 70000); // Initialize with default amount
+    _slideController = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
+    _offsetAnimation = Tween<Offset>(
+      begin: const Offset(0.0, 1.0),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(
+      parent: _slideController,
+      curve: Curves.easeInOut,
+    ));
+
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true);
+
+    _scaleAnimation = Tween<double>(begin: 0.4, end: 0.6).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut,
+      ),
+    );
+  }
+
+  void _oopsDialog() {
+    Future.delayed(Duration.zero, () {
+      _slideController.forward();
+      showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (BuildContext context) {
+          return SlideTransition(
+            position: _offsetAnimation,
+            child: Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Dialog(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  side: const BorderSide(
+                    color: Color.fromARGB(255, 245, 245, 245),
+                    width: 1.0,
+                  ),
+                ),
+                backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 40,
+                        height: 40,
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Color.fromARGB(255, 69, 255, 78)
+                              .withOpacity(0.2), // Adjust opacity here
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              '!',
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 37, 255, 8),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        'Application Fee',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontSize: 14,
+                          fontFamily: 'Montserrat SemiBold',
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Your Application fee for this loan is NGN500. Do you wish to continue ?',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 168, 168, 168),
+                          fontSize: 10,
+                          fontFamily: 'Montserrat Regular',
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 10,
+                                horizontal: 20,
+                              ),
+                              child: const Text(
+                                'Yes',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
+                                  color: Color.fromARGB(255, 156, 156, 156),
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 10,
+                                horizontal: 20,
+                              ),
+                              child: const Text(
+                                'No',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
+                                  color: Color.fromARGB(255, 48, 48, 48),
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
+      ).then((_) => _slideController.reset());
+    });
   }
 
   @override
@@ -450,8 +615,7 @@ class _EligibilityState extends State<Eligibility> {
               ),
               GestureDetector(
                 onTap: () {
-                  // Handle the Apply Now button tap
-                  print("Apply Now tapped");
+                  _oopsDialog();
                 },
                 child: Container(
                   padding: const EdgeInsets.only(left: 20, right: 20),

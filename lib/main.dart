@@ -6,7 +6,7 @@ import 'package:mamaa_app/firstscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mamaa_app/institutions.dart';
 import 'package:mamaa_app/paymentpage.dart';
-import 'package:mamaa_app/utils.dart';
+//import 'package:mamaa_app/utils.dart';
 import 'package:mamaa_app/work.dart';
 
 void main() async {
@@ -28,7 +28,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScaffoldMessengerKey:
-    Utils.messengerKey;
+    //Utils.messengerKey;
     navigatorKey:
     navigatorKey;
     return const MaterialApp(

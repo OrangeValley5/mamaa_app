@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:mamaa_app/signup.dart';
 import 'package:mamaa_app/moreinfo.dart';
 import 'package:mamaa_app/dashboard.dart';
-import 'package:mamaa_app/utils.dart';
+//import 'package:mamaa_app/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'colors.dart' as color;
 
@@ -303,7 +303,7 @@ class _RegisterState extends State<Register> {
     } on FirebaseAuthException catch (e) {
       print(e);
 
-      Utils.showSnackBar(e.message);
+      //Utils.showSnackBar(e.message);
       //const AlertDialog(e.message);
       // TODO
     }
