@@ -445,16 +445,16 @@ class _EligibilityState extends State<Eligibility> {
                 child: Container(
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   width: MediaQuery.of(context).size.width,
-                  height: 60,
+                  height: 45,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 67, 74, 255),
-                      borderRadius: BorderRadius.circular(100)),
+                      borderRadius: BorderRadius.circular(10)),
                   child: const Center(
                     child: Text(
                       'Apply Now',
                       style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
                           color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                   ),
