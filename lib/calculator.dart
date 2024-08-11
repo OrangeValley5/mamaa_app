@@ -12,7 +12,7 @@ class Calculator {
 
   Calculator({
     required this.amount,
-    this.interestRate = 0.015,
+    this.interestRate = 0.074,
     this.serviceCharge = 500,
     DateTime? applicationDate,
     this.selectedDuration = 0,

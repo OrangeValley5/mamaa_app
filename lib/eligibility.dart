@@ -249,6 +249,16 @@ class _EligibilityState extends State<Eligibility> {
               const SizedBox(
                 height: 20,
               ),
+              const Text(
+                "Over how many days ?",
+                style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w300),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -260,7 +270,7 @@ class _EligibilityState extends State<Eligibility> {
                     },
                     child: Container(
                       padding: const EdgeInsets.only(
-                          top: 10, bottom: 10, left: 12, right: 12),
+                          top: 10, bottom: 10, left: 25, right: 25),
                       decoration: BoxDecoration(
                           color: loanCalculator.selectedDuration == 30
                               ? const Color.fromARGB(255, 67, 74, 255)
@@ -285,7 +295,7 @@ class _EligibilityState extends State<Eligibility> {
                     },
                     child: Container(
                       padding: const EdgeInsets.only(
-                          top: 10, bottom: 10, left: 12, right: 12),
+                          top: 10, bottom: 10, left: 25, right: 25),
                       decoration: BoxDecoration(
                           color: loanCalculator.selectedDuration == 60
                               ? const Color.fromARGB(255, 67, 74, 255)
@@ -310,7 +320,7 @@ class _EligibilityState extends State<Eligibility> {
                     },
                     child: Container(
                       padding: const EdgeInsets.only(
-                          top: 10, bottom: 10, left: 12, right: 12),
+                          top: 10, bottom: 10, left: 25, right: 25),
                       decoration: BoxDecoration(
                           color: loanCalculator.selectedDuration == 90
                               ? const Color.fromARGB(255, 67, 74, 255)
