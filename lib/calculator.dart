@@ -16,7 +16,7 @@ class Calculator {
     this.serviceCharge = 500,
     DateTime? applicationDate,
     this.selectedDuration = 0,
-    this.referenceNumber = "REF123456789",
+    this.referenceNumber = "REFXDJHU6H8U80",
   })  : applicationDate = applicationDate ?? DateTime.now(),
         dueDate = null,
         paybackAmount = 0;

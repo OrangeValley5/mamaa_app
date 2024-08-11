@@ -86,7 +86,7 @@ class _Eligibility2State extends State<Eligibility2>
               ),
               SizedBox(height: 10),
               Text(
-                'We are currently submitting and evaluating the your loan application for review. This should only take a short while',
+                'We are currently submitting and evaluating your loan application for review. This should only take a short while',
                 style: TextStyle(
                   fontSize: 12,
                   color: Color.fromARGB(255, 163, 163, 163),
@@ -313,7 +313,7 @@ class _Eligibility2State extends State<Eligibility2>
                 style: TextStyle(
                     fontSize: 12,
                     color: Colors.black,
-                    fontWeight: FontWeight.w300),
+                    fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 height: 10,
@@ -441,7 +441,7 @@ class _Eligibility2State extends State<Eligibility2>
                           width: 4,
                         ),
                         const Text(
-                          '1.5%',
+                          '0.5%',
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 8,
@@ -479,7 +479,7 @@ class _Eligibility2State extends State<Eligibility2>
                 style: TextStyle(
                     fontSize: 12,
                     color: Colors.black,
-                    fontWeight: FontWeight.w300),
+                    fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 height: 10,
@@ -685,9 +685,9 @@ class _Eligibility2State extends State<Eligibility2>
                 child: Container(
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   width: MediaQuery.of(context).size.width,
-                  height: 45,
+                  height: 50,
                   decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 67, 74, 255),
+                      color: Color(0xFF0E0AEC),
                       borderRadius: BorderRadius.circular(10)),
                   child: const Center(
                     child: Text(
