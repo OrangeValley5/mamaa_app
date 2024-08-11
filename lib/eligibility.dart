@@ -255,23 +255,23 @@ class _EligibilityState extends State<Eligibility> {
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        loanCalculator.updateDueDate(91);
+                        loanCalculator.updateDueDate(30);
                       });
                     },
                     child: Container(
                       padding: const EdgeInsets.only(
                           top: 10, bottom: 10, left: 12, right: 12),
                       decoration: BoxDecoration(
-                          color: loanCalculator.selectedDuration == 91
+                          color: loanCalculator.selectedDuration == 30
                               ? const Color.fromARGB(255, 67, 74, 255)
                               : const Color(0xFFF3F3F3),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
-                        '91 days',
+                        '30 days',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 10,
-                            color: loanCalculator.selectedDuration == 91
+                            color: loanCalculator.selectedDuration == 30
                                 ? Colors.white
                                 : const Color.fromARGB(255, 25, 25, 25)),
                       ),
@@ -280,23 +280,23 @@ class _EligibilityState extends State<Eligibility> {
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        loanCalculator.updateDueDate(120);
+                        loanCalculator.updateDueDate(60);
                       });
                     },
                     child: Container(
                       padding: const EdgeInsets.only(
                           top: 10, bottom: 10, left: 12, right: 12),
                       decoration: BoxDecoration(
-                          color: loanCalculator.selectedDuration == 120
+                          color: loanCalculator.selectedDuration == 60
                               ? const Color.fromARGB(255, 67, 74, 255)
                               : const Color(0xFFF3F3F3),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
-                        '120 days',
+                        '60 days',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 10,
-                            color: loanCalculator.selectedDuration == 120
+                            color: loanCalculator.selectedDuration == 60
                                 ? Colors.white
                                 : const Color.fromARGB(255, 25, 25, 25)),
                       ),
@@ -305,23 +305,23 @@ class _EligibilityState extends State<Eligibility> {
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        loanCalculator.updateDueDate(180);
+                        loanCalculator.updateDueDate(90);
                       });
                     },
                     child: Container(
                       padding: const EdgeInsets.only(
                           top: 10, bottom: 10, left: 12, right: 12),
                       decoration: BoxDecoration(
-                          color: loanCalculator.selectedDuration == 180
+                          color: loanCalculator.selectedDuration == 90
                               ? const Color.fromARGB(255, 67, 74, 255)
                               : const Color(0xFFF3F3F3),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
-                        '180 days',
+                        '90 days',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 10,
-                            color: loanCalculator.selectedDuration == 180
+                            color: loanCalculator.selectedDuration == 90
                                 ? Colors.white
                                 : const Color.fromARGB(255, 25, 25, 25)),
                       ),
@@ -436,7 +436,7 @@ class _EligibilityState extends State<Eligibility> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
               GestureDetector(
                 onTap: () {
@@ -452,7 +452,7 @@ class _EligibilityState extends State<Eligibility> {
                       borderRadius: BorderRadius.circular(10)),
                   child: const Center(
                     child: Text(
-                      'Apply Now',
+                      'Submit',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 12,
@@ -462,7 +462,7 @@ class _EligibilityState extends State<Eligibility> {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 90,
               ),
             ],
           ),
