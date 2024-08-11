@@ -714,7 +714,7 @@ class _HomeState extends State<Home> {
                             height: 40,
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                                color: const Color(0xFFFFF0E1),
+                                color: Color.fromARGB(255, 186, 184, 255),
                                 borderRadius: BorderRadius.circular(50)),
                             child: const Center(
                                 child: Text(
@@ -722,7 +722,7 @@ class _HomeState extends State<Home> {
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
-                                color: Color(0xFFFF9123),
+                                color: Color(0xFF0E0AEC),
                               ),
                             ))),
                         const SizedBox(height: 10),

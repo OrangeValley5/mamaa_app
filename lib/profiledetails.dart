@@ -137,7 +137,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             Navigator.pop(context);
                           },
                           child: Container(
-                            width: 30,
+                            width: 25,
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5),
@@ -145,7 +145,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             child: const Center(
                               child: Icon(
                                 Icons.arrow_back_ios,
-                                size: 20,
+                                size: 15,
                               ),
                             ),
                           ),
@@ -164,9 +164,9 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                           height: 5,
                         ),
                         const Text(
-                          "Let us know more about you so we can personalise your experience while performing task",
+                          "We use your profile to serve you better",
                           style: TextStyle(
-                              fontSize: 10,
+                              fontSize: 12,
                               color: Colors.grey,
                               fontWeight: FontWeight.w300),
                         ),

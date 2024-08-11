@@ -34,7 +34,8 @@ class App extends StatelessWidget {
     //Utils.messengerKey;
     navigatorKey:
     navigatorKey;
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.white),
       home: Terms(),
     );
   }
