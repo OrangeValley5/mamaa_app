@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:mamaa_app/onboarding.dart';
 import 'package:mamaa_app/terms_condition.dart';
 
 class Terms extends StatefulWidget {
@@ -29,7 +30,7 @@ class _TermsState extends State<Terms> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               const Text(
                 termsAndConditions,
@@ -42,7 +43,10 @@ class _TermsState extends State<Terms> {
               ),
               GestureDetector(
                 onTap: () {
-                  //signUp();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Onboarding()),
+                  );
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

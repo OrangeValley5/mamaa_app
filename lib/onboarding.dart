@@ -56,7 +56,7 @@ class _OnboardingState extends State<Onboarding> {
                                 child: Container(
                                   height: 300,
                                   width: 300,
-                                  child: Image.asset('lib/images/introimg.png'),
+                                  child: Image.asset('lib/images/welly.png'),
                                 ),
                               ),
                               const SizedBox(
@@ -82,7 +82,7 @@ class _OnboardingState extends State<Onboarding> {
                                 height: 10,
                               ),
                               const Text(
-                                "Get access to instant loans anywhere you are",
+                                "Get access to instant loans anywhere you are directly from telegram",
                                 style: TextStyle(
                                     fontSize: 13,
                                     fontFamily: 'Montserrat Medium',

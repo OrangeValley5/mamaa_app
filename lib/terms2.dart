@@ -29,7 +29,7 @@ class _Terms2State extends State<Terms2> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Text(
                 termsAndConditions,

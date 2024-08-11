@@ -17,7 +17,7 @@ class _FirstScreenState extends State<FirstScreen> {
     super.initState();
     // Start a timer to navigate to the next screen after 5 seconds
     Timer(Duration(seconds: 3), () {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const Onboarding()),
       );
@@ -38,14 +38,24 @@ class _FirstScreenState extends State<FirstScreen> {
               alignment: Alignment.center,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  SizedBox(
+                children: [
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  Center(
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      child: Image.asset('lib/images/mylogo.png'),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  const Text(
                     'Mamaa',
                     style: TextStyle(
-                        fontSize: 20, fontFamily: 'Montserrat SemiBold'),
+                        fontSize: 14, fontFamily: 'Montserrat SemiBold'),
                   ),
                 ],
               ),

@@ -14,12 +14,12 @@ import 'package:mamaa_app/work.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  /* await Firebase.initializeApp(
+  await Firebase.initializeApp(
       options: const FirebaseOptions(
           apiKey: "AIzaSyCQPwW4HarOn0RpYxHNs1gx-2JG441QPPk",
           appId: "1:185378870031:web:5b64f92ef6979d6d63247a",
           messagingSenderId: "185378870031",
-          projectId: "log-and-chat"));*/
+          projectId: "log-and-chat"));
   runApp(const App());
 }
 
