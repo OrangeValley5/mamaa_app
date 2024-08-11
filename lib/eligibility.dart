@@ -81,7 +81,7 @@ class _EligibilityState extends State<Eligibility>
                         padding: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          color: Color.fromARGB(255, 69, 255, 78)
+                          color: Color.fromARGB(255, 69, 81, 255)
                               .withOpacity(0.2), // Adjust opacity here
                         ),
                         child: Column(
@@ -91,7 +91,7 @@ class _EligibilityState extends State<Eligibility>
                             Text(
                               '!',
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 37, 255, 8),
+                                  color: Color.fromARGB(255, 69, 81, 255),
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600),
                             ),
@@ -394,25 +394,30 @@ class _EligibilityState extends State<Eligibility>
                         ),
                       ],
                     ),
-                    const Text(
-                      'Service Charge',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 8,
-                          color: Color.fromARGB(255, 25, 25, 25)),
-                    ),
-                    const Text(
-                      '₦500',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 8,
-                          color: Color.fromARGB(255, 25, 25, 25)),
+                    Row(
+                      children: const [
+                        Text(
+                          'Service Charge',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 8,
+                              color: Color.fromARGB(255, 25, 25, 25)),
+                        ),
+                        SizedBox(width: 4),
+                        Text(
+                          '₦500',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 8,
+                              color: Color.fromARGB(255, 25, 25, 25)),
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
               const Text(
                 "Over how many days ?",
