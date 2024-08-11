@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:mamaa_app/terms_condition.dart';
 
 class Terms extends StatefulWidget {
   const Terms({Key? key}) : super(key: key);
@@ -15,21 +16,24 @@ class _TermsState extends State<Terms> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
+          padding:
+              const EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
           child: Column(
             children: [
               const Text(
                 'Terms & Condition',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
               const Text(
-                'Terms & Condition',
+                termsAndConditions,
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 12,
                 ),
               ),
               const SizedBox(

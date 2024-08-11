@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mamaa_app/faqs.dart';
+import 'package:mamaa_app/terms.dart';
+import 'package:mamaa_app/terms2.dart';
 import 'package:mamaa_app/updateprofile.dart';
 import 'package:mamaa_app/work.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -525,37 +527,45 @@ class _ProfileState extends State<Profile> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(18),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: Color(0xFFF3F3F3),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.note,
-                          color: Colors.black,
-                          size: 15,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Expanded(
-                          child: Text(
-                            'Terms & Agreement',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                                color: Color.fromARGB(255, 25, 25, 25)),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Terms2()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(18),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFF3F3F3),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        children: const [
+                          Icon(
+                            Icons.note,
+                            color: Colors.black,
+                            size: 15,
                           ),
-                        ),
-                        Icon(
-                          Icons.arrow_forward,
-                          color: Color.fromARGB(255, 163, 163, 163),
-                          size: 15,
-                        ),
-                      ],
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Terms & Agreement',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  color: Color.fromARGB(255, 25, 25, 25)),
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Color.fromARGB(255, 163, 163, 163),
+                            size: 15,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
