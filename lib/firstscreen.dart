@@ -16,7 +16,7 @@ class _FirstScreenState extends State<FirstScreen> {
   void initState() {
     super.initState();
     // Start a timer to navigate to the next screen after 5 seconds
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 7), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const Onboarding()),

@@ -13,11 +13,34 @@ class Onboarding extends StatefulWidget {
   State<Onboarding> createState() => _OnboardingState();
 }
 
-class _OnboardingState extends State<Onboarding> {
+class _OnboardingState extends State<Onboarding>
+    with SingleTickerProviderStateMixin {
   final navigatorKey = GlobalKey<NavigatorState>();
+  late AnimationController _controller;
+  late Animation<Offset> _offsetAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
+    _offsetAnimation = Tween<Offset>(
+      begin: const Offset(0.0, 1.0),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOut,
+    ));
+
+    // Start the animation when the page is opened
+    _controller.forward();
+  }
 
   @override
   void dispose() {
+    _controller.dispose();
     super.dispose();
   }
 
@@ -35,109 +58,114 @@ class _OnboardingState extends State<Onboarding> {
                 return Dashboard();
               }
               return SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Container(
-                      color: Colors.white,
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      padding:
-                          const EdgeInsets.only(left: 25, top: 40, right: 25),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Center(
-                                child: Container(
-                                  height: 300,
-                                  width: 300,
-                                  child: Image.asset('lib/images/welly.png'),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 40,
-                              ),
-                              const Text(
-                                "Get access to",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    fontFamily: 'Montserrat Bold',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w800),
-                              ),
-                              const Text(
-                                "instant loans",
-                                style: TextStyle(
-                                    fontSize: 32,
-                                    color: Colors.black,
-                                    fontFamily: 'Montserrat Bold',
-                                    fontWeight: FontWeight.w800),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                "Get access to instant loans anywhere you are directly from telegram",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    fontFamily: 'Montserrat Medium',
-                                    color: Color.fromARGB(255, 117, 117, 117),
-                                    fontWeight: FontWeight.w200),
-                                textAlign: TextAlign.start,
-                              ),
-                              const SizedBox(
-                                height: 60,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const Register()),
-                                      );
-                                    },
-                                    child: Container(
-                                      width: MediaQuery.of(context).size.width,
-                                      height: 50,
-                                      child: Container(
-                                          padding: const EdgeInsets.all(15),
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            color: const Color(0xFF2E38FF),
-                                          ),
-                                          height: 50,
-                                          child: const Center(
-                                            child: Text(
-                                              "Get started",
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            ),
-                                          )),
-                                    ),
+                child: SlideTransition(
+                  position: _offsetAnimation,
+                  child: Column(
+                    children: [
+                      Container(
+                        color: Colors.white,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        padding:
+                            const EdgeInsets.only(left: 25, top: 40, right: 25),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Center(
+                                  child: Container(
+                                    height: 300,
+                                    width: 300,
+                                    child: Image.asset('lib/images/welly.png'),
                                   ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
+                                ),
+                                const SizedBox(
+                                  height: 40,
+                                ),
+                                const Text(
+                                  "Get access to",
+                                  style: TextStyle(
+                                      fontSize: 32,
+                                      fontFamily: 'Montserrat Bold',
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w800),
+                                ),
+                                const Text(
+                                  "instant loans",
+                                  style: TextStyle(
+                                      fontSize: 32,
+                                      color: Colors.black,
+                                      fontFamily: 'Montserrat Bold',
+                                      fontWeight: FontWeight.w800),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  "Get access to instant loans anywhere you are directly from telegram",
+                                  style: TextStyle(
+                                      fontSize: 13,
+                                      fontFamily: 'Montserrat Medium',
+                                      color: Color.fromARGB(255, 117, 117, 117),
+                                      fontWeight: FontWeight.w200),
+                                  textAlign: TextAlign.start,
+                                ),
+                                const SizedBox(
+                                  height: 60,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Register()),
+                                        );
+                                      },
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        height: 50,
+                                        child: Container(
+                                            padding: const EdgeInsets.all(15),
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: const Color(0xFF2E38FF),
+                                            ),
+                                            height: 50,
+                                            child: const Center(
+                                              child: Text(
+                                                "Get started",
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                            )),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               );
             }));
