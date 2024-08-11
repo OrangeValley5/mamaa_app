@@ -196,9 +196,6 @@ class _HomeState extends State<Home> {
                                 style: const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w600),
                               ),
-                              const SizedBox(
-                                height: 3,
-                              ),
                               const Text(
                                 'Welcome',
                                 style: TextStyle(

@@ -26,7 +26,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   void _handleTextTap(BuildContext context) {
     // Add your logic here when the text is tapped
     print('Text is tapped!');
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(
           builder: (context) => const Register()), // Navigate to SecondPage
@@ -89,7 +89,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             child: TextFormField(
                               controller: emailController,
                               style: const TextStyle(
-                                fontSize: 14,
+                                fontSize: 12,
                               ),
                               decoration: const InputDecoration(
                                 hintText: 'Enter your email address',
@@ -121,7 +121,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 },
                                 child: Container(
                                   width: MediaQuery.of(context).size.width,
-                                  height: 45,
+                                  height: 50,
                                   child: Container(
                                       padding: const EdgeInsets.all(15),
                                       width: MediaQuery.of(context).size.width,

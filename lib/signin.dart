@@ -29,7 +29,7 @@ class _LoginState extends State<Login> {
   void _handleTextTap(BuildContext context) {
     // Add your logic here when the text is tapped
     print('Text is tapped!');
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(
           builder: (context) =>

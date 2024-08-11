@@ -46,7 +46,7 @@ class _RegisterState extends State<Register> {
   void _handleTextTap(BuildContext context) {
     // Add your logic here when the text is tapped
     print('Text is tapped!');
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(
           builder: (context) => const Login()), // Navigate to SecondPage
@@ -152,7 +152,7 @@ class _RegisterState extends State<Register> {
                                       hintText: 'Enter your email address',
                                       labelText: 'Email',
                                       labelStyle: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontFamily: 'Montserrat Regular',
                                           color: Colors.grey),
                                       border: InputBorder.none,
@@ -186,7 +186,7 @@ class _RegisterState extends State<Register> {
                                       hintText: '*******',
                                       labelText: 'Password',
                                       labelStyle: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontFamily: 'Montserrat Regular',
                                           color: Colors.grey),
                                       border: InputBorder.none,

@@ -136,7 +136,7 @@ class _MoreInfoState extends State<MoreInfo> {
                             height: 5,
                           ),
                           const Text(
-                            "Let us know more about you so we can personalise your experience while performing task",
+                            "Let us know more about you so we can personalise your experience & serve you better",
                             style: TextStyle(
                                 fontSize: 13,
                                 color: Colors.grey,

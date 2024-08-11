@@ -23,7 +23,7 @@ class _AirtimeState extends State<Airtime> {
                 Navigator.pop(context);
               },
               child: Container(
-                width: 30,
+                width: 25,
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
@@ -31,7 +31,7 @@ class _AirtimeState extends State<Airtime> {
                 child: const Center(
                   child: Icon(
                     Icons.arrow_back_ios,
-                    size: 20,
+                    size: 15,
                   ),
                 ),
               ),

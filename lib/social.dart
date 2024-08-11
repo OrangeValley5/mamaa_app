@@ -68,8 +68,8 @@ class _Eligibility2State extends State<Eligibility2>
       isDismissible: false,
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20))), // Prevent dismissal
+              topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+      backgroundColor: Colors.white, // Prevent dismissal
       builder: (BuildContext context) {
         return Container(
           height: 150,
@@ -256,7 +256,7 @@ class _Eligibility2State extends State<Eligibility2>
                   Navigator.pop(context);
                 },
                 child: Container(
-                  width: 30,
+                  width: 25,
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
@@ -323,7 +323,7 @@ class _Eligibility2State extends State<Eligibility2>
                     top: 30, bottom: 30, left: 10, right: 10),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 67, 74, 255),
+                    color: Color(0xFF0E0AEC),
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
