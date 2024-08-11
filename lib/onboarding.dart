@@ -67,7 +67,7 @@ class _OnboardingState extends State<Onboarding>
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height,
                         padding:
-                            const EdgeInsets.only(left: 25, top: 40, right: 25),
+                            const EdgeInsets.only(left: 25, top: 20, right: 25),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -104,7 +104,7 @@ class _OnboardingState extends State<Onboarding>
                                       fontWeight: FontWeight.w800),
                                 ),
                                 const SizedBox(
-                                  height: 10,
+                                  height: 4,
                                 ),
                                 const Text(
                                   "Get access to instant loans anywhere you are directly from telegram",
@@ -159,7 +159,7 @@ class _OnboardingState extends State<Onboarding>
                               ],
                             ),
                             const SizedBox(
-                              height: 20,
+                              height: 50,
                             ),
                           ],
                         ),

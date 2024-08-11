@@ -30,7 +30,7 @@ class _TermsState extends State<Terms> {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               const Text(
                 termsAndConditions,
