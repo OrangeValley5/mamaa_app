@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,11 +14,33 @@ class MoreInfo extends StatefulWidget {
   State<MoreInfo> createState() => _MoreInfoState();
 }
 
-class _MoreInfoState extends State<MoreInfo> {
+class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
   final navigatorKey = GlobalKey<NavigatorState>();
+
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true);
+
+    _scaleAnimation = Tween<double>(begin: 0.4, end: 0.6).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    // Fetch the conversion rate
+  }
 
   @override
   void dispose() {
+    _controller.dispose();
     super.dispose();
   }
 
@@ -91,6 +115,49 @@ class _MoreInfoState extends State<MoreInfo> {
       context,
       MaterialPageRoute(builder: (context) => const Dashboard()),
     );
+  }
+
+  void _showLoadingDialog2() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return Stack(
+          children: [
+            // Blurred background
+            BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+              child: Container(
+                color: Colors.black.withOpacity(0.2),
+              ),
+            ),
+            // Loading animation
+            Center(
+              child: AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return Transform.scale(
+                    scale: _scaleAnimation.value,
+                    child: child,
+                  );
+                },
+                child: Image.asset(
+                  'lib/images/mylogo.png',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+
+    // Close the loading dialog after 3 seconds
+    Future.delayed(const Duration(seconds: 8), () {
+      Navigator.of(context).pop();
+      _saveData();
+    });
   }
 
   @override
@@ -333,8 +400,8 @@ class _MoreInfoState extends State<MoreInfo> {
                                 width: MediaQuery.of(context).size.width,
                                 height: 50,
                                 child: GestureDetector(
-                                  onTap: () async {
-                                    await _saveData();
+                                  onTap: () {
+                                    _showLoadingDialog2();
                                   },
                                   child: Container(
                                     width: MediaQuery.of(context).size.width,
