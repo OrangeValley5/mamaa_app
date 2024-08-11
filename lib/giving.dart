@@ -30,7 +30,7 @@ class _GiversState extends State<Givers> {
                       Navigator.pop(context);
                     },
                     child: Container(
-                      width: 30,
+                      width: 25,
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
@@ -38,7 +38,7 @@ class _GiversState extends State<Givers> {
                       child: const Center(
                         child: Icon(
                           Icons.arrow_back_ios,
-                          size: 20,
+                          size: 15,
                         ),
                       ),
                     ),
@@ -122,15 +122,16 @@ class _GiversState extends State<Givers> {
                     children: [
                       Expanded(
                         child: Container(
-                          height: 50,
+                          height: 45,
                           decoration: (BoxDecoration(
-                              color: Color(0xFF2E38FF),
+                              color: Color(0xFFEBEBEB),
                               borderRadius: BorderRadius.circular(10))),
                           child: const Center(
                               child: (Text(
                             'Repay',
                             style: TextStyle(
-                              color: Colors.white,
+                              fontSize: 12,
+                              color: Color(0xFF939393),
                             ),
                           ))),
                         ),
@@ -140,7 +141,7 @@ class _GiversState extends State<Givers> {
                       ),
                       Expanded(
                         child: Container(
-                          height: 50,
+                          height: 45,
                           decoration: (BoxDecoration(
                               color: Color(0xFFEBEBEB),
                               borderRadius: BorderRadius.circular(10))),
@@ -148,6 +149,7 @@ class _GiversState extends State<Givers> {
                               child: (Text(
                             'Extend',
                             style: TextStyle(
+                              fontSize: 12,
                               color: Color(0xFF939393),
                             ),
                           ))),

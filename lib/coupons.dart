@@ -23,7 +23,7 @@ class _CouponsState extends State<Coupons> {
                 Navigator.pop(context);
               },
               child: Container(
-                width: 30,
+                width: 25,
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
@@ -31,7 +31,7 @@ class _CouponsState extends State<Coupons> {
                 child: const Center(
                   child: Icon(
                     Icons.arrow_back_ios,
-                    size: 20,
+                    size: 15,
                   ),
                 ),
               ),
@@ -68,7 +68,7 @@ class _CouponsState extends State<Coupons> {
             ),
             const Center(
               child: Text(
-                'Get free coupons whenever you repay your loan before due date',
+                'Get free coupons whenever you repay your loan before the due date',
                 style: TextStyle(
                     fontSize: 12,
                     color: Color.fromARGB(255, 178, 178, 178),

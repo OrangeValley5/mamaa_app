@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mamaa_app/airtime.dart';
 import 'package:mamaa_app/coupons.dart';
+import 'package:mamaa_app/eligibility.dart';
 import 'package:mamaa_app/giving.dart';
+import 'package:mamaa_app/social.dart';
 import 'package:mamaa_app/tacks.dart';
 import 'package:mamaa_app/transactions.dart';
 import 'package:mamaa_app/notifications.dart';
@@ -278,15 +280,18 @@ class _HomeState extends State<Home> {
                                               ),
                                             ),
                                           ),
-                                          IconButton(
-                                            icon: Icon(
-                                              _isVisible
-                                                  ? Icons.visibility
-                                                  : Icons.visibility_off,
-                                              color: Colors.white,
-                                              size: 14,
+                                          Visibility(
+                                            visible: false,
+                                            child: IconButton(
+                                              icon: Icon(
+                                                _isVisible
+                                                    ? Icons.visibility
+                                                    : Icons.visibility_off,
+                                                color: Colors.white,
+                                                size: 14,
+                                              ),
+                                              onPressed: _toggleVisibility,
                                             ),
-                                            onPressed: _toggleVisibility,
                                           ),
                                         ],
                                       ),
@@ -315,31 +320,41 @@ class _HomeState extends State<Home> {
                                       const SizedBox(
                                         height: 10,
                                       ),
-                                      Container(
-                                        height: 40,
-                                        width: 100,
-                                        decoration: BoxDecoration(
-                                            color: const Color.fromARGB(
-                                                255, 255, 255, 255),
-                                            borderRadius:
-                                                BorderRadius.circular(10)),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: const [
-                                            const SizedBox(width: 4),
-                                            Text(
-                                              'REQUEST LOAN',
-                                              style: TextStyle(
-                                                  fontSize: 10,
-                                                  color: Color.fromARGB(
-                                                      255, 0, 0, 0)),
-                                            ),
-                                            Icon(
-                                              Icons.arrow_forward,
-                                              size: 14,
-                                            ),
-                                          ],
+                                      GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Eligibility2()),
+                                          );
+                                        },
+                                        child: Container(
+                                          height: 40,
+                                          width: 100,
+                                          decoration: BoxDecoration(
+                                              color: const Color.fromARGB(
+                                                  255, 255, 255, 255),
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: const [
+                                              const SizedBox(width: 4),
+                                              Text(
+                                                'REQUEST LOAN',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Color.fromARGB(
+                                                        255, 0, 0, 0)),
+                                              ),
+                                              Icon(
+                                                Icons.arrow_forward,
+                                                size: 14,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -363,7 +378,7 @@ class _HomeState extends State<Home> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       const Text(
-                                        'Bonus Balance',
+                                        'Amount Received',
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 12),
                                       ),
@@ -528,7 +543,7 @@ class _HomeState extends State<Home> {
                                         height: 4,
                                       ),
                                       const Text(
-                                        'Track current loan',
+                                        'Repay your loan',
                                         style: TextStyle(
                                             fontSize: 10,
                                             color: Color(0xFFFE7D37)),
@@ -636,7 +651,7 @@ class _HomeState extends State<Home> {
                                         height: 4,
                                       ),
                                       const Text(
-                                        'Check credit score',
+                                        'View available coupons',
                                         style: TextStyle(
                                             fontSize: 10,
                                             color: Color(0xFFEDC600)),
@@ -665,7 +680,8 @@ class _HomeState extends State<Home> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const Transactions()),
+                                  builder: (context) =>
+                                      const TransactionHistory()),
                             );
                           },
                           child: Container(

@@ -6,6 +6,8 @@ import 'package:mamaa_app/firstscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mamaa_app/institutions.dart';
 import 'package:mamaa_app/paymentpage.dart';
+import 'package:mamaa_app/social.dart';
+import 'package:mamaa_app/transactions.dart';
 //import 'package:mamaa_app/utils.dart';
 import 'package:mamaa_app/work.dart';
 
@@ -32,7 +34,7 @@ class App extends StatelessWidget {
     navigatorKey:
     navigatorKey;
     return const MaterialApp(
-      home: Eligibility(),
+      home: Dashboard(),
     );
   }
 }

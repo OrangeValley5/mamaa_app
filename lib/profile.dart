@@ -39,7 +39,7 @@ class _ProfileState extends State<Profile> {
                     height: 40,
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        color: const Color(0xFFFFF0E1),
+                        color: Color.fromARGB(255, 255, 225, 225),
                         borderRadius: BorderRadius.circular(50)),
                     child: const Center(
                         child: Text(
@@ -47,7 +47,7 @@ class _ProfileState extends State<Profile> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xFFFF9123),
+                        color: Color.fromARGB(255, 255, 35, 35),
                       ),
                     ))),
                 const SizedBox(
@@ -56,13 +56,13 @@ class _ProfileState extends State<Profile> {
                 const Text(
                   "Delete Account",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "Are you sure you want to delete your account ?",
+                  "Are you sure you want to delete your account?",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 12,
@@ -73,57 +73,61 @@ class _ProfileState extends State<Profile> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 50,
-                        child: Container(
-                            padding: const EdgeInsets.all(15),
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: const Color(0xFF2E38FF),
-                            ),
-                            height: 50,
-                            child: const Center(
-                              child: Text(
-                                "Got it",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            )),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 8,
-                    ),
                     Container(
                       width: 80,
                       child: GestureDetector(
                         onTap: () {
                           Navigator.of(context).pop();
-                          FirebaseAuth.instance.signOut();
                         },
                         child: Container(
                           width: MediaQuery.of(context).size.width,
-                          height: 50,
+                          height: 40,
                           child: Container(
                               padding: const EdgeInsets.all(15),
                               width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: const Color(0xFF2E38FF),
+                                color: Color.fromARGB(255, 236, 236, 236),
                               ),
                               height: 50,
                               child: const Center(
                                 child: Text(
-                                  "Got it",
-                                  style: TextStyle(color: Colors.white),
+                                  "Yes",
+                                  style: TextStyle(
+                                      fontSize: 10,
+                                      color: Color.fromARGB(255, 0, 0, 0)),
                                 ),
                               )),
                         ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 12,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        FirebaseAuth.instance.signOut();
+                      },
+                      child: Container(
+                        height: 40,
+                        width: 80,
+                        child: Container(
+                            padding: const EdgeInsets.all(15),
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color.fromARGB(255, 236, 236, 236),
+                            ),
+                            height: 50,
+                            child: const Center(
+                              child: Text(
+                                "No",
+                                style: TextStyle(
+                                    fontSize: 10,
+                                    color: Color.fromARGB(255, 0, 0, 0)),
+                              ),
+                            )),
                       ),
                     ),
                   ],
@@ -160,7 +164,7 @@ class _ProfileState extends State<Profile> {
                     height: 40,
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        color: const Color(0xFFFFF0E1),
+                        color: Color.fromARGB(255, 255, 225, 225),
                         borderRadius: BorderRadius.circular(50)),
                     child: const Center(
                         child: Text(
@@ -168,7 +172,7 @@ class _ProfileState extends State<Profile> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xFFFF9123),
+                        color: Color.fromARGB(255, 255, 35, 35),
                       ),
                     ))),
                 const SizedBox(
@@ -177,7 +181,7 @@ class _ProfileState extends State<Profile> {
                 const Text(
                   "Sign Out",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -202,19 +206,21 @@ class _ProfileState extends State<Profile> {
                         },
                         child: Container(
                           width: MediaQuery.of(context).size.width,
-                          height: 50,
+                          height: 40,
                           child: Container(
                               padding: const EdgeInsets.all(15),
                               width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: const Color(0xFF2E38FF),
+                                color: Color.fromARGB(255, 236, 236, 236),
                               ),
                               height: 50,
                               child: const Center(
                                 child: Text(
-                                  "Got it",
-                                  style: TextStyle(color: Colors.white),
+                                  "Yes",
+                                  style: TextStyle(
+                                      fontSize: 10,
+                                      color: Color.fromARGB(255, 0, 0, 0)),
                                 ),
                               )),
                         ),
@@ -229,20 +235,22 @@ class _ProfileState extends State<Profile> {
                         FirebaseAuth.instance.signOut();
                       },
                       child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 50,
+                        height: 40,
+                        width: 80,
                         child: Container(
                             padding: const EdgeInsets.all(15),
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: const Color(0xFF2E38FF),
+                              color: Color.fromARGB(255, 236, 236, 236),
                             ),
                             height: 50,
                             child: const Center(
                               child: Text(
-                                "Got it",
-                                style: TextStyle(color: Colors.white),
+                                "No",
+                                style: TextStyle(
+                                    fontSize: 10,
+                                    color: Color.fromARGB(255, 0, 0, 0)),
                               ),
                             )),
                       ),
@@ -356,9 +364,9 @@ class _ProfileState extends State<Profile> {
                       child: Row(
                         children: const [
                           Icon(
-                            Icons.people,
+                            Icons.person,
                             color: Colors.black,
-                            size: 20,
+                            size: 15,
                           ),
                           SizedBox(
                             width: 10,
@@ -368,7 +376,7 @@ class _ProfileState extends State<Profile> {
                               'Application Information',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -400,9 +408,9 @@ class _ProfileState extends State<Profile> {
                       child: Row(
                         children: const [
                           Icon(
-                            Icons.people,
+                            Icons.work,
                             color: Colors.black,
-                            size: 20,
+                            size: 14,
                           ),
                           SizedBox(
                             width: 10,
@@ -412,7 +420,7 @@ class _ProfileState extends State<Profile> {
                               'Work Information',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -445,9 +453,9 @@ class _ProfileState extends State<Profile> {
                       child: Row(
                         children: const [
                           Icon(
-                            Icons.people,
+                            Icons.house,
                             color: Colors.black,
-                            size: 20,
+                            size: 14,
                           ),
                           SizedBox(
                             width: 10,
@@ -457,7 +465,7 @@ class _ProfileState extends State<Profile> {
                               'Add Bank',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -470,47 +478,47 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Faqs()),
-                      );
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(18),
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          color: Color(0xFFF3F3F3),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.people,
-                            color: Colors.black,
-                            size: 20,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Expanded(
-                            child: Text(
-                              'Faqs',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: Color.fromARGB(255, 25, 25, 25)),
+                  Visibility(
+                    visible: false,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Faqs()),
+                        );
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(18),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            color: Color(0xFFF3F3F3),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.people,
+                              color: Colors.black,
+                              size: 20,
                             ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward,
-                            color: Color.fromARGB(255, 163, 163, 163),
-                            size: 15,
-                          ),
-                        ],
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(
+                              child: Text(
+                                'Faqs',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: Color.fromARGB(255, 25, 25, 25)),
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward,
+                              color: Color.fromARGB(255, 163, 163, 163),
+                              size: 15,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -526,9 +534,9 @@ class _ProfileState extends State<Profile> {
                     child: Row(
                       children: const [
                         Icon(
-                          Icons.people,
+                          Icons.note,
                           color: Colors.black,
-                          size: 20,
+                          size: 15,
                         ),
                         SizedBox(
                           width: 10,
@@ -538,7 +546,7 @@ class _ProfileState extends State<Profile> {
                             'Terms & Agreement',
                             style: TextStyle(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 14,
+                                fontSize: 12,
                                 color: Color.fromARGB(255, 25, 25, 25)),
                           ),
                         ),
@@ -626,9 +634,9 @@ class _ProfileState extends State<Profile> {
                       child: Row(
                         children: const [
                           Icon(
-                            Icons.people,
+                            Icons.contact_mail,
                             color: Colors.black,
-                            size: 20,
+                            size: 15,
                           ),
                           SizedBox(
                             width: 10,
@@ -638,7 +646,7 @@ class _ProfileState extends State<Profile> {
                               'Contact Us',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -667,50 +675,9 @@ class _ProfileState extends State<Profile> {
                       child: Row(
                         children: const [
                           Icon(
-                            Icons.people,
-                            color: Colors.black,
-                            size: 20,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Expanded(
-                            child: Text(
-                              'Terms & Agreement',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: Color.fromARGB(255, 25, 25, 25)),
-                            ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward,
-                            color: Color.fromARGB(255, 163, 163, 163),
+                            Icons.delete,
+                            color: Color.fromARGB(255, 255, 73, 73),
                             size: 15,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      _showCustomDialog();
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(18),
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          color: Color(0xFFFF3F3F3),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.people,
-                            color: Colors.black,
-                            size: 20,
                           ),
                           SizedBox(
                             width: 10,
@@ -720,7 +687,7 @@ class _ProfileState extends State<Profile> {
                               'Delete Account',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),

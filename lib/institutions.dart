@@ -66,7 +66,7 @@ class _InstitutionsState extends State<Institutions> {
                       Navigator.pop(context);
                     },
                     child: Container(
-                      width: 30,
+                      width: 25,
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
@@ -74,7 +74,7 @@ class _InstitutionsState extends State<Institutions> {
                       child: const Center(
                         child: Icon(
                           Icons.arrow_back_ios,
-                          size: 18,
+                          size: 15,
                         ),
                       ),
                     ),

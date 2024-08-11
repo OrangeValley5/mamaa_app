@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as color;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class History extends StatefulWidget {
   const History({Key? key}) : super(key: key);
@@ -9,6 +10,21 @@ class History extends StatefulWidget {
 }
 
 class _HistoryState extends State<History> {
+  List<String> loanData = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLoanData();
+  }
+
+  Future<void> _loadLoanData() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      loanData = prefs.getStringList('loanData') ?? [];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +42,14 @@ class _HistoryState extends State<History> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 80),
+            ListView.builder(
+              itemCount: loanData.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(loanData[index]),
+                );
+              },
+            ),
             Center(
               child: Container(
                 height: 200,

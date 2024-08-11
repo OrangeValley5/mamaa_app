@@ -37,7 +37,7 @@ class _TrackState extends State<Track> {
                       Navigator.pop(context);
                     },
                     child: Container(
-                      width: 30,
+                      width: 25,
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
@@ -45,7 +45,7 @@ class _TrackState extends State<Track> {
                       child: const Center(
                         child: Icon(
                           Icons.arrow_back_ios,
-                          size: 20,
+                          size: 15,
                         ),
                       ),
                     ),
@@ -155,31 +155,31 @@ class _TrackState extends State<Track> {
                                 ],
                               ),
                             ),
-                            const SizedBox(
-                              height: 80,
-                            ),
-                            GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                width: MediaQuery.of(context).size.width,
-                                height: 50,
-                                child: Container(
-                                    padding: const EdgeInsets.all(15),
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: const Color(0xFF2E38FF),
-                                    ),
-                                    height: 50,
-                                    child: const Center(
-                                      child: Text(
-                                        "Confirm Status",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    )),
-                              ),
-                            ),
                           ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          child: Container(
+                              padding: const EdgeInsets.all(15),
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: const Color(0xFF2E38FF),
+                              ),
+                              height: 50,
+                              child: const Center(
+                                child: Text(
+                                  "Confirm Status",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              )),
                         ),
                       ),
                     ],
