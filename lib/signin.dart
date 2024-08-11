@@ -69,7 +69,7 @@ class _LoginState extends State<Login> {
                     Container(
                       width: MediaQuery.of(context).size.width,
                       padding:
-                          const EdgeInsets.only(left: 25, top: 80, right: 25),
+                          const EdgeInsets.only(left: 25, top: 20, right: 25),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
