@@ -14,6 +14,7 @@ class _Terms2State extends State<Terms2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
           padding:
