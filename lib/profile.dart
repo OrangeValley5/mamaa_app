@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mamaa_app/dashboard.dart';
 import 'package:mamaa_app/faqs.dart';
+import 'package:mamaa_app/signin.dart';
 import 'package:mamaa_app/terms.dart';
 import 'package:mamaa_app/terms2.dart';
 import 'package:mamaa_app/updateprofile.dart';
@@ -18,6 +20,10 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  Future<void> _signOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
   void _showCustomDialog() {
     showDialog(
       context: context,
@@ -203,8 +209,15 @@ class _ProfileState extends State<Profile> {
                     Container(
                       width: 80,
                       child: GestureDetector(
-                        onTap: () {
+                        onTap: () async {
                           Navigator.of(context).pop();
+
+                          await _signOut();
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) => const Login(),
+                            ),
+                          );
                         },
                         child: Container(
                           width: MediaQuery.of(context).size.width,

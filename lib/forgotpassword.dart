@@ -69,7 +69,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           const Text(
                             "Enter your email address to reset your password",
                             style: TextStyle(
-                                fontSize: 13,
+                                fontSize: 12,
                                 color: Colors.grey,
                                 fontWeight: FontWeight.w300),
                           ),
@@ -85,7 +85,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 left: 12, top: 0, right: 12),
                             decoration: BoxDecoration(
                                 color: color.AppColor.greyish,
-                                borderRadius: BorderRadius.circular(20)),
+                                borderRadius: BorderRadius.circular(10)),
                             child: TextFormField(
                               controller: emailController,
                               style: const TextStyle(
@@ -121,7 +121,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 },
                                 child: Container(
                                   width: MediaQuery.of(context).size.width,
-                                  height: 50,
+                                  height: 45,
                                   child: Container(
                                       padding: const EdgeInsets.all(15),
                                       width: MediaQuery.of(context).size.width,
@@ -164,7 +164,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   " click here to create one ",
                                   style: TextStyle(
                                       fontSize: 12,
-                                      color: Colors.orange,
+                                      color: Color(0xFF0E0AEC),
                                       fontWeight: FontWeight.w400),
                                 ),
                               )),
