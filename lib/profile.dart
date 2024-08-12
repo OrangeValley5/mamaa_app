@@ -115,7 +115,6 @@ class _ProfileState extends State<Profile> {
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).pop();
-                        FirebaseAuth.instance.signOut();
                       },
                       child: Container(
                         height: 40,
@@ -603,7 +602,7 @@ class _ProfileState extends State<Profile> {
                                   const Text(
                                     "Contact us",
                                     style: TextStyle(
-                                        fontSize: 16,
+                                        fontSize: 14,
                                         fontWeight: FontWeight.w500),
                                   ),
                                   const SizedBox(
@@ -612,7 +611,7 @@ class _ProfileState extends State<Profile> {
                                   const Text(
                                       "Reach out to us via email mamaaservice@outlook.com",
                                       style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.w300,
                                         color: Colors.grey,
                                       )),
@@ -636,7 +635,7 @@ class _ProfileState extends State<Profile> {
                                           height: 50,
                                           child: const Center(
                                             child: Text(
-                                              "Sign Up",
+                                              "Close",
                                               style: TextStyle(
                                                   color: Colors.white),
                                             ),
