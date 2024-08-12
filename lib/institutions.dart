@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mamaa_app/verifying.dart';
 import 'colors.dart' as color;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -264,7 +265,11 @@ class _InstitutionsState extends State<Institutions> {
                         GestureDetector(
                           onTap: () async {
                             await _saveData();
-                            Navigator.of(context).pop();
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Verification()),
+                            );
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width,

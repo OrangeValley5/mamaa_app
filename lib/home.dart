@@ -3,6 +3,7 @@ import 'package:mamaa_app/airtime.dart';
 import 'package:mamaa_app/coupons.dart';
 import 'package:mamaa_app/eligibility.dart';
 import 'package:mamaa_app/giving.dart';
+import 'package:mamaa_app/profiledetails.dart';
 import 'package:mamaa_app/social.dart';
 import 'package:mamaa_app/tacks.dart';
 import 'package:mamaa_app/transactions.dart';
@@ -153,6 +154,26 @@ class _HomeState extends State<Home> {
   void dispose() {
     _pageController.dispose();
     super.dispose();
+  }
+
+  void _onButtonPressed(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? value = prefs.getString(
+        'likes'); // replace 'your_key' with the key you used to store the value
+
+    if (value == null || value.isEmpty) {
+      // Value is empty or null, navigate to the first page
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ProfileDetails()),
+      ); // Replace '/firstPage' with your route
+    } else {
+      // Value is not empty, navigate to the second page
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Eligibility2()),
+      ); // Replace '/secondPage' with your route
+    }
   }
 
   @override
@@ -319,12 +340,7 @@ class _HomeState extends State<Home> {
                                       ),
                                       GestureDetector(
                                         onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const Eligibility2()),
-                                          );
+                                          _onButtonPressed(context);
                                         },
                                         child: Container(
                                           height: 40,

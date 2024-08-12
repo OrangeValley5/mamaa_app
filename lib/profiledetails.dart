@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:mamaa_app/work.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dashboard.dart';
 import 'colors.dart' as color;
@@ -453,7 +454,11 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             GestureDetector(
                               onTap: () async {
                                 await _saveData();
-                                Navigator.of(context).pop();
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Work()),
+                                );
                               },
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
