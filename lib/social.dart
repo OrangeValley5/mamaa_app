@@ -4,6 +4,8 @@ import 'colors.dart' as color;
 import 'package:intl/intl.dart';
 import 'calculator.dart'; // Import the new file
 import 'utils/dialog_util.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Eligibility2 extends StatefulWidget {
@@ -21,6 +23,7 @@ class _Eligibility2State extends State<Eligibility2>
   late Animation<Offset> _offsetAnimation;
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
+  final Uri _url = Uri.parse('https://www.example.com');
 
   @override
   void initState() {
@@ -102,8 +105,14 @@ class _Eligibility2State extends State<Eligibility2>
       },
     );
 
-    Future.delayed(const Duration(seconds: 15), () {
-      Navigator.pop(context); // Close the modal after 15 seconds
+    Future.delayed(const Duration(seconds: 15), () async {
+      Navigator.pop(context);
+      if (await canLaunchUrl(_url)) {
+        await launchUrl(_url);
+      } else {
+        throw 'Could not launch $_url';
+      }
+      // Close the modal after 15 seconds
     });
   }
 
