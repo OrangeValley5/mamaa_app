@@ -35,16 +35,19 @@ class _WebViewScreenState extends State<WebViewScreen> {
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (WebViewController controller) {
               _controller = controller;
+              print("WebView Created");
             },
             onPageStarted: (String url) {
               setState(() {
                 isLoading = true;
               });
+              print("Page started loading: $url");
             },
             onPageFinished: (String url) {
               setState(() {
                 isLoading = false;
               });
+              print("Page finished loading: $url");
             },
             navigationDelegate: (NavigationRequest request) {
               if (request.url.startsWith('https://www.google.com')) {
