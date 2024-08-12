@@ -89,11 +89,11 @@ class _WorkState extends State<Work> {
       _selectedIncome = prefs.getString('income')?.isNotEmpty == true
           ? prefs.getString('income')
           : null;
-      _selectedExperience = prefs.getString('experience')?.isNotEmpty == true
-          ? prefs.getString('experience')
+      _selectedExperience = prefs.getString('xperience')?.isNotEmpty == true
+          ? prefs.getString('xperience')
           : null;
       jobController.text = prefs.getString('job') ?? '';
-      addressController.text = prefs.getString('address') ?? '';
+      addressController.text = prefs.getString('addresses') ?? '';
     });
   }
 
@@ -102,9 +102,9 @@ class _WorkState extends State<Work> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('income', _selectedIncome ?? '');
     await prefs.setString('field', _selectedField ?? '');
-    await prefs.setString('experience', _selectedExperience ?? '');
+    await prefs.setString('xperience', _selectedExperience ?? '');
     await prefs.setString('stats', _selectedStatus ?? '');
-    await prefs.setString('address', addressController.text);
+    await prefs.setString('addresses', addressController.text);
     await prefs.setString('job', jobController.text);
   }
 

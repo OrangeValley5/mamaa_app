@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mamaa_app/splashscreen.dart';
 import 'package:mamaa_app/onboarding.dart';
 import 'dart:async';
+
+import 'package:mamaa_app/terms.dart';
 //import 'package:mamaa_app/utils.dart';
 
 class FirstScreen extends StatefulWidget {
@@ -19,7 +21,7 @@ class _FirstScreenState extends State<FirstScreen> {
     Timer(Duration(seconds: 7), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const Onboarding()),
+        MaterialPageRoute(builder: (context) => const Terms()),
       );
     });
   }

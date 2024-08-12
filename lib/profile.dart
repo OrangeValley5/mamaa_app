@@ -246,7 +246,6 @@ class _ProfileState extends State<Profile> {
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).pop();
-                        FirebaseAuth.instance.signOut();
                       },
                       child: Container(
                         height: 40,

@@ -42,14 +42,6 @@ class _HistoryState extends State<History> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 80),
-            ListView.builder(
-              itemCount: loanData.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(loanData[index]),
-                );
-              },
-            ),
             Center(
               child: Container(
                 height: 200,
