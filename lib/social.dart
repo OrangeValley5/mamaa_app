@@ -256,7 +256,7 @@ class _Eligibility2State extends State<Eligibility2>
   void _openWebView() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => WebViewScreen(url: 'https://www.example.com'),
+        builder: (context) => WebViewScreen(url: 'https://www.google.com'),
       ),
     );
   }
