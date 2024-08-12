@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mamaa_app/dashboard.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Congratulations extends StatefulWidget {
   const Congratulations({Key? key}) : super(key: key);
@@ -9,6 +10,18 @@ class Congratulations extends StatefulWidget {
 }
 
 class _CongratulationsState extends State<Congratulations> {
+  @override
+  void initState() {
+    super.initState();
+    _addValueToSharedPreferences();
+  }
+
+  Future<void> _addValueToSharedPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('liker',
+        'likes'); // Replace 'your_key' and 'your_value' with your desired key-value pair
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
