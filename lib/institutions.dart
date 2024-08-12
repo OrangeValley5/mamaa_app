@@ -56,7 +56,7 @@ class _InstitutionsState extends State<Institutions> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
     setState(() {
-      _selectedDay = prefs.getString('experience')?.isNotEmpty == true
+      _selectedDay = prefs.getString('day')?.isNotEmpty == true
           ? prefs.getString('day')
           : null;
       _institutionsController.text = prefs.getString('institute') ?? '';
@@ -68,7 +68,7 @@ class _InstitutionsState extends State<Institutions> {
   Future<void> _saveData() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    await prefs.setString('experience', _selectedDay ?? '');
+    await prefs.setString('day', _selectedDay ?? '');
     await prefs.setString('institute', _institutionsController.text);
     await prefs.setString('verif', verifController.text);
   }
@@ -262,7 +262,10 @@ class _InstitutionsState extends State<Institutions> {
                           height: 80,
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () async {
+                            await _saveData();
+                            Navigator.of(context).pop();
+                          },
                           child: Container(
                             width: MediaQuery.of(context).size.width,
                             height: 50,
