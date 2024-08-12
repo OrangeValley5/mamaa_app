@@ -38,7 +38,7 @@ class App extends StatelessWidget {
     navigatorKey;
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.white),
-      home: Terms(),
+      home: FirstScreen(),
     );
   }
 }
