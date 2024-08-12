@@ -23,7 +23,7 @@ class _Eligibility2State extends State<Eligibility2>
   late Animation<Offset> _offsetAnimation;
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
-  final Uri _url = Uri.parse('https://www.example.com');
+  final Uri _url = Uri.parse('https://paystack.com/pay/ebuyxzte75');
 
   @override
   void initState() {
