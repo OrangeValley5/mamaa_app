@@ -121,7 +121,7 @@ class _InstitutionsState extends State<Institutions> {
                         height: 4,
                       ),
                       Text(
-                        'Add a payout account where you would like to receive your earnings',
+                        'Add a payout account where you would like to receive your funds',
                         style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,

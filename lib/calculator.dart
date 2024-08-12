@@ -23,16 +23,16 @@ class Calculator {
 
   // Function to decrease the amount
   void decreaseAmount() {
-    if (amount > 10000) {
-      amount -= 10000;
+    if (amount > 5000) {
+      amount -= 5000;
       _calculatePaybackAmount();
     }
   }
 
   // Function to increase the amount
   void increaseAmount() {
-    if (amount < 90000) {
-      amount += 10000;
+    if (amount < 30000) {
+      amount += 5000;
       _calculatePaybackAmount();
     }
   }

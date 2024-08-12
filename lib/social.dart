@@ -29,7 +29,7 @@ class _Eligibility2State extends State<Eligibility2>
   void initState() {
     super.initState();
     loanCalculator =
-        Calculator(amount: 70000); // Initialize with default amount
+        Calculator(amount: 30000); // Initialize with default amount
     _slideController = AnimationController(
       duration: const Duration(milliseconds: 300),
       vsync: this,
