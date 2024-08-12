@@ -690,12 +690,12 @@ class _HomeState extends State<Home> {
                         const Expanded(child: Text('Transactions')),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
+                            /* Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
                                       const TransactionHistory()),
-                            );
+                            ); */
                           },
                           child: Container(
                             height: 20,
