@@ -47,7 +47,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
               });
             },
             navigationDelegate: (NavigationRequest request) {
-              if (request.url.startsWith('https://www.example.com')) {
+              if (request.url.startsWith('https://www.google.com')) {
                 return NavigationDecision.navigate;
               } else {
                 // Prevent navigation to other sites
