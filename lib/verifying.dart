@@ -47,13 +47,19 @@ class _VerificationState extends State<Verification>
             const SizedBox(
               height: 10,
             ),
-            CircularProgressIndicator(),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                CircularProgressIndicator(),
+              ],
+            ),
             const SizedBox(
               height: 10,
             ),
             const Center(
               child: Text(
-                'Verifying Identity',
+                'Verifying Details',
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,

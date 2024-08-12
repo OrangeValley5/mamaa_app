@@ -18,7 +18,7 @@ class _CongratulationsState extends State<Congratulations> {
 
   Future<void> _addValueToSharedPreferences() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('liker',
+    await prefs.setString('likes',
         'likes'); // Replace 'your_key' and 'your_value' with your desired key-value pair
   }
 
@@ -56,7 +56,7 @@ class _CongratulationsState extends State<Congratulations> {
                         const Text(
                           "Congratulations",
                           style: TextStyle(
-                              fontSize: 28,
+                              fontSize: 26,
                               fontFamily: 'Montserrat Bold',
                               color: Colors.black,
                               fontWeight: FontWeight.w600),
@@ -100,7 +100,8 @@ class _CongratulationsState extends State<Congratulations> {
                                     child: const Center(
                                       child: Text(
                                         "Return To Dashboard",
-                                        style: TextStyle(color: Colors.white),
+                                        style: TextStyle(
+                                            fontSize: 14, color: Colors.white),
                                       ),
                                     )),
                               ),
