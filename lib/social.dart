@@ -4,6 +4,8 @@ import 'colors.dart' as color;
 import 'package:intl/intl.dart';
 import 'calculator.dart'; // Import the new file
 import 'utils/dialog_util.dart';
+import 'webviews.dart'; // Import the WebView screen
+
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -105,14 +107,15 @@ class _Eligibility2State extends State<Eligibility2>
       },
     );
 
-    Future.delayed(const Duration(seconds: 15), () async {
+    Future.delayed(const Duration(seconds: 5), () async {
       Navigator.pop(context);
-      if (await canLaunchUrl(_url)) {
+      /* if (await canLaunchUrl(_url)) {
         await launchUrl(_url);
       } else {
         throw 'Could not launch $_url';
-      }
+      }*/
       // Close the modal after 15 seconds
+      _openWebView(); // Open the WebView
     });
   }
 
@@ -248,6 +251,14 @@ class _Eligibility2State extends State<Eligibility2>
         },
       ).then((_) => _slideController.reset());
     });
+  }
+
+  void _openWebView() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => WebViewScreen(url: 'https://www.example.com'),
+      ),
+    );
   }
 
   @override
