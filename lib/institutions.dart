@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as color;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Institutions extends StatefulWidget {
   const Institutions({Key? key}) : super(key: key);
@@ -41,10 +42,35 @@ class _InstitutionsState extends State<Institutions> {
   // The currently selected day
   String? _selectedDay;
 
+  final TextEditingController _institutionsController = TextEditingController();
+  final TextEditingController verifController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
-    // Start a timer to navigate to the next screen after 5 seconds
+    _loadData();
+  }
+
+  // Function to load data from SharedPreferences
+  Future<void> _loadData() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _selectedDay = prefs.getString('experience')?.isNotEmpty == true
+          ? prefs.getString('day')
+          : null;
+      _institutionsController.text = prefs.getString('institute') ?? '';
+      verifController.text = prefs.getString('verif') ?? '';
+    });
+  }
+
+  // Function to save data to SharedPreferences
+  Future<void> _saveData() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    await prefs.setString('experience', _selectedDay ?? '');
+    await prefs.setString('institute', _institutionsController.text);
+    await prefs.setString('verif', verifController.text);
   }
 
   @override
@@ -118,18 +144,24 @@ class _InstitutionsState extends State<Institutions> {
                           decoration: BoxDecoration(
                               color: color.AppColor.lightgray,
                               borderRadius: BorderRadius.circular(10)),
-                          child: const TextField(
-                            keyboardType: TextInputType.number,
-                            style: TextStyle(
+                          child: TextFormField(
+                            controller: _institutionsController,
+                            style: const TextStyle(
                               fontSize: 12,
                             ),
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Enter your account number',
                               labelText: 'Account Number',
                               labelStyle:
                                   TextStyle(fontSize: 12, color: Colors.grey),
                               border: InputBorder.none,
                             ),
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (value) =>
+                                value != null && value.length < 9
+                                    ? 'Required'
+                                    : null,
                           ),
                         ),
                         const SizedBox(
@@ -206,18 +238,24 @@ class _InstitutionsState extends State<Institutions> {
                           decoration: BoxDecoration(
                               color: color.AppColor.lightgray,
                               borderRadius: BorderRadius.circular(10)),
-                          child: const TextField(
-                            keyboardType: TextInputType.number,
-                            style: TextStyle(
+                          child: TextFormField(
+                            controller: verifController,
+                            style: const TextStyle(
                               fontSize: 12,
                             ),
-                            decoration: InputDecoration(
-                              hintText: 'Enter your BVN number',
-                              labelText: 'Bvn (Bank Verification Number)',
+                            decoration: const InputDecoration(
+                              hintText: 'Enter your Bvn?',
+                              labelText: 'Bvn',
                               labelStyle:
                                   TextStyle(fontSize: 12, color: Colors.grey),
                               border: InputBorder.none,
                             ),
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (value) =>
+                                value != null && value.length < 8
+                                    ? 'Required'
+                                    : null,
                           ),
                         ),
                         const SizedBox(

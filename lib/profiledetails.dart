@@ -194,7 +194,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             validator: (value) =>
-                                value != null && value.length < 6
+                                value != null && value.length < 3
                                     ? 'Required'
                                     : null,
                           ),
@@ -223,7 +223,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             validator: (value) =>
-                                value != null && value.length < 6
+                                value != null && value.length < 3
                                     ? 'Required'
                                     : null,
                           ),

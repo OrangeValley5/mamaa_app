@@ -229,6 +229,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                   hint: const Text(
                                     "Select a gender",
                                     style: TextStyle(
+                                        //fontSize: 12,
                                         color: Colors
                                             .grey), // Custom hint text color
                                   ),

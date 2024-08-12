@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as color;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Work extends StatefulWidget {
   const Work({Key? key}) : super(key: key);
@@ -9,8 +10,6 @@ class Work extends StatefulWidget {
 }
 
 class _WorkState extends State<Work> {
-  final TextEditingController workContoller = TextEditingController();
-
   // List of Filed
   final List<String> _field = [
     'Health & Medicine',
@@ -66,6 +65,48 @@ class _WorkState extends State<Work> {
 
   // The currently selected Experience
   String? _selectedExperience;
+
+  final TextEditingController jobController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
+
+  // Function to load data from SharedPreferences
+  Future<void> _loadData() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _selectedField = prefs.getString('field')?.isNotEmpty == true
+          ? prefs.getString('field')
+          : null;
+      _selectedStatus = prefs.getString('stats')?.isNotEmpty == true
+          ? prefs.getString('stats')
+          : null;
+      _selectedIncome = prefs.getString('income')?.isNotEmpty == true
+          ? prefs.getString('income')
+          : null;
+      _selectedExperience = prefs.getString('experience')?.isNotEmpty == true
+          ? prefs.getString('experience')
+          : null;
+      jobController.text = prefs.getString('job') ?? '';
+      addressController.text = prefs.getString('address') ?? '';
+    });
+  }
+
+  // Function to save data to SharedPreferences
+  Future<void> _saveData() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('income', _selectedIncome ?? '');
+    await prefs.setString('field', _selectedField ?? '');
+    await prefs.setString('experience', _selectedExperience ?? '');
+    await prefs.setString('stats', _selectedStatus ?? '');
+    await prefs.setString('address', addressController.text);
+    await prefs.setString('job', jobController.text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +166,7 @@ class _WorkState extends State<Work> {
                     color: color.AppColor.lightgray,
                     borderRadius: BorderRadius.circular(10)),
                 child: TextFormField(
-                  controller: workContoller,
+                  controller: jobController,
                   style: const TextStyle(
                     fontSize: 12,
                   ),
@@ -149,7 +190,7 @@ class _WorkState extends State<Work> {
                     color: color.AppColor.lightgray,
                     borderRadius: BorderRadius.circular(10)),
                 child: TextFormField(
-                  controller: workContoller,
+                  controller: addressController,
                   style: const TextStyle(
                     fontSize: 12,
                   ),
@@ -371,9 +412,9 @@ class _WorkState extends State<Work> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    onTap: () {
-                      //await _saveData();
-                      //Navigator.of(context).pop();
+                    onTap: () async {
+                      await _saveData();
+                      Navigator.of(context).pop();
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,
