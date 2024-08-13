@@ -168,7 +168,7 @@ class _Eligibility2State extends State<Eligibility2>
               ),
               const SizedBox(height: 10),
               const Text(
-                'Copy the link and open in an chrome or safari to complete your application and click on continue when you are done, then come back to the app and clcik on continue so we can verify and approve your loan',
+                'Copy the link and open in chrome or safari to complete your application and click on continue when you are done, then come back to the app and clcik on continue so we can verify and approve your loan',
                 style: TextStyle(
                   fontSize: 10,
                   color: Color.fromARGB(255, 163, 163, 163),
