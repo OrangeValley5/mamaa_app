@@ -57,7 +57,7 @@ class _Eligibility2State extends State<Eligibility2>
     );
   }
 
-  final String _url = 'https://www.example.com';
+  final String _url = 'https://www.google.com';
 
   // Function to launch the URL
   Future<void> _launchURL() async {
