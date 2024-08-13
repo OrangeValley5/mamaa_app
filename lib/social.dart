@@ -4,6 +4,8 @@ import 'colors.dart' as color;
 import 'package:intl/intl.dart';
 import 'calculator.dart'; // Import the new file
 import 'utils/dialog_util.dart';
+import 'dart:async';
+
 import 'package:flutter/services.dart';
 
 import 'webviews.dart'; // Import the WebView screen
@@ -60,17 +62,29 @@ class _Eligibility2State extends State<Eligibility2>
     );
   }
 
-  final String _url = 'https://www.google.com';
+  int _remainingTime = 300; // 5 minutes in seconds
+  Timer? _timer;
 
-  // Function to launch the URL
-  Future<void> _launchURL() async {
-    final Uri uri = Uri.parse(_url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(
-        uri,
-        mode: LaunchMode.externalApplication, // Opens in a new tab or window
-      );
-    } else {}
+  // Function to start the countdown timer
+  void _startTimer() {
+    _timer = Timer.periodic(const Duration(seconds: 1), (Timer timer) {
+      if (_remainingTime == 0) {
+        setState(() {
+          timer.cancel();
+        });
+      } else {
+        setState(() {
+          _remainingTime--;
+        });
+      }
+    });
+  }
+
+  // Function to format time in MM:SS
+  String _formatTime(int seconds) {
+    int minutes = seconds ~/ 60;
+    int remainingSeconds = seconds % 60;
+    return '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
   }
 
   Future<void> _saveLoanData() async {
@@ -130,6 +144,7 @@ class _Eligibility2State extends State<Eligibility2>
   }
 
   void _showBottomModal2() {
+    _startTimer(); // Start the countdown timer
     showModalBottomSheet(
       context: context,
       isDismissible: false,
