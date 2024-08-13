@@ -4,6 +4,8 @@ import 'colors.dart' as color;
 import 'package:intl/intl.dart';
 import 'calculator.dart'; // Import the new file
 import 'utils/dialog_util.dart';
+import 'package:flutter/services.dart';
+
 import 'webviews.dart'; // Import the WebView screen
 
 import 'package:url_launcher/url_launcher.dart';
@@ -26,6 +28,7 @@ class _Eligibility2State extends State<Eligibility2>
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
   //final Uri _url = Uri.parse('https://paystack.com/pay/ebuyxzte75');
+  final String textToCopy = 'https://paystack.com/pay/ebuyxzte75';
 
   @override
   void initState() {
@@ -67,28 +70,7 @@ class _Eligibility2State extends State<Eligibility2>
         uri,
         mode: LaunchMode.externalApplication, // Opens in a new tab or window
       );
-    } else {
-      _showErrorDialog('Could not launch $_url');
-    }
-  }
-
-  // Show an error dialog
-  void _showErrorDialog(String message) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Error'),
-          content: Text(message),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
+    } else {}
   }
 
   Future<void> _saveLoanData() async {
@@ -143,14 +125,106 @@ class _Eligibility2State extends State<Eligibility2>
 
     Future.delayed(const Duration(seconds: 5), () async {
       Navigator.pop(context);
-      /* if (await canLaunchUrl(_url)) {
-        await launchUrl(_url);
-      } else {
-        throw 'Could not launch $_url';
-      }*/
-      // Close the modal after 15 seconds
-      //_openWebView(); // Open the WebView
-      _launchURL();
+      _showBottomModal2();
+    });
+  }
+
+  void _showBottomModal2() {
+    showModalBottomSheet(
+      context: context,
+      isDismissible: false,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+      backgroundColor: Colors.white, // Prevent dismissal
+      builder: (BuildContext context) {
+        return Container(
+          height: 250,
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Notice',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'Copy the link and open in an chrome or safari to complete your application and click on continue when you are done, then come back to the app and clcik on continue so we can verify and approve your loan',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Color.fromARGB(255, 163, 163, 163),
+                  fontWeight: FontWeight.w300,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 20),
+              Container(
+                height: 40,
+                width: 250,
+                padding: const EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Color.fromARGB(255, 243, 243, 243)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Copy Link',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 143, 143, 143),
+                          fontFamily: 'Montserrat Regular',
+                          fontSize: 10),
+                    ),
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Clipboard.setData(
+                          ClipboardData(text: textToCopy),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Address copied to clipboard!'),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        Icons.copy,
+                        size: 14,
+                        color: Color.fromARGB(255, 143, 143, 143),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Center(
+                  child: InkWell(
+                onTap: () => {Navigator.pop(context)},
+                child: const Text(
+                  " Continue ",
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF0E0AEC),
+                      fontFamily: 'Montserrat Regular',
+                      fontWeight: FontWeight.w400),
+                ),
+              )),
+            ],
+          ),
+        );
+      },
+    );
+
+    Future.delayed(const Duration(seconds: 500), () async {
+      Navigator.pop(context);
     });
   }
 
