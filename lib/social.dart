@@ -25,7 +25,7 @@ class _Eligibility2State extends State<Eligibility2>
   late Animation<Offset> _offsetAnimation;
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
-  final Uri _url = Uri.parse('https://paystack.com/pay/ebuyxzte75');
+  //final Uri _url = Uri.parse('https://paystack.com/pay/ebuyxzte75');
 
   @override
   void initState() {
@@ -55,6 +55,19 @@ class _Eligibility2State extends State<Eligibility2>
         curve: Curves.easeInOut,
       ),
     );
+  }
+
+  final String _url = 'https://www.example.com';
+
+  // Function to launch the URL
+  Future<void> _launchURL() async {
+    final Uri uri = Uri.parse(_url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri,
+          mode: LaunchMode.inAppWebView); // Opens in a new tab or window
+    } else {
+      throw 'Could not launch $_url';
+    }
   }
 
   Future<void> _saveLoanData() async {
@@ -115,7 +128,8 @@ class _Eligibility2State extends State<Eligibility2>
         throw 'Could not launch $_url';
       }*/
       // Close the modal after 15 seconds
-      _openWebView(); // Open the WebView
+      //_openWebView(); // Open the WebView
+      _launchURL();
     });
   }
 
@@ -256,7 +270,7 @@ class _Eligibility2State extends State<Eligibility2>
   void _openWebView() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => WebViewScreen(url: 'https://www.google.com'),
+        builder: (context) => MyHomePage2(),
       ),
     );
   }
