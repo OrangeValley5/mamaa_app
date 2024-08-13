@@ -168,7 +168,7 @@ class _Eligibility2State extends State<Eligibility2>
               ),
               const SizedBox(height: 10),
               const Text(
-                'Copy the link and open in chrome or safari to complete your application and click on continue when you are done, then come back to the app and clcik on continue so we can verify and approve your loan',
+                'Copy the link and open in chrome or safari to complete your application and click on continue when you are done, then come back to the app and clcik on proceed so we can verify and approve your loan',
                 style: TextStyle(
                   fontSize: 10,
                   color: Color.fromARGB(255, 163, 163, 163),
@@ -224,7 +224,7 @@ class _Eligibility2State extends State<Eligibility2>
                   child: InkWell(
                 onTap: () => {Navigator.pop(context)},
                 child: const Text(
-                  "Continue",
+                  "Proceed",
                   style: TextStyle(
                       fontSize: 12,
                       color: Color(0xFF0E0AEC),
