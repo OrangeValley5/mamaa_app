@@ -63,11 +63,32 @@ class _Eligibility2State extends State<Eligibility2>
   Future<void> _launchURL() async {
     final Uri uri = Uri.parse(_url);
     if (await canLaunchUrl(uri)) {
-      await launchUrl(uri,
-          mode: LaunchMode.inAppWebView); // Opens in a new tab or window
+      await launchUrl(
+        uri,
+        mode: LaunchMode.externalApplication, // Opens in a new tab or window
+      );
     } else {
-      throw 'Could not launch $_url';
+      _showErrorDialog('Could not launch $_url');
     }
+  }
+
+  // Show an error dialog
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Error'),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Future<void> _saveLoanData() async {
