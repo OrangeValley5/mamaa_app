@@ -13,17 +13,20 @@ class WebViewScreen extends StatefulWidget {
 class _WebViewScreenState extends State<WebViewScreen> {
   late WebViewController _controller;
   bool isLoading = true;
+  bool isControllerReady = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Web View'),
+        title: const Text('Web View'),
         actions: [
           IconButton(
-            icon: Icon(Icons.refresh),
+            icon: const Icon(Icons.refresh),
             onPressed: () {
-              _controller.reload();
+              if (isControllerReady) {
+                _controller.reload();
+              }
             },
           ),
         ],
@@ -35,6 +38,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (WebViewController controller) {
               _controller = controller;
+              isControllerReady = true;
               print("WebView Created");
             },
             onPageStarted: (String url) {
@@ -50,15 +54,23 @@ class _WebViewScreenState extends State<WebViewScreen> {
               print("Page finished loading: $url");
             },
             navigationDelegate: (NavigationRequest request) {
-              if (request.url.startsWith('https://www.google.com')) {
+              // Adjust this condition to allow more URLs if necessary
+              if (request.url.startsWith('https://yourwebsite.com')) {
                 return NavigationDecision.navigate;
               } else {
-                // Prevent navigation to other sites
                 return NavigationDecision.prevent;
               }
             },
+            onWebResourceError: (WebResourceError error) {
+              print("Failed to load: ${error.description}");
+              setState(() {
+                isLoading = false;
+              });
+            },
           ),
-          isLoading ? Center(child: CircularProgressIndicator()) : Container(),
+          isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : Container(),
         ],
       ),
     );
