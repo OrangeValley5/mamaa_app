@@ -123,7 +123,7 @@ class _Eligibility2State extends State<Eligibility2>
       },
     );
 
-    Future.delayed(const Duration(seconds: 5), () async {
+    Future.delayed(const Duration(seconds: 25), () async {
       Navigator.pop(context);
       _showBottomModal2();
     });
