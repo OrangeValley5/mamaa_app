@@ -224,7 +224,7 @@ class _Eligibility2State extends State<Eligibility2>
                   child: InkWell(
                 onTap: () => {Navigator.pop(context)},
                 child: const Text(
-                  " Continue ",
+                  "Continue",
                   style: TextStyle(
                       fontSize: 12,
                       color: Color(0xFF0E0AEC),

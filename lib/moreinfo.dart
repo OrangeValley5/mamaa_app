@@ -142,7 +142,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                   );
                 },
                 child: Image.asset(
-                  'lib/images/mylogo.png',
+                  'lib/images/mylogo3.png',
                   width: 100,
                   height: 100,
                 ),
