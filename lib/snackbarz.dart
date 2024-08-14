@@ -38,7 +38,7 @@ class TopSnackBar {
                 Row(
                   children: const [
                     Icon(
-                      Icons.check_box_rounded,
+                      Icons.check_circle_outline,
                       size: 18,
                       color: Color.fromARGB(255, 11, 31, 255),
                     ),
