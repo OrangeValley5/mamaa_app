@@ -41,7 +41,7 @@ class _VerificationState extends State<Verification>
               child: Container(
                 height: 200,
                 width: 200,
-                child: Image.asset('lib/images/introimg.png'),
+                child: Image.asset('lib/images/hangon.png'),
               ),
             ),
             const SizedBox(

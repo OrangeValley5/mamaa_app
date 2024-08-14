@@ -51,7 +51,7 @@ class _CouponsState extends State<Coupons> {
               child: Container(
                 height: 200,
                 width: 200,
-                child: Image.asset('lib/images/introimg.png'),
+                child: Image.asset('lib/images/nothing.png'),
               ),
             ),
             const SizedBox(
