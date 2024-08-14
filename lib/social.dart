@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'calculator.dart'; // Import the new file
 import 'utils/dialog_util.dart';
 import 'dart:async';
+import 'snackbarz.dart';
 
 import 'package:flutter/services.dart';
 
@@ -206,18 +207,24 @@ class _Eligibility2State extends State<Eligibility2>
                         Clipboard.setData(
                           ClipboardData(text: textToCopy),
                         );
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Address copied to clipboard!'),
-                          ),
+                        TopSnackBar.show(
+                          context,
+                          'Your link has successfully been copied',
                         );
                       },
-                      child: const Icon(
-                        Icons.copy,
-                        size: 14,
-                        color: Color.fromARGB(255, 143, 143, 143),
+                      child: Container(
+                        padding: EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: const Icon(
+                          Icons.copy,
+                          color: Color.fromARGB(255, 163, 163, 163),
+                          size: 15,
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

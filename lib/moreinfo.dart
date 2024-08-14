@@ -241,6 +241,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                   iconSize: 24,
                                   elevation: 16,
                                   style: const TextStyle(
+                                      fontFamily: 'Montserrat Regular',
                                       color: Colors
                                           .black), // Dropdown list values color
                                   onChanged: (String? newValue) {
@@ -255,6 +256,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                       child: Text(
                                         value,
                                         style: const TextStyle(
+                                            fontFamily: 'Montserrat Regular',
                                             color: Colors
                                                 .black), // Dropdown list values color
                                       ),
@@ -293,6 +295,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                   iconSize: 24,
                                   elevation: 16,
                                   style: const TextStyle(
+                                      fontFamily: 'Montserrat Regular',
                                       color: Colors
                                           .black), // Dropdown list values color
                                   onChanged: (String? newValue) {
@@ -308,6 +311,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                       child: Text(
                                         value,
                                         style: const TextStyle(
+                                            fontFamily: 'Montserrat Regular',
                                             color: Colors
                                                 .black), // Dropdown list values color
                                       ),
@@ -360,6 +364,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                       child: Text(
                                         value,
                                         style: const TextStyle(
+                                            fontFamily: 'Montserrat Regular',
                                             color: Colors
                                                 .black), // Dropdown list values color
                                       ),
@@ -381,7 +386,8 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                             child: TextFormField(
                               controller: _phoneController,
                               style: const TextStyle(
-                                fontSize: 14,
+                                fontSize: 12,
+                                fontFamily: 'Montserrat Regular',
                               ),
                               decoration: const InputDecoration(
                                 hintText: 'E.g 080',
