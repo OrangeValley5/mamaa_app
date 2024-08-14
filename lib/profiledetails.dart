@@ -185,7 +185,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                           child: TextFormField(
                             controller: usernameController,
                             style: const TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                               fontFamily: 'Montserrat Regular',
                             ),
                             decoration: const InputDecoration(
@@ -193,7 +193,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                               labelText: 'First Name',
                               labelStyle: TextStyle(
                                   fontFamily: 'Montserrat Regular',
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Colors.grey),
                               border: InputBorder.none,
                             ),
@@ -218,14 +218,14 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             controller: lastnameController,
                             style: const TextStyle(
                               fontFamily: 'Montserrat Regular',
-                              fontSize: 14,
+                              fontSize: 12,
                             ),
                             decoration: const InputDecoration(
                               hintText: 'Enter your Last Name',
                               labelText: 'Last Name',
                               labelStyle: TextStyle(
                                   fontFamily: 'Montserrat Regular',
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Colors.grey),
                               border: InputBorder.none,
                             ),
@@ -250,14 +250,14 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             controller: _addressController,
                             style: const TextStyle(
                               fontFamily: 'Montserrat Regular',
-                              fontSize: 14,
+                              fontSize: 12,
                             ),
                             decoration: const InputDecoration(
                               hintText: 'Enter your home address',
                               labelText: 'Home Address',
                               labelStyle: TextStyle(
                                   fontFamily: 'Montserrat Regular',
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Colors.grey),
                               border: InputBorder.none,
                             ),
@@ -291,6 +291,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                     hint: const Text(
                                       "Select a gender",
                                       style: TextStyle(
+                                          fontSize: 12,
                                           fontFamily: 'Montserrat Regular',
                                           color: Colors
                                               .grey), // Custom hint text color
@@ -301,6 +302,8 @@ class _ProfileDetailsState extends State<ProfileDetails> {
 
                                     elevation: 16,
                                     style: const TextStyle(
+                                        fontSize: 12,
+                                        fontFamily: 'Montserrat Regular',
                                         color: Colors
                                             .black), // Dropdown list values color
                                     onChanged: (String? newValue) {
@@ -316,6 +319,8 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                         child: Text(
                                           value,
                                           style: const TextStyle(
+                                              fontSize: 12,
+                                              fontFamily: 'Montserrat Regular',
                                               color: Colors
                                                   .black), // Dropdown list values color
                                         ),
@@ -346,6 +351,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                 hint: const Text(
                                   "Age",
                                   style: TextStyle(
+                                      fontSize: 12,
                                       fontFamily: 'Montserrat Regular',
                                       color: Colors
                                           .grey), // Custom hint text color
@@ -355,6 +361,8 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                 iconSize: 24,
                                 elevation: 16,
                                 style: const TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Montserrat Regular',
                                     color: Colors
                                         .black), // Dropdown list values color
                                 onChanged: (String? newValue) {
@@ -369,6 +377,8 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                     child: Text(
                                       value,
                                       style: const TextStyle(
+                                          fontSize: 12,
+                                          fontFamily: 'Montserrat Regular',
                                           color: Colors
                                               .black), // Dropdown list values color
                                     ),
@@ -397,6 +407,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                 hint: const Text(
                                   "Select your state",
                                   style: TextStyle(
+                                      fontSize: 12,
                                       fontFamily: 'Montserrat Regular',
                                       color: Colors
                                           .grey), // Custom hint text color
@@ -406,6 +417,8 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                 iconSize: 24,
                                 elevation: 16,
                                 style: const TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Montserrat Regular',
                                     color: Colors
                                         .black), // Dropdown list values color
                                 onChanged: (String? newValue) {
@@ -420,6 +433,8 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                     child: Text(
                                       value,
                                       style: const TextStyle(
+                                          fontFamily: 'Montserrat Regular',
+                                          fontSize: 12,
                                           color: Colors
                                               .black), // Dropdown list values color
                                     ),
@@ -443,14 +458,14 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             keyboardType: TextInputType.number,
                             style: const TextStyle(
                               fontFamily: 'Montserrat Regular',
-                              fontSize: 14,
+                              fontSize: 12,
                             ),
                             decoration: const InputDecoration(
                               hintText: 'E.g 080',
                               labelText: 'Phone Number',
                               labelStyle: TextStyle(
                                   fontFamily: 'Montserrat Regular',
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Colors.grey),
                               border: InputBorder.none,
                             ),
