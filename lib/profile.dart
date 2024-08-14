@@ -663,7 +663,9 @@ class _ProfileState extends State<Profile> {
                                         fontWeight: FontWeight.w300,
                                         color: Colors.grey,
                                       )),
-                                  const Spacer(),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
                                 ],
                               ),
                             );

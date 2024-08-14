@@ -181,13 +181,14 @@ class _TrackState extends State<Track> {
                               width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: const Color(0xFF2E38FF),
+                                color: Color.fromARGB(255, 182, 182, 182),
                               ),
                               height: 50,
                               child: const Center(
                                 child: Text(
                                   "Confirm Status",
                                   style: TextStyle(
+                                      fontSize: 12,
                                       fontFamily: 'Montserrat Regular',
                                       color: Colors.white),
                                 ),
