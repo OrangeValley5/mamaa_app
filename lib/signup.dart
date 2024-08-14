@@ -94,7 +94,7 @@ class _RegisterState extends State<Register> {
                             style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
-                                fontFamily: 'Montserrat Medium',
+                                fontFamily: 'Montserrat Regular',
                                 fontWeight: FontWeight.w300),
                           ),
                           const SizedBox(
@@ -226,7 +226,9 @@ class _RegisterState extends State<Register> {
                                       child: const Center(
                                         child: Text(
                                           "Sign Up",
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(
+                                              fontFamily: 'Montserrat Regular',
+                                              color: Colors.white),
                                         ),
                                       )),
                                 ),
@@ -258,6 +260,7 @@ class _RegisterState extends State<Register> {
                                   " click here to sign in ",
                                   style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color(0xFF0E0AEC),
                                       fontWeight: FontWeight.w400),
                                 ),

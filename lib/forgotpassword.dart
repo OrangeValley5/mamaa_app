@@ -60,6 +60,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             "Forgot Password",
                             style: TextStyle(
                                 fontSize: 22,
+                                fontFamily: 'Montserrat Bold',
                                 color: Colors.black,
                                 fontWeight: FontWeight.w700),
                           ),
@@ -71,6 +72,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
+                                fontFamily: 'Montserrat Regular',
                                 fontWeight: FontWeight.w300),
                           ),
                           Container(),
@@ -94,8 +96,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               decoration: const InputDecoration(
                                 hintText: 'Enter your email address',
                                 labelText: 'Email',
-                                labelStyle:
-                                    TextStyle(fontSize: 14, color: Colors.grey),
+                                labelStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontFamily: 'Montserrat Regular',
+                                    color: Colors.grey),
                                 border: InputBorder.none,
                               ),
                               autovalidateMode:
@@ -133,7 +137,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                       child: const Center(
                                         child: Text(
                                           "Reset password",
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(
+                                              fontFamily: 'Montserrat Regular',
+                                              color: Colors.white),
                                         ),
                                       )),
                                 ),
@@ -153,6 +159,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   "Don't have an account?",
                                   style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Colors.grey,
                                       fontWeight: FontWeight.w400),
                                 ),
@@ -164,6 +171,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   " click here to create one ",
                                   style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color(0xFF0E0AEC),
                                       fontWeight: FontWeight.w400),
                                 ),

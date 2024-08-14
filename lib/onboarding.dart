@@ -110,7 +110,7 @@ class _OnboardingState extends State<Onboarding>
                                   "Get access to instant loans anywhere you are directly from telegram",
                                   style: TextStyle(
                                       fontSize: 13,
-                                      fontFamily: 'Montserrat Medium',
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color.fromARGB(255, 117, 117, 117),
                                       fontWeight: FontWeight.w200),
                                   textAlign: TextAlign.start,
@@ -149,6 +149,8 @@ class _OnboardingState extends State<Onboarding>
                                               child: Text(
                                                 "Get started",
                                                 style: TextStyle(
+                                                    fontFamily:
+                                                        'Montserrat Regular',
                                                     color: Colors.white),
                                               ),
                                             )),

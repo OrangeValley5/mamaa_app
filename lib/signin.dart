@@ -202,7 +202,9 @@ class _LoginState extends State<Login> {
                                       child: const Center(
                                         child: Text(
                                           "Sign In",
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(
+                                              fontFamily: 'Montserrat Regular',
+                                              color: Colors.white),
                                         ),
                                       )),
                                 ),

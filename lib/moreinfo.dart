@@ -142,7 +142,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                   );
                 },
                 child: Image.asset(
-                  'lib/images/mylogo3.png',
+                  'lib/images/malogo3.png',
                   width: 100,
                   height: 100,
                 ),
@@ -196,6 +196,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                             "Tell us more about you",
                             style: TextStyle(
                                 fontSize: 22,
+                                fontFamily: 'Montserrat SemiBold',
                                 color: Colors.black,
                                 fontWeight: FontWeight.w700),
                           ),
@@ -207,6 +208,7 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                             style: TextStyle(
                                 fontSize: 13,
                                 color: Colors.grey,
+                                fontFamily: 'Montserrat Regular',
                                 fontWeight: FontWeight.w300),
                             textAlign: TextAlign.center,
                           ),
@@ -229,7 +231,8 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                   hint: const Text(
                                     "Select a gender",
                                     style: TextStyle(
-                                        //fontSize: 12,
+                                        fontSize: 12,
+                                        fontFamily: 'Montserrat Regular',
                                         color: Colors
                                             .grey), // Custom hint text color
                                   ),
@@ -280,6 +283,8 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                   hint: const Text(
                                     "Select a religion",
                                     style: TextStyle(
+                                        fontSize: 12,
+                                        fontFamily: 'Montserrat Regular',
                                         color: Colors
                                             .grey), // Custom hint text color
                                   ),
@@ -339,6 +344,8 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                   iconSize: 24,
                                   elevation: 16,
                                   style: const TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Colors
                                           .black), // Dropdown list values color
                                   onChanged: (String? newValue) {
@@ -379,8 +386,10 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                               decoration: const InputDecoration(
                                 hintText: 'E.g 080',
                                 labelText: 'Phone Number',
-                                labelStyle:
-                                    TextStyle(fontSize: 14, color: Colors.grey),
+                                labelStyle: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Montserrat Regular',
+                                    color: Colors.grey),
                                 border: InputBorder.none,
                               ),
                               autovalidateMode:
@@ -420,8 +429,11 @@ class _MoreInfoState extends State<MoreInfo> with TickerProviderStateMixin {
                                         child: const Center(
                                           child: Text(
                                             "Continue",
-                                            style:
-                                                TextStyle(color: Colors.white),
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontFamily:
+                                                    'Montserrat Regular',
+                                                color: Colors.white),
                                           ),
                                         )),
                                   ),

@@ -39,7 +39,10 @@ class _HistoryState extends State<History> {
             ),
             const Text(
               'History',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+              style: TextStyle(
+                  fontFamily: 'Montserrat SemiBold',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 80),
             Center(
@@ -58,6 +61,7 @@ class _HistoryState extends State<History> {
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,
+                    fontFamily: 'Montserrat SemiBold',
                     fontWeight: FontWeight.w600),
               ),
             ),
@@ -71,6 +75,7 @@ class _HistoryState extends State<History> {
                   'You haven\'t made any trasactions yet. Any transaction made will show up here',
                   style: TextStyle(
                       fontSize: 12,
+                      fontFamily: 'Montserrat Regular',
                       color: Color.fromARGB(255, 178, 178, 178),
                       fontWeight: FontWeight.w300),
                   textAlign: TextAlign.center,

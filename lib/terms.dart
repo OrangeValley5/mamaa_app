@@ -34,6 +34,7 @@ class _TermsState extends State<Terms> {
                       'Terms & Condition',
                       style: TextStyle(
                         fontSize: 16,
+                        fontFamily: 'Montserrat SemiBold',
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -44,6 +45,7 @@ class _TermsState extends State<Terms> {
                       termsAndConditions,
                       style: TextStyle(
                         fontSize: 12,
+                        fontFamily: 'Montserrat Regular',
                       ),
                     ),
                     const SizedBox(
@@ -71,7 +73,9 @@ class _TermsState extends State<Terms> {
                             child: const Center(
                               child: Text(
                                 'Accept',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    fontFamily: 'Montserrat Regular',
+                                    color: Colors.white),
                               ),
                             )),
                       ),

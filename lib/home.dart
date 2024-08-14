@@ -215,12 +215,15 @@ class _HomeState extends State<Home> {
                               Text(
                                 username ?? 'No username entered',
                                 style: const TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w600),
+                                    fontFamily: 'Montserrat SemiBold',
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600),
                               ),
                               const Text(
                                 'Welcome',
                                 style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 10,
+                                    fontFamily: 'Montserrat Regular',
                                     fontWeight: FontWeight.w300,
                                     color: Colors.grey),
                               )
@@ -273,9 +276,11 @@ class _HomeState extends State<Home> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       const Text(
-                                        'Loan Amounnt',
+                                        'Loan Amount',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 12),
+                                            fontFamily: 'Montserrat Regular',
+                                            color: Colors.white,
+                                            fontSize: 12),
                                       ),
                                       const SizedBox(
                                         height: 6,
@@ -321,7 +326,7 @@ class _HomeState extends State<Home> {
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 12,
-                                          fontFamily: 'Montserrat SemiBold',
+                                          fontFamily: 'Montserrat Medium',
                                         ),
                                       ),
                                       const SizedBox(
@@ -330,6 +335,7 @@ class _HomeState extends State<Home> {
                                       const Text(
                                         'Request a loan in minutes',
                                         style: TextStyle(
+                                          fontFamily: 'Montserrat Regular',
                                           color: Color.fromARGB(
                                               255, 207, 207, 207),
                                           fontSize: 10,
@@ -358,6 +364,8 @@ class _HomeState extends State<Home> {
                                               Text(
                                                 'REQUEST LOAN',
                                                 style: TextStyle(
+                                                    fontFamily:
+                                                        'Montserrat Regular',
                                                     fontSize: 10,
                                                     color: Color.fromARGB(
                                                         255, 0, 0, 0)),
@@ -393,7 +401,9 @@ class _HomeState extends State<Home> {
                                       const Text(
                                         'Amount Received',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 12),
+                                            fontFamily: 'Montserrat Regular',
+                                            color: Colors.white,
+                                            fontSize: 12),
                                       ),
                                       const SizedBox(
                                         height: 6,
@@ -405,6 +415,7 @@ class _HomeState extends State<Home> {
                                               _isVisible ? 'N0.00' : '*****',
                                               style: const TextStyle(
                                                 fontSize: 22,
+                                                fontFamily: 'Montserrat Bold',
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -453,9 +464,7 @@ class _HomeState extends State<Home> {
                     child: Text(
                       'Quick Actions',
                       style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Montserrat Medium'),
+                          fontSize: 13, fontFamily: 'Montserrat Medium'),
                     ),
                   ),
                   Padding(
@@ -497,6 +506,7 @@ class _HomeState extends State<Home> {
                                       const Text(
                                         'Track Loan',
                                         style: TextStyle(
+                                            fontFamily: 'Montserrat Regular',
                                             fontWeight: FontWeight.w400,
                                             fontSize: 12),
                                       ),
@@ -506,6 +516,7 @@ class _HomeState extends State<Home> {
                                       const Text(
                                         'Track current loan',
                                         style: TextStyle(
+                                            fontFamily: 'Montserrat Regular',
                                             fontSize: 10,
                                             color: Color(0xFF2E38FF)),
                                       )
@@ -549,6 +560,7 @@ class _HomeState extends State<Home> {
                                       const Text(
                                         'Repay Loan',
                                         style: TextStyle(
+                                            fontFamily: 'Montserrat Regular',
                                             fontWeight: FontWeight.w400,
                                             fontSize: 12),
                                       ),
@@ -558,6 +570,7 @@ class _HomeState extends State<Home> {
                                       const Text(
                                         'Repay your loan',
                                         style: TextStyle(
+                                            fontFamily: 'Montserrat Regular',
                                             fontSize: 10,
                                             color: Color(0xFFFE7D37)),
                                       )
@@ -605,6 +618,7 @@ class _HomeState extends State<Home> {
                                       const Text(
                                         'Airtime to Cash',
                                         style: TextStyle(
+                                            fontFamily: 'Montserrat Regular',
                                             fontWeight: FontWeight.w400,
                                             fontSize: 12),
                                       ),
@@ -615,6 +629,7 @@ class _HomeState extends State<Home> {
                                         'Convert airtime to cash',
                                         style: TextStyle(
                                             fontSize: 10,
+                                            fontFamily: 'Montserrat Regular',
                                             color: Color(0xFFBB2DFF)),
                                       )
                                     ],
@@ -658,6 +673,7 @@ class _HomeState extends State<Home> {
                                         'Coupons',
                                         style: TextStyle(
                                             fontWeight: FontWeight.w400,
+                                            fontFamily: 'Montserrat Regular',
                                             fontSize: 12),
                                       ),
                                       const SizedBox(
@@ -667,6 +683,7 @@ class _HomeState extends State<Home> {
                                         'View available coupons',
                                         style: TextStyle(
                                             fontSize: 10,
+                                            fontFamily: 'Montserrat Regular',
                                             color: Color(0xFFEDC600)),
                                       )
                                     ],
@@ -687,7 +704,13 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.all(20),
                     child: Row(
                       children: [
-                        const Expanded(child: Text('Transactions')),
+                        const Expanded(
+                            child: Text(
+                          'Transactions',
+                          style: TextStyle(
+                            fontFamily: 'Montserrat Regular',
+                          ),
+                        )),
                         GestureDetector(
                           onTap: () {
                             /* Navigator.push(
@@ -709,7 +732,9 @@ class _HomeState extends State<Home> {
                                 Text(
                                   'View all',
                                   style: TextStyle(
-                                      color: Colors.grey, fontSize: 10),
+                                      fontFamily: 'Montserrat Regular',
+                                      color: Colors.grey,
+                                      fontSize: 10),
                                 )
                               ],
                             ),
@@ -737,6 +762,7 @@ class _HomeState extends State<Home> {
                               'i',
                               style: TextStyle(
                                 fontSize: 16,
+                                fontFamily: 'Montserrat Regular',
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xFF0E0AEC),
                               ),
@@ -744,7 +770,10 @@ class _HomeState extends State<Home> {
                         const SizedBox(height: 10),
                         const Text(
                           'You are yet to perform a transaction',
-                          style: TextStyle(color: Colors.grey, fontSize: 10),
+                          style: TextStyle(
+                              fontFamily: 'Montserrat Regular',
+                              color: Colors.grey,
+                              fontSize: 10),
                         )
                       ],
                     ),

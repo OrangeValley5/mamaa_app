@@ -37,6 +37,7 @@ class _ProfileState extends State<Profile> {
             height: 210,
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
+              color: Colors.white,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
@@ -55,6 +56,7 @@ class _ProfileState extends State<Profile> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
+                        fontFamily: 'Montserrat Medium',
                         color: Color.fromARGB(255, 255, 35, 35),
                       ),
                     ))),
@@ -65,6 +67,7 @@ class _ProfileState extends State<Profile> {
                   "Delete Account",
                   style: TextStyle(
                     fontSize: 14,
+                    fontFamily: 'Montserrat SemiBold',
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -74,6 +77,7 @@ class _ProfileState extends State<Profile> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 12,
+                      fontFamily: 'Montserrat Regular',
                       fontWeight: FontWeight.w300,
                       color: Colors.grey),
                 ),
@@ -103,6 +107,7 @@ class _ProfileState extends State<Profile> {
                                   "Yes",
                                   style: TextStyle(
                                       fontSize: 10,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color.fromARGB(255, 0, 0, 0)),
                                 ),
                               )),
@@ -132,6 +137,7 @@ class _ProfileState extends State<Profile> {
                                 "No",
                                 style: TextStyle(
                                     fontSize: 10,
+                                    fontFamily: 'Montserrat Regular',
                                     color: Color.fromARGB(255, 0, 0, 0)),
                               ),
                             )),
@@ -161,6 +167,7 @@ class _ProfileState extends State<Profile> {
             height: 210,
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
+              color: Colors.white,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
@@ -178,6 +185,7 @@ class _ProfileState extends State<Profile> {
                       'i',
                       style: TextStyle(
                         fontSize: 16,
+                        fontFamily: 'Montserrat Regular',
                         fontWeight: FontWeight.w500,
                         color: Color.fromARGB(255, 255, 35, 35),
                       ),
@@ -189,6 +197,7 @@ class _ProfileState extends State<Profile> {
                   "Sign Out",
                   style: TextStyle(
                     fontSize: 14,
+                    fontFamily: 'Montserrat Semibold',
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -198,6 +207,7 @@ class _ProfileState extends State<Profile> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 12,
+                      fontFamily: 'Montserrat Regular',
                       fontWeight: FontWeight.w300,
                       color: Colors.grey),
                 ),
@@ -234,6 +244,7 @@ class _ProfileState extends State<Profile> {
                                   "Yes",
                                   style: TextStyle(
                                       fontSize: 10,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color.fromARGB(255, 0, 0, 0)),
                                 ),
                               )),
@@ -263,6 +274,7 @@ class _ProfileState extends State<Profile> {
                                 "No",
                                 style: TextStyle(
                                     fontSize: 10,
+                                    fontFamily: 'Montserrat Regular',
                                     color: Color.fromARGB(255, 0, 0, 0)),
                               ),
                             )),
@@ -312,7 +324,10 @@ class _ProfileState extends State<Profile> {
                   ),
                   const Text(
                     'Profile',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                        fontFamily: 'Montserrat SemiBold',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(
                     height: 10,
@@ -339,7 +354,9 @@ class _ProfileState extends State<Profile> {
                         Text(
                           username ?? 'No username entered',
                           style: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w600),
+                              fontSize: 18,
+                              fontFamily: 'Montserrat Medium',
+                              fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(
                           height: 4,
@@ -348,6 +365,7 @@ class _ProfileState extends State<Profile> {
                           'REF ID: XH398Q9C47NDS',
                           style: TextStyle(
                               fontSize: 10,
+                              fontFamily: 'Montserrat Regular',
                               fontWeight: FontWeight.w300,
                               color: Colors.grey),
                         ),
@@ -390,6 +408,7 @@ class _ProfileState extends State<Profile> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -434,6 +453,7 @@ class _ProfileState extends State<Profile> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -479,6 +499,7 @@ class _ProfileState extends State<Profile> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -567,6 +588,7 @@ class _ProfileState extends State<Profile> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -602,6 +624,7 @@ class _ProfileState extends State<Profile> {
                                     "Contact us",
                                     style: TextStyle(
                                         fontSize: 14,
+                                        fontFamily: 'Montserrat Medium',
                                         fontWeight: FontWeight.w500),
                                   ),
                                   const SizedBox(
@@ -611,6 +634,7 @@ class _ProfileState extends State<Profile> {
                                       "Reach out to us via email mamaaservice@outlook.com",
                                       style: TextStyle(
                                         fontSize: 12,
+                                        fontFamily: 'Montserrat Regular',
                                         fontWeight: FontWeight.w300,
                                         color: Colors.grey,
                                       )),
@@ -636,6 +660,8 @@ class _ProfileState extends State<Profile> {
                                             child: Text(
                                               "Close",
                                               style: TextStyle(
+                                                  fontFamily:
+                                                      'Montserrat Regular',
                                                   color: Colors.white),
                                             ),
                                           )),
@@ -668,6 +694,7 @@ class _ProfileState extends State<Profile> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -709,6 +736,7 @@ class _ProfileState extends State<Profile> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
                                   color: Color.fromARGB(255, 25, 25, 25)),
                             ),
                           ),
@@ -733,7 +761,8 @@ class _ProfileState extends State<Profile> {
                           'Logout',
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
-                              fontSize: 14,
+                              fontSize: 12,
+                              fontFamily: 'Montserrat Regular',
                               color: Color.fromARGB(255, 255, 44, 44)),
                         ),
                       ),
