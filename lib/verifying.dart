@@ -63,6 +63,7 @@ class _VerificationState extends State<Verification>
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,
+                    fontFamily: 'Montserrat Medium',
                     fontWeight: FontWeight.w600),
               ),
             ),
@@ -76,6 +77,7 @@ class _VerificationState extends State<Verification>
                   'Please hold on while we are verifying your identity and the information you have provided',
                   style: TextStyle(
                       fontSize: 12,
+                      fontFamily: 'Montserrat Regular',
                       color: Color.fromARGB(255, 178, 178, 178),
                       fontWeight: FontWeight.w300),
                   textAlign: TextAlign.center,

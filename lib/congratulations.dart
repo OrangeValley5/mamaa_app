@@ -57,7 +57,7 @@ class _CongratulationsState extends State<Congratulations> {
                           "Congratulations",
                           style: TextStyle(
                               fontSize: 26,
-                              fontFamily: 'Montserrat Bold',
+                              fontFamily: 'Montserrat SemiBold',
                               color: Colors.black,
                               fontWeight: FontWeight.w600),
                         ),
@@ -69,6 +69,7 @@ class _CongratulationsState extends State<Congratulations> {
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w300,
+                              fontFamily: 'Montserrat Regular',
                               color: Color.fromARGB(255, 184, 184, 184)),
                           textAlign: TextAlign.center,
                         ),
@@ -101,7 +102,9 @@ class _CongratulationsState extends State<Congratulations> {
                                       child: Text(
                                         "Return To Dashboard",
                                         style: TextStyle(
-                                            fontSize: 14, color: Colors.white),
+                                            fontFamily: 'Montserrat Regular',
+                                            fontSize: 14,
+                                            color: Colors.white),
                                       ),
                                     )),
                               ),
