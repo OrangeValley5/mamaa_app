@@ -55,7 +55,10 @@ class _TrackState extends State<Track> {
                   ),
                   const Text(
                     'Track Loan',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                        fontFamily: 'Montserrat SemiBold',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(
                     height: 4,
@@ -64,6 +67,7 @@ class _TrackState extends State<Track> {
                     'Track your loan in progress',
                     style: TextStyle(
                         fontSize: 12,
+                        fontFamily: 'Montserrat Regular',
                         color: Colors.black45,
                         fontWeight: FontWeight.w300),
                   ),
@@ -90,6 +94,7 @@ class _TrackState extends State<Track> {
                                     'Amount',
                                     style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color.fromARGB(255, 0, 0, 0),
                                     ),
                                   ),
@@ -97,6 +102,7 @@ class _TrackState extends State<Track> {
                                     'N0.00',
                                     style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color.fromARGB(255, 164, 164, 164),
                                     ),
                                   )
@@ -116,6 +122,7 @@ class _TrackState extends State<Track> {
                                     'Status',
                                     style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color.fromARGB(255, 0, 0, 0),
                                     ),
                                   ),
@@ -123,6 +130,7 @@ class _TrackState extends State<Track> {
                                     'No loans',
                                     style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color.fromARGB(255, 164, 164, 164),
                                     ),
                                   )
@@ -142,6 +150,7 @@ class _TrackState extends State<Track> {
                                     'Date',
                                     style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color.fromARGB(255, 0, 0, 0),
                                     ),
                                   ),
@@ -149,6 +158,7 @@ class _TrackState extends State<Track> {
                                     '-',
                                     style: TextStyle(
                                       fontSize: 12,
+                                      fontFamily: 'Montserrat Regular',
                                       color: Color.fromARGB(255, 164, 164, 164),
                                     ),
                                   )
@@ -177,7 +187,9 @@ class _TrackState extends State<Track> {
                               child: const Center(
                                 child: Text(
                                   "Confirm Status",
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      fontFamily: 'Montserrat Regular',
+                                      color: Colors.white),
                                 ),
                               )),
                         ),

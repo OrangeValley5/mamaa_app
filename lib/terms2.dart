@@ -25,6 +25,7 @@ class _Terms2State extends State<Terms2> {
                 'Terms & Condition',
                 style: TextStyle(
                   fontSize: 16,
+                  fontFamily: 'Montserrat SemiBold',
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -35,6 +36,7 @@ class _Terms2State extends State<Terms2> {
                 termsAndConditions,
                 style: TextStyle(
                   fontSize: 12,
+                  fontFamily: 'Montserrat Regular',
                 ),
               ),
               SizedBox(

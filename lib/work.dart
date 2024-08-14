@@ -145,6 +145,7 @@ class _WorkState extends State<Work> {
                 "Work Information",
                 style: TextStyle(
                     fontSize: 22,
+                    fontFamily: 'Montserrat SemiBold',
                     color: Colors.black,
                     fontWeight: FontWeight.w700),
               ),
@@ -155,6 +156,7 @@ class _WorkState extends State<Work> {
                 "To enable us serve you better and provide you with the best offer, please ensure you provide the correct information",
                 style: TextStyle(
                     fontSize: 12,
+                    fontFamily: 'Montserrat Regular',
                     color: Color.fromARGB(255, 185, 185, 185),
                     fontWeight: FontWeight.w300),
               ),
@@ -170,11 +172,15 @@ class _WorkState extends State<Work> {
                   controller: jobController,
                   style: const TextStyle(
                     fontSize: 12,
+                    fontFamily: 'Montserrat Regular',
                   ),
                   decoration: const InputDecoration(
                     hintText: 'Where do you work ?',
                     labelText: 'Company Name',
-                    labelStyle: TextStyle(fontSize: 12, color: Colors.grey),
+                    labelStyle: TextStyle(
+                        fontFamily: 'Montserrat Regular',
+                        fontSize: 12,
+                        color: Colors.grey),
                     border: InputBorder.none,
                   ),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -194,11 +200,15 @@ class _WorkState extends State<Work> {
                   controller: addressController,
                   style: const TextStyle(
                     fontSize: 12,
+                    fontFamily: 'Montserrat Regular',
                   ),
                   decoration: const InputDecoration(
                     hintText: 'Where is your work address?',
                     labelText: 'Company Address',
-                    labelStyle: TextStyle(fontSize: 12, color: Colors.grey),
+                    labelStyle: TextStyle(
+                        fontFamily: 'Montserrat Regular',
+                        fontSize: 12,
+                        color: Colors.grey),
                     border: InputBorder.none,
                   ),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -232,6 +242,7 @@ class _WorkState extends State<Work> {
 
                         elevation: 16,
                         style: const TextStyle(
+                            fontFamily: 'Montserrat Regular',
                             color: Colors.black), // Dropdown list values color
                         onChanged: (String? newValue) {
                           setState(() {
@@ -246,6 +257,7 @@ class _WorkState extends State<Work> {
                               value,
                               style: const TextStyle(
                                   fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
                                   color: Colors
                                       .black), // Dropdown list values color
                             ),
@@ -274,6 +286,7 @@ class _WorkState extends State<Work> {
                           "Employment Status",
                           style: TextStyle(
                               fontSize: 12,
+                              fontFamily: 'Montserrat Regular',
                               color: Colors.grey), // Custom hint text color
                         ),
                         value: _selectedStatus,
@@ -282,6 +295,7 @@ class _WorkState extends State<Work> {
 
                         elevation: 16,
                         style: const TextStyle(
+                            fontFamily: 'Montserrat Regular',
                             color: Colors.black), // Dropdown list values color
                         onChanged: (String? newValue) {
                           setState(() {
@@ -296,6 +310,7 @@ class _WorkState extends State<Work> {
                               value,
                               style: const TextStyle(
                                   fontSize: 12,
+                                  fontFamily: 'Montserrat Regular',
                                   color: Colors
                                       .black), // Dropdown list values color
                             ),
@@ -323,6 +338,7 @@ class _WorkState extends State<Work> {
                         hint: const Text(
                           "Monthly Income",
                           style: TextStyle(
+                              fontFamily: 'Montserrat Regular',
                               fontSize: 12,
                               color: Colors.grey), // Custom hint text color
                         ),
@@ -332,6 +348,7 @@ class _WorkState extends State<Work> {
 
                         elevation: 16,
                         style: const TextStyle(
+                            fontFamily: 'Montserrat Regular',
                             color: Colors.black), // Dropdown list values color
                         onChanged: (String? newValue) {
                           setState(() {
@@ -345,6 +362,7 @@ class _WorkState extends State<Work> {
                             child: Text(
                               value,
                               style: const TextStyle(
+                                  fontFamily: 'Montserrat Regular',
                                   fontSize: 12,
                                   color: Colors
                                       .black), // Dropdown list values color
@@ -374,6 +392,7 @@ class _WorkState extends State<Work> {
                           "Years of working Experience",
                           style: TextStyle(
                               fontSize: 12,
+                              fontFamily: 'Montserrat Regular',
                               color: Colors.grey), // Custom hint text color
                         ),
                         value: _selectedExperience,
@@ -382,6 +401,7 @@ class _WorkState extends State<Work> {
 
                         elevation: 16,
                         style: const TextStyle(
+                            fontFamily: 'Montserrat Regular',
                             color: Colors.black), // Dropdown list values color
                         onChanged: (String? newValue) {
                           setState(() {
@@ -395,6 +415,7 @@ class _WorkState extends State<Work> {
                             child: Text(
                               value,
                               style: const TextStyle(
+                                  fontFamily: 'Montserrat Regular',
                                   fontSize: 12,
                                   color: Colors
                                       .black), // Dropdown list values color
@@ -435,7 +456,9 @@ class _WorkState extends State<Work> {
                           child: const Center(
                             child: Text(
                               "Continue",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(
+                                  fontFamily: 'Montserrat Regular',
+                                  color: Colors.white),
                             ),
                           )),
                     ),

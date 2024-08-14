@@ -48,7 +48,10 @@ class _GiversState extends State<Givers> {
                   ),
                   const Text(
                     'Repayment',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                        fontFamily: 'Montserrat SemiBold',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(
                     height: 4,
@@ -57,6 +60,7 @@ class _GiversState extends State<Givers> {
                     'Repayment days remaining',
                     style: TextStyle(
                         fontSize: 12,
+                        fontFamily: 'Montserrat Regular',
                         color: Colors.black45,
                         fontWeight: FontWeight.w300),
                   ),
@@ -97,6 +101,7 @@ class _GiversState extends State<Givers> {
                                       style: TextStyle(
                                           color: Color(0xFF2E38FF),
                                           fontSize: 30,
+                                          fontFamily: 'Montserrat SemiBold',
                                           fontWeight: FontWeight.w800),
                                     ),
                                     Text(
@@ -104,6 +109,7 @@ class _GiversState extends State<Givers> {
                                       style: TextStyle(
                                           color: Color(0xFF2E38FF),
                                           fontSize: 24,
+                                          fontFamily: 'Montserrat SemiBold',
                                           fontWeight: FontWeight.w800),
                                     )
                                   ],
@@ -131,6 +137,7 @@ class _GiversState extends State<Givers> {
                             'Repay',
                             style: TextStyle(
                               fontSize: 12,
+                              fontFamily: 'Montserrat Regular',
                               color: Color(0xFF939393),
                             ),
                           ))),
@@ -150,6 +157,7 @@ class _GiversState extends State<Givers> {
                             'Extend',
                             style: TextStyle(
                               fontSize: 12,
+                              fontFamily: 'Montserrat Regular',
                               color: Color(0xFF939393),
                             ),
                           ))),

@@ -41,7 +41,10 @@ class _CouponsState extends State<Coupons> {
             ),
             const Text(
               'Coupons',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+              style: TextStyle(
+                  fontFamily: 'Montserrat SemiBold',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 80),
             Center(
@@ -59,6 +62,7 @@ class _CouponsState extends State<Coupons> {
                 'Coupon not available',
                 style: TextStyle(
                     fontSize: 20,
+                    fontFamily: 'Montserrat SemiBold',
                     color: Colors.black,
                     fontWeight: FontWeight.w600),
               ),
@@ -71,6 +75,7 @@ class _CouponsState extends State<Coupons> {
                 'Get free coupons whenever you repay your loan before the due date',
                 style: TextStyle(
                     fontSize: 12,
+                    fontFamily: 'Montserrat Regular',
                     color: Color.fromARGB(255, 178, 178, 178),
                     fontWeight: FontWeight.w300),
                 textAlign: TextAlign.center,

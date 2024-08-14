@@ -55,7 +55,9 @@ class _AirtimeConvertState extends State<AirtimeConvert> {
                       Text(
                         'Airtime to cash',
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w600),
+                            fontFamily: 'Montserrat SemiBold',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600),
                       ),
                     ],
                   ),
@@ -81,6 +83,7 @@ class _AirtimeConvertState extends State<AirtimeConvert> {
                               'i',
                               style: TextStyle(
                                 fontSize: 16,
+                                fontFamily: 'Montserrat Medium',
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xFFFF9123),
                               ),
@@ -89,6 +92,7 @@ class _AirtimeConvertState extends State<AirtimeConvert> {
                         const Text(
                           'Coming soon',
                           style: TextStyle(
+                              fontFamily: 'Montserrat SemiBold',
                               color: Color.fromARGB(255, 0, 0, 0),
                               fontSize: 20),
                         )

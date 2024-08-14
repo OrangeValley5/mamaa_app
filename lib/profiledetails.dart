@@ -158,6 +158,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                           "Profile",
                           style: TextStyle(
                               fontSize: 22,
+                              fontFamily: 'Montserrat SemiBold',
                               color: Colors.black,
                               fontWeight: FontWeight.w700),
                         ),
@@ -168,6 +169,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                           "We use your profile to serve you better",
                           style: TextStyle(
                               fontSize: 12,
+                              fontFamily: 'Montserrat Regular',
                               color: Colors.grey,
                               fontWeight: FontWeight.w300),
                         ),
@@ -184,12 +186,15 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             controller: usernameController,
                             style: const TextStyle(
                               fontSize: 14,
+                              fontFamily: 'Montserrat Regular',
                             ),
                             decoration: const InputDecoration(
                               hintText: 'Enter your First Name',
                               labelText: 'First Name',
-                              labelStyle:
-                                  TextStyle(fontSize: 14, color: Colors.grey),
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat Regular',
+                                  fontSize: 14,
+                                  color: Colors.grey),
                               border: InputBorder.none,
                             ),
                             autovalidateMode:
@@ -212,13 +217,16 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                           child: TextFormField(
                             controller: lastnameController,
                             style: const TextStyle(
+                              fontFamily: 'Montserrat Regular',
                               fontSize: 14,
                             ),
                             decoration: const InputDecoration(
                               hintText: 'Enter your Last Name',
                               labelText: 'Last Name',
-                              labelStyle:
-                                  TextStyle(fontSize: 14, color: Colors.grey),
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat Regular',
+                                  fontSize: 14,
+                                  color: Colors.grey),
                               border: InputBorder.none,
                             ),
                             autovalidateMode:
@@ -241,13 +249,16 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                           child: TextFormField(
                             controller: _addressController,
                             style: const TextStyle(
+                              fontFamily: 'Montserrat Regular',
                               fontSize: 14,
                             ),
                             decoration: const InputDecoration(
                               hintText: 'Enter your home address',
                               labelText: 'Home Address',
-                              labelStyle:
-                                  TextStyle(fontSize: 14, color: Colors.grey),
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat Regular',
+                                  fontSize: 14,
+                                  color: Colors.grey),
                               border: InputBorder.none,
                             ),
                             autovalidateMode:
@@ -280,6 +291,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                     hint: const Text(
                                       "Select a gender",
                                       style: TextStyle(
+                                          fontFamily: 'Montserrat Regular',
                                           color: Colors
                                               .grey), // Custom hint text color
                                     ),
@@ -334,6 +346,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                 hint: const Text(
                                   "Age",
                                   style: TextStyle(
+                                      fontFamily: 'Montserrat Regular',
                                       color: Colors
                                           .grey), // Custom hint text color
                                 ),
@@ -384,6 +397,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                 hint: const Text(
                                   "Select your state",
                                   style: TextStyle(
+                                      fontFamily: 'Montserrat Regular',
                                       color: Colors
                                           .grey), // Custom hint text color
                                 ),
@@ -428,13 +442,16 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                             controller: _phoneController,
                             keyboardType: TextInputType.number,
                             style: const TextStyle(
+                              fontFamily: 'Montserrat Regular',
                               fontSize: 14,
                             ),
                             decoration: const InputDecoration(
                               hintText: 'E.g 080',
                               labelText: 'Phone Number',
-                              labelStyle:
-                                  TextStyle(fontSize: 14, color: Colors.grey),
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat Regular',
+                                  fontSize: 14,
+                                  color: Colors.grey),
                               border: InputBorder.none,
                             ),
                             autovalidateMode:
@@ -474,7 +491,9 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                     child: const Center(
                                       child: Text(
                                         "Continue",
-                                        style: TextStyle(color: Colors.white),
+                                        style: TextStyle(
+                                            fontFamily: 'Montserrat Regular',
+                                            color: Colors.white),
                                       ),
                                     )),
                               ),

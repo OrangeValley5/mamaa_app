@@ -116,6 +116,7 @@ class _Eligibility2State extends State<Eligibility2>
                 'Submitting...',
                 style: TextStyle(
                   fontSize: 16,
+                  fontFamily: 'Montserrat SemiBold',
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -124,6 +125,7 @@ class _Eligibility2State extends State<Eligibility2>
                 'We are currently submitting and evaluating your loan application for review. This should only take a short while',
                 style: TextStyle(
                   fontSize: 12,
+                  fontFamily: 'Montserrat Regular',
                   color: Color.fromARGB(255, 163, 163, 163),
                   fontWeight: FontWeight.w300,
                 ),
@@ -163,6 +165,7 @@ class _Eligibility2State extends State<Eligibility2>
                 'Notice',
                 style: TextStyle(
                   fontSize: 16,
+                  fontFamily: 'Montserrat SemiBold',
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -171,6 +174,7 @@ class _Eligibility2State extends State<Eligibility2>
                 'Copy the link and open in chrome or safari to complete your application and click on continue when you are done, then come back to the app and clcik on proceed so we can verify and approve your loan',
                 style: TextStyle(
                   fontSize: 10,
+                  fontFamily: 'Montserrat Regular',
                   color: Color.fromARGB(255, 163, 163, 163),
                   fontWeight: FontWeight.w300,
                 ),
@@ -228,7 +232,7 @@ class _Eligibility2State extends State<Eligibility2>
                   style: TextStyle(
                       fontSize: 12,
                       color: Color(0xFF0E0AEC),
-                      fontFamily: 'Montserrat Regular',
+                      fontFamily: 'Montserrat Medium',
                       fontWeight: FontWeight.w400),
                 ),
               )),
@@ -283,6 +287,7 @@ class _Eligibility2State extends State<Eligibility2>
                             style: TextStyle(
                               color: Color.fromARGB(255, 69, 81, 255),
                               fontSize: 16,
+                              fontFamily: 'Montserrat Medium',
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -420,6 +425,7 @@ class _Eligibility2State extends State<Eligibility2>
                 "Eligibility",
                 style: TextStyle(
                     fontSize: 22,
+                    fontFamily: 'Montserrat SemiBold',
                     color: Colors.black,
                     fontWeight: FontWeight.w700),
               ),
@@ -443,6 +449,7 @@ class _Eligibility2State extends State<Eligibility2>
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 10,
+                            fontFamily: 'Montserrat Regular',
                             color: Color.fromARGB(255, 72, 82, 255)),
                       ),
                     ),
@@ -457,6 +464,7 @@ class _Eligibility2State extends State<Eligibility2>
                 style: TextStyle(
                     fontSize: 12,
                     color: Colors.black,
+                    fontFamily: 'Montserrat Medium',
                     fontWeight: FontWeight.w500),
               ),
               const SizedBox(
@@ -570,6 +578,7 @@ class _Eligibility2State extends State<Eligibility2>
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 8,
+                              fontFamily: 'Montserrat Regular',
                               color: Color.fromARGB(255, 25, 25, 25)),
                         ),
                         const SizedBox(
@@ -589,6 +598,7 @@ class _Eligibility2State extends State<Eligibility2>
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 8,
+                              fontFamily: 'Montserrat Regular',
                               color: Color.fromARGB(255, 25, 25, 25)),
                         ),
                       ],
@@ -600,6 +610,7 @@ class _Eligibility2State extends State<Eligibility2>
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 8,
+                              fontFamily: 'Montserrat Regular',
                               color: Color.fromARGB(255, 25, 25, 25)),
                         ),
                         SizedBox(width: 4),
@@ -608,6 +619,7 @@ class _Eligibility2State extends State<Eligibility2>
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 8,
+                              fontFamily: 'Montserrat Regular',
                               color: Color.fromARGB(255, 25, 25, 25)),
                         ),
                       ],
@@ -623,6 +635,7 @@ class _Eligibility2State extends State<Eligibility2>
                 style: TextStyle(
                     fontSize: 12,
                     color: Colors.black,
+                    fontFamily: 'Montserrat Medium',
                     fontWeight: FontWeight.w500),
               ),
               const SizedBox(
@@ -648,8 +661,8 @@ class _Eligibility2State extends State<Eligibility2>
                       child: Text(
                         '30 days',
                         style: TextStyle(
-                            fontWeight: FontWeight.w400,
                             fontSize: 10,
+                            fontFamily: 'Montserrat Medium',
                             color: loanCalculator.selectedDuration == 30
                                 ? Colors.white
                                 : const Color.fromARGB(255, 25, 25, 25)),
@@ -673,8 +686,8 @@ class _Eligibility2State extends State<Eligibility2>
                       child: Text(
                         '60 days',
                         style: TextStyle(
-                            fontWeight: FontWeight.w400,
                             fontSize: 10,
+                            fontFamily: 'Montserrat Medium',
                             color: loanCalculator.selectedDuration == 60
                                 ? Colors.white
                                 : const Color.fromARGB(255, 25, 25, 25)),
@@ -698,8 +711,8 @@ class _Eligibility2State extends State<Eligibility2>
                       child: Text(
                         '90 days',
                         style: TextStyle(
-                            fontWeight: FontWeight.w400,
                             fontSize: 10,
+                            fontFamily: 'Montserrat Medium',
                             color: loanCalculator.selectedDuration == 90
                                 ? Colors.white
                                 : const Color.fromARGB(255, 25, 25, 25)),
@@ -725,6 +738,7 @@ class _Eligibility2State extends State<Eligibility2>
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 10,
+                          fontFamily: 'Montserrat Regular',
                           color: Color.fromARGB(255, 25, 25, 25)),
                     ),
                     const SizedBox(
@@ -733,8 +747,8 @@ class _Eligibility2State extends State<Eligibility2>
                     Text(
                       loanCalculator.referenceNumber,
                       style: const TextStyle(
-                          fontWeight: FontWeight.w400,
                           fontSize: 10,
+                          fontFamily: 'Montserrat Regular',
                           color: Color.fromARGB(255, 67, 74, 255)),
                     ),
                     const SizedBox(
@@ -743,8 +757,8 @@ class _Eligibility2State extends State<Eligibility2>
                     const Text(
                       'Application Date',
                       style: TextStyle(
-                          fontWeight: FontWeight.w400,
                           fontSize: 10,
+                          fontFamily: 'Montserrat Regular',
                           color: Color.fromARGB(255, 25, 25, 25)),
                     ),
                     const SizedBox(
@@ -753,8 +767,8 @@ class _Eligibility2State extends State<Eligibility2>
                     Text(
                       loanCalculator.getFormattedApplicationDate(),
                       style: const TextStyle(
-                          fontWeight: FontWeight.w400,
                           fontSize: 10,
+                          fontFamily: 'Montserrat Regular',
                           color: Color.fromARGB(255, 67, 74, 255)),
                     ),
                     const SizedBox(
@@ -763,8 +777,8 @@ class _Eligibility2State extends State<Eligibility2>
                     const Text(
                       'Payback Date',
                       style: TextStyle(
-                          fontWeight: FontWeight.w400,
                           fontSize: 10,
+                          fontFamily: 'Montserrat Regular',
                           color: Color.fromARGB(255, 25, 25, 25)),
                     ),
                     const SizedBox(
@@ -773,8 +787,8 @@ class _Eligibility2State extends State<Eligibility2>
                     Text(
                       loanCalculator.getFormattedDueDate(),
                       style: const TextStyle(
-                          fontWeight: FontWeight.w400,
                           fontSize: 10,
+                          fontFamily: 'Montserrat Regular',
                           color: Color.fromARGB(255, 67, 74, 255)),
                     ),
                     const SizedBox(
@@ -783,8 +797,8 @@ class _Eligibility2State extends State<Eligibility2>
                     const Text(
                       'Payback Amount',
                       style: TextStyle(
-                          fontWeight: FontWeight.w500,
                           fontSize: 10,
+                          fontFamily: 'Montserrat Regular',
                           color: Color.fromARGB(255, 25, 25, 25)),
                     ),
                     const SizedBox(
@@ -805,8 +819,8 @@ class _Eligibility2State extends State<Eligibility2>
                         Text(
                           currencyFormat.format(loanCalculator.paybackAmount),
                           style: const TextStyle(
-                              fontWeight: FontWeight.w400,
                               fontSize: 10,
+                              fontFamily: 'Montserrat Regular',
                               color: Color.fromARGB(255, 67, 74, 255)),
                         ),
                       ],
@@ -839,6 +853,7 @@ class _Eligibility2State extends State<Eligibility2>
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 12,
+                          fontFamily: 'Montserrat Regular',
                           color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                   ),

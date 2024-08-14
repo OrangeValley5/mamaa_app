@@ -115,7 +115,9 @@ class _InstitutionsState extends State<Institutions> {
                       Text(
                         'Add Bank',
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w600),
+                            fontFamily: 'Montserrat SemiBold',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600),
                       ),
                       SizedBox(
                         height: 4,
@@ -124,6 +126,7 @@ class _InstitutionsState extends State<Institutions> {
                         'Add a payout account where you would like to receive your funds',
                         style: TextStyle(
                             fontSize: 12,
+                            fontFamily: 'Montserrat Regular',
                             fontWeight: FontWeight.w400,
                             color: Colors.grey),
                       ),
@@ -148,13 +151,16 @@ class _InstitutionsState extends State<Institutions> {
                           child: TextFormField(
                             controller: _institutionsController,
                             style: const TextStyle(
+                              fontFamily: 'Montserrat Regular',
                               fontSize: 12,
                             ),
                             decoration: const InputDecoration(
                               hintText: 'Enter your account number',
                               labelText: 'Account Number',
-                              labelStyle:
-                                  TextStyle(fontSize: 12, color: Colors.grey),
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat Regular',
+                                  fontSize: 12,
+                                  color: Colors.grey),
                               border: InputBorder.none,
                             ),
                             autovalidateMode:
@@ -190,6 +196,8 @@ class _InstitutionsState extends State<Institutions> {
                                           hint: const Text(
                                             "Select bank",
                                             style: TextStyle(
+                                                fontFamily:
+                                                    'Montserrat Regular',
                                                 fontSize: 12,
                                                 color: Colors
                                                     .grey), // Custom hint text color
@@ -200,6 +208,7 @@ class _InstitutionsState extends State<Institutions> {
                                           iconSize: 20,
                                           elevation: 16,
                                           style: const TextStyle(
+                                              fontFamily: 'Montserrat Regular',
                                               fontSize: 12,
                                               color: Colors
                                                   .black), // Dropdown list values color
@@ -216,6 +225,8 @@ class _InstitutionsState extends State<Institutions> {
                                               child: Text(
                                                 value,
                                                 style: const TextStyle(
+                                                    fontFamily:
+                                                        'Montserrat Regular',
                                                     color: Colors
                                                         .black), // Dropdown list values color
                                               ),
@@ -243,12 +254,15 @@ class _InstitutionsState extends State<Institutions> {
                             controller: verifController,
                             style: const TextStyle(
                               fontSize: 12,
+                              fontFamily: 'Montserrat Regular',
                             ),
                             decoration: const InputDecoration(
                               hintText: 'Enter your Bvn?',
                               labelText: 'Bvn',
-                              labelStyle:
-                                  TextStyle(fontSize: 12, color: Colors.grey),
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat Regular',
+                                  fontSize: 12,
+                                  color: Colors.grey),
                               border: InputBorder.none,
                             ),
                             autovalidateMode:
@@ -285,7 +299,9 @@ class _InstitutionsState extends State<Institutions> {
                                 child: const Center(
                                   child: Text(
                                     "Continue",
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(
+                                        fontFamily: 'Montserrat Regular',
+                                        color: Colors.white),
                                   ),
                                 )),
                           ),

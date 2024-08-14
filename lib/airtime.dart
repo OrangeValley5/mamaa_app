@@ -41,7 +41,10 @@ class _AirtimeState extends State<Airtime> {
             ),
             const Text(
               'Airtime to cash',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+              style: TextStyle(
+                  fontFamily: 'Montserrat SemiBold',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 80),
             Center(
@@ -60,6 +63,7 @@ class _AirtimeState extends State<Airtime> {
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,
+                    fontFamily: 'Montserrat SemiBold',
                     fontWeight: FontWeight.w600),
               ),
             ),
@@ -71,6 +75,7 @@ class _AirtimeState extends State<Airtime> {
                 'This feature is currently being worked on',
                 style: TextStyle(
                     fontSize: 12,
+                    fontFamily: 'Montserrat Regular',
                     color: Color.fromARGB(255, 178, 178, 178),
                     fontWeight: FontWeight.w300),
               ),
