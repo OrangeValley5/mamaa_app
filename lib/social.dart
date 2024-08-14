@@ -125,7 +125,7 @@ class _Eligibility2State extends State<Eligibility2>
               Text(
                 'We are currently submitting and evaluating your loan application for review. This should only take a short while',
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 10,
                   fontFamily: 'Montserrat Regular',
                   color: Color.fromARGB(255, 163, 163, 163),
                   fontWeight: FontWeight.w300,
@@ -162,6 +162,28 @@ class _Eligibility2State extends State<Eligibility2>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 234, 234, 234),
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: const Icon(
+                        Icons.close,
+                        color: Color.fromARGB(255, 75, 75, 75),
+                        size: 15,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               const Text(
                 'Notice',
                 style: TextStyle(
@@ -314,7 +336,7 @@ class _Eligibility2State extends State<Eligibility2>
                       ),
                       const SizedBox(height: 10),
                       const Text(
-                        'Your Application fee for this loan is NGN500. Do you wish to continue?',
+                        'Your Application fee for this loan is ₦500. Do you wish to continue?',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color.fromARGB(255, 168, 168, 168),
@@ -822,7 +844,7 @@ class _Eligibility2State extends State<Eligibility2>
                               color: Color.fromARGB(255, 74, 46, 255),
                             )),
                         const SizedBox(
-                          width: 4,
+                          width: 2,
                         ),
                         Text(
                           currencyFormat.format(loanCalculator.paybackAmount),

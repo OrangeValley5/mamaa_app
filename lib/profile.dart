@@ -620,6 +620,31 @@ class _ProfileState extends State<Profile> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Container(
+                                          padding: const EdgeInsets.all(4),
+                                          decoration: BoxDecoration(
+                                            color: const Color.fromARGB(
+                                                255, 234, 234, 234),
+                                            borderRadius:
+                                                BorderRadius.circular(50),
+                                          ),
+                                          child: const Icon(
+                                            Icons.close,
+                                            color:
+                                                Color.fromARGB(255, 75, 75, 75),
+                                            size: 15,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                   const Text(
                                     "Contact us",
                                     style: TextStyle(
@@ -639,34 +664,6 @@ class _ProfileState extends State<Profile> {
                                         color: Colors.grey,
                                       )),
                                   const Spacer(),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Container(
-                                      width: MediaQuery.of(context).size.width,
-                                      height: 50,
-                                      child: Container(
-                                          padding: const EdgeInsets.all(15),
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            color: const Color(0xFF2E38FF),
-                                          ),
-                                          height: 50,
-                                          child: const Center(
-                                            child: Text(
-                                              "Close",
-                                              style: TextStyle(
-                                                  fontFamily:
-                                                      'Montserrat Regular',
-                                                  color: Colors.white),
-                                            ),
-                                          )),
-                                    ),
-                                  ),
                                 ],
                               ),
                             );

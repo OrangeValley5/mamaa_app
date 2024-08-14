@@ -99,7 +99,7 @@ class _TrackState extends State<Track> {
                                     ),
                                   ),
                                   Text(
-                                    'N0.00',
+                                    '₦0.00',
                                     style: TextStyle(
                                       fontSize: 12,
                                       fontFamily: 'Montserrat Regular',
