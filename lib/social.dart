@@ -171,7 +171,7 @@ class _Eligibility2State extends State<Eligibility2>
               ),
               const SizedBox(height: 10),
               const Text(
-                'Copy the link and open in chrome or safari to complete your application and click on continue when you are done, then come back to the app and clcik on proceed so we can verify and approve your loan',
+                'Copy the link and open in chrome or safari to complete your application and click on continue when you are done, then come back to the app and click on proceed so we can verify and approve your loan',
                 style: TextStyle(
                   fontSize: 10,
                   fontFamily: 'Montserrat Regular',
@@ -524,6 +524,7 @@ class _Eligibility2State extends State<Eligibility2>
                           style: const TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 24,
+                              fontFamily: 'Montserrat SemiBold',
                               color: Color.fromARGB(255, 255, 255, 255)),
                         ),
                       ],
