@@ -119,6 +119,10 @@ class _RegisterState extends State<Register> {
                                     decoration: const InputDecoration(
                                       hintText: 'Enter your Name',
                                       labelText: 'Name',
+                                      prefixIcon: Icon(
+                                        Icons.person,
+                                        size: 14,
+                                      ),
                                       labelStyle: TextStyle(
                                           fontSize: 12,
                                           fontFamily: 'Montserrat Regular',
@@ -151,6 +155,10 @@ class _RegisterState extends State<Register> {
                                     decoration: const InputDecoration(
                                       hintText: 'Enter your email address',
                                       labelText: 'Email',
+                                      prefixIcon: Icon(
+                                        Icons.mail,
+                                        size: 14,
+                                      ),
                                       labelStyle: TextStyle(
                                           fontSize: 12,
                                           fontFamily: 'Montserrat Regular',
@@ -170,7 +178,7 @@ class _RegisterState extends State<Register> {
                                 ),
                                 Container(
                                   padding: const EdgeInsets.only(
-                                      left: 12, top: 0, right: 12),
+                                      left: 6, top: 0, right: 12),
                                   decoration: BoxDecoration(
                                     color: color.AppColor.greyish,
                                     borderRadius: BorderRadius.circular(10),
@@ -185,6 +193,10 @@ class _RegisterState extends State<Register> {
                                     decoration: const InputDecoration(
                                       hintText: '*******',
                                       labelText: 'Password',
+                                      prefixIcon: Icon(
+                                        Icons.lock,
+                                        size: 14,
+                                      ),
                                       labelStyle: TextStyle(
                                           fontSize: 12,
                                           fontFamily: 'Montserrat Regular',
