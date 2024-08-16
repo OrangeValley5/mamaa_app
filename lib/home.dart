@@ -202,7 +202,7 @@ class _HomeState extends State<Home> {
                           child: const CircleAvatar(
                             radius: 50,
                             backgroundImage: NetworkImage(
-                                'https://img.freepik.com/premium-photo/bearded-man-illustration_665280-67047.jpg'),
+                                'https://img.freepik.com/free-photo/3d-rendering-zoom-call-avatar_23-2149556776.jpg?t=st=1723780344~exp=1723783944~hmac=e985cfb341d530422208b84e62cb50f72e7469d4b07a495f5f1e6c2e1aa37f9d&w=1380'),
                           ),
                         ),
                         const SizedBox(
