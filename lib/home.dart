@@ -367,7 +367,7 @@ class _HomeState extends State<Home> {
                                                 'REQUEST LOAN',
                                                 style: TextStyle(
                                                     fontFamily:
-                                                        'Montserrat Regular',
+                                                        'Montserrat Medium',
                                                     fontSize: 10,
                                                     color: Color.fromARGB(
                                                         255, 0, 0, 0)),
