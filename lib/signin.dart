@@ -69,7 +69,7 @@ class _LoginState extends State<Login> {
                     Container(
                       width: MediaQuery.of(context).size.width,
                       padding:
-                          const EdgeInsets.only(left: 25, top: 20, right: 25),
+                          const EdgeInsets.only(left: 25, top: 30, right: 25),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -87,9 +87,9 @@ class _LoginState extends State<Login> {
                           const Text(
                             "Enter your email address and password to continue",
                             style: TextStyle(
-                                fontSize: 13,
+                                fontSize: 12,
                                 color: Colors.grey,
-                                fontFamily: 'Montserrat Medium',
+                                fontFamily: 'Montserrat Regular',
                                 fontWeight: FontWeight.w300),
                           ),
                           Container(),
@@ -114,6 +114,10 @@ class _LoginState extends State<Login> {
                               decoration: const InputDecoration(
                                 hintText: 'Enter your email address',
                                 labelText: 'Email',
+                                prefixIcon: Icon(
+                                  Icons.mail,
+                                  size: 14,
+                                ),
                                 labelStyle: TextStyle(
                                     fontSize: 12,
                                     fontFamily: 'Montserrat Regular',
@@ -146,6 +150,10 @@ class _LoginState extends State<Login> {
                               decoration: const InputDecoration(
                                 hintText: '*******',
                                 labelText: 'Password',
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  size: 14,
+                                ),
                                 labelStyle: TextStyle(
                                     fontSize: 12,
                                     fontFamily: 'Montserrat Regular',

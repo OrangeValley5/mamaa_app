@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:mamaa_app/signup.dart';
 import 'package:mamaa_app/moreinfo.dart';
 import 'package:mamaa_app/dashboard.dart';
+import 'dart:ui';
+
 //import 'package:mamaa_app/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'colors.dart' as color;
@@ -16,16 +18,31 @@ class Register extends StatefulWidget {
   State<Register> createState() => _RegisterState();
 }
 
-class _RegisterState extends State<Register> {
+class _RegisterState extends State<Register> with TickerProviderStateMixin {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final usernameController = TextEditingController();
 
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+
   @override
   void initState() {
     super.initState();
-    //_showUsernameDialog();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true);
+
+    _scaleAnimation = Tween<double>(begin: 0.4, end: 0.6).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    // Fetch the conversion rate
   }
 
   Future<void> _saveUsername() async {
@@ -40,6 +57,7 @@ class _RegisterState extends State<Register> {
     emailController.dispose();
     passwordController.dispose();
     usernameController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -50,6 +68,43 @@ class _RegisterState extends State<Register> {
       context,
       MaterialPageRoute(
           builder: (context) => const Login()), // Navigate to SecondPage
+    );
+  }
+
+  void _showLoadingDialog2() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return Stack(
+          children: [
+            // Blurred background
+            BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+              child: Container(
+                color: Colors.black.withOpacity(0.2),
+              ),
+            ),
+            // Loading animation
+            Center(
+              child: AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return Transform.scale(
+                    scale: _scaleAnimation.value,
+                    child: child,
+                  );
+                },
+                child: Image.asset(
+                  'lib/images/malogo3.png',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -74,7 +129,7 @@ class _RegisterState extends State<Register> {
                     Container(
                       width: MediaQuery.of(context).size.width,
                       padding:
-                          const EdgeInsets.only(left: 25, top: 20, right: 25),
+                          const EdgeInsets.only(left: 25, top: 30, right: 25),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -298,10 +353,12 @@ class _RegisterState extends State<Register> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('username', usernameController.text);
 
-    showDialog(
+    /* showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (context) => Center(child: CircularProgressIndicator()));
+        builder: (context) => Center(child: CircularProgressIndicator()));*/
+
+    _showLoadingDialog2();
 
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(

@@ -67,6 +67,12 @@ class _InstitutionsState extends State<Institutions>
     );
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   // Function to load data from SharedPreferences
   Future<void> _loadData() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();

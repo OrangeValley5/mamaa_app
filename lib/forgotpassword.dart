@@ -96,6 +96,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               decoration: const InputDecoration(
                                 hintText: 'Enter your email address',
                                 labelText: 'Email',
+                                prefixIcon: Icon(
+                                  Icons.mail,
+                                  size: 14,
+                                ),
                                 labelStyle: TextStyle(
                                     fontSize: 14,
                                     fontFamily: 'Montserrat Regular',
