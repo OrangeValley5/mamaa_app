@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mamaa_app/verifying.dart';
 import 'colors.dart' as color;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:ui';
 
 class Institutions extends StatefulWidget {
   const Institutions({Key? key}) : super(key: key);
@@ -10,7 +11,8 @@ class Institutions extends StatefulWidget {
   State<Institutions> createState() => _InstitutionsState();
 }
 
-class _InstitutionsState extends State<Institutions> {
+class _InstitutionsState extends State<Institutions>
+    with TickerProviderStateMixin {
   // List of days of the week
   final List<String> _daysOfWeek = [
     'Access Bank',
@@ -45,11 +47,24 @@ class _InstitutionsState extends State<Institutions> {
 
   final TextEditingController _institutionsController = TextEditingController();
   final TextEditingController verifController = TextEditingController();
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
     _loadData();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true);
+
+    _scaleAnimation = Tween<double>(begin: 0.4, end: 0.6).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut,
+      ),
+    );
   }
 
   // Function to load data from SharedPreferences
@@ -72,6 +87,52 @@ class _InstitutionsState extends State<Institutions> {
     await prefs.setString('day', _selectedDay ?? '');
     await prefs.setString('institute', _institutionsController.text);
     await prefs.setString('verif', verifController.text);
+  }
+
+  void _showLoadingDialog2() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return Stack(
+          children: [
+            // Blurred background
+            BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+              child: Container(
+                color: Colors.black.withOpacity(0.2),
+              ),
+            ),
+            // Loading animation
+            Center(
+              child: AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return Transform.scale(
+                    scale: _scaleAnimation.value,
+                    child: child,
+                  );
+                },
+                child: Image.asset(
+                  'lib/images/malogo3.png',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+
+    // Close the loading dialog after 3 seconds
+    Future.delayed(const Duration(seconds: 6), () {
+      Navigator.of(context).pop();
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const Verification()),
+      );
+    });
   }
 
   @override
@@ -279,11 +340,7 @@ class _InstitutionsState extends State<Institutions> {
                         GestureDetector(
                           onTap: () async {
                             await _saveData();
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Verification()),
-                            );
+                            _showLoadingDialog2();
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width,
