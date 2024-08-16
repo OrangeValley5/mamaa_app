@@ -55,6 +55,7 @@ class _DashboardState extends State<Dashboard> {
         selectedItemColor: Colors.black, // Set selected item color
         unselectedItemColor: Colors.grey,
         showSelectedLabels: true,
+        backgroundColor: Colors.white,
         showUnselectedLabels: true, // Set unselected item color
       ),
       body: IndexedStack(

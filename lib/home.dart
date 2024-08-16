@@ -298,6 +298,8 @@ class _HomeState extends State<Home> {
                                               _isVisible ? '50,000' : '*****',
                                               style: const TextStyle(
                                                 fontSize: 22,
+                                                fontFamily:
+                                                    'Montserrat SemiBold',
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.w700,
                                               ),
