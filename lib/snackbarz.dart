@@ -47,7 +47,7 @@ class TopSnackBar {
                       'Link Copied',
                       style: TextStyle(
                           color: Color.fromARGB(255, 0, 0, 0),
-                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Montserrat Medium',
                           fontSize: 12),
                     ),
                   ],
@@ -60,6 +60,7 @@ class TopSnackBar {
                   style: const TextStyle(
                       color: Color.fromARGB(255, 128, 128, 128),
                       fontWeight: FontWeight.w300,
+                      fontFamily: 'Montserrat Regular',
                       fontSize: 12),
                 ),
               ],
