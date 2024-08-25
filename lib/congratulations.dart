@@ -9,11 +9,32 @@ class Congratulations extends StatefulWidget {
   State<Congratulations> createState() => _CongratulationsState();
 }
 
-class _CongratulationsState extends State<Congratulations> {
+class _CongratulationsState extends State<Congratulations>
+    with TickerProviderStateMixin {
+  late AnimationController _slideController;
+  late Animation<Offset> _slideAnimation;
+
   @override
   void initState() {
     super.initState();
     _addValueToSharedPreferences();
+
+    // Initialize the animation controller and animation
+    _slideController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(0, 1), // Start off the screen (bottom)
+      end: Offset.zero, // End at the final position (on the screen)
+    ).animate(CurvedAnimation(
+      parent: _slideController,
+      curve: Curves.easeOut,
+    ));
+
+    // Start the slide animation
+    _slideController.forward();
   }
 
   Future<void> _addValueToSharedPreferences() async {
@@ -23,10 +44,18 @@ class _CongratulationsState extends State<Congratulations> {
   }
 
   @override
+  void dispose() {
+    _slideController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
+      backgroundColor: Colors.white,
+      body: SlideTransition(
+        position: _slideAnimation,
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
@@ -91,22 +120,23 @@ class _CongratulationsState extends State<Congratulations> {
                                 width: MediaQuery.of(context).size.width,
                                 height: 50,
                                 child: Container(
-                                    padding: const EdgeInsets.all(15),
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: const Color(0xFF2E38FF),
+                                  padding: const EdgeInsets.all(15),
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: const Color(0xFF2E38FF),
+                                  ),
+                                  height: 50,
+                                  child: const Center(
+                                    child: Text(
+                                      "Return To Dashboard",
+                                      style: TextStyle(
+                                          fontFamily: 'Montserrat Regular',
+                                          fontSize: 14,
+                                          color: Colors.white),
                                     ),
-                                    height: 50,
-                                    child: const Center(
-                                      child: Text(
-                                        "Return To Dashboard",
-                                        style: TextStyle(
-                                            fontFamily: 'Montserrat Regular',
-                                            fontSize: 14,
-                                            color: Colors.white),
-                                      ),
-                                    )),
+                                  ),
+                                ),
                               ),
                             ),
                           ],
@@ -121,6 +151,8 @@ class _CongratulationsState extends State<Congratulations> {
               )
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

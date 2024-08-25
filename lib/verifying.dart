@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mamaa_app/congratulations.dart';
 import 'dart:async';
 
-import 'package:mamaa_app/terms.dart';
+import 'congratulations.dart';
 
 class Verification extends StatefulWidget {
   const Verification({Key? key}) : super(key: key);
@@ -13,9 +12,31 @@ class Verification extends StatefulWidget {
 
 class _VerificationState extends State<Verification>
     with TickerProviderStateMixin {
+  late AnimationController _slideController;
+  late Animation<Offset> _slideAnimation;
+
+  @override
   void initState() {
     super.initState();
-    // Start a timer to navigate to the next screen after 5 seconds
+
+    // Initialize the animation controller and animation
+    _slideController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(0, 1), // Start off the screen (bottom)
+      end: Offset.zero, // End at the final position (on the screen)
+    ).animate(CurvedAnimation(
+      parent: _slideController,
+      curve: Curves.easeOut,
+    ));
+
+    // Start the slide animation
+    _slideController.forward();
+
+    // Start a timer to navigate to the next screen after 25 seconds
     Timer(Duration(seconds: 25), () {
       Navigator.pushReplacement(
         context,
@@ -25,55 +46,57 @@ class _VerificationState extends State<Verification>
   }
 
   @override
+  void dispose() {
+    _slideController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            SizedBox(height: 80),
-            Center(
-              child: Container(
-                height: 200,
-                width: 200,
-                child: Image.asset('lib/images/hangon.png'),
+      body: SlideTransition(
+        position: _slideAnimation,
+        child: Container(
+          padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 10,
               ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                CircularProgressIndicator(),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Center(
-              child: Text(
-                'Verifying Details',
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontFamily: 'Montserrat Medium',
-                    fontWeight: FontWeight.w600),
+              const SizedBox(height: 80),
+              Center(
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  child: Image.asset('lib/images/hangon.png'),
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 6,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                Text(
+              const SizedBox(
+                height: 10,
+              ),
+              const Center(
+                child: CircularProgressIndicator(),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Center(
+                child: Text(
+                  'Verifying Details',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontFamily: 'Montserrat Medium',
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+              const SizedBox(
+                height: 6,
+              ),
+              const Center(
+                child: Text(
                   'Please hold on while we are verifying your identity and the information you have provided',
                   style: TextStyle(
                       fontSize: 12,
@@ -82,9 +105,9 @@ class _VerificationState extends State<Verification>
                       fontWeight: FontWeight.w300),
                   textAlign: TextAlign.center,
                 ),
-              ],
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
