@@ -38,7 +38,7 @@ class _RegisterState extends State<Register> with TickerProviderStateMixin {
     _scaleAnimation = Tween<double>(begin: 0.4, end: 0.6).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Curves.easeInOut,
+        curve: Curves.fastOutSlowIn,
       ),
     );
 
@@ -79,13 +79,13 @@ class _RegisterState extends State<Register> with TickerProviderStateMixin {
         return Stack(
           children: [
             // Blurred background
-            BackdropFilter(
+            /*  BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
               child: Container(
-                color: Colors.black.withOpacity(0.2),
+                color: Colors.black.withOpacity(0.1),
               ),
-            ),
-            // Loading animation
+            ), */
+            // Loading animationoading animation
             Center(
               child: AnimatedBuilder(
                 animation: _controller,

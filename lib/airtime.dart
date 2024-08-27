@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as color;
+import 'package:url_launcher/url_launcher.dart';
 
 class Airtime extends StatefulWidget {
   const Airtime({Key? key}) : super(key: key);
@@ -32,12 +33,84 @@ class _AirtimeState extends State<Airtime> with TickerProviderStateMixin {
 
     // Start the slide animation
     _slideController.forward();
+
+    _showWelcomeDialog();
   }
 
   @override
   void dispose() {
     _slideController.dispose();
     super.dispose();
+  }
+
+  void _showWelcomeDialog() {
+    Future.delayed(Duration.zero, () {
+      showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (BuildContext context) {
+          return Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Dialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+                side: const BorderSide(
+                  color: Color(0xFF232532),
+                  width: 1.0,
+                ),
+              ),
+              backgroundColor: Colors.white,
+              child: Container(
+                padding: const EdgeInsets.all(4),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      width: 300,
+                      height: 200,
+                      child: Image.asset('lib/images/tapp.png'),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GestureDetector(
+                          onTap: () async {
+                            const url = 'https://yourweblink.com';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 10,
+                              horizontal: 20,
+                            ),
+                            child: const Text(
+                              'Continue',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: 'Montserrat Medium',
+                                color: Color(0xFF7540F0),
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      );
+    });
   }
 
   @override
