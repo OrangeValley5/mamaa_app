@@ -75,7 +75,7 @@ class _AirtimeState extends State<Airtime> with TickerProviderStateMixin {
                       children: [
                         GestureDetector(
                           onTap: () async {
-                            const url = 'https://yourweblink.com';
+                            const url = 'https://t.me/Xkoyn_bot';
                             if (await canLaunch(url)) {
                               await launch(url);
                             } else {
