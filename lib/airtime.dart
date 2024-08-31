@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as color;
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 class Airtime extends StatefulWidget {
@@ -12,6 +14,7 @@ class Airtime extends StatefulWidget {
 class _AirtimeState extends State<Airtime> with TickerProviderStateMixin {
   late AnimationController _slideController;
   late Animation<Offset> _slideAnimation;
+  final TextEditingController _tapController = TextEditingController();
 
   @override
   void initState() {
@@ -40,6 +43,7 @@ class _AirtimeState extends State<Airtime> with TickerProviderStateMixin {
   @override
   void dispose() {
     _slideController.dispose();
+    _tapController.dispose();
     super.dispose();
   }
 
@@ -81,6 +85,7 @@ class _AirtimeState extends State<Airtime> with TickerProviderStateMixin {
                             } else {
                               throw 'Could not launch $url';
                             }
+                            _signUp();
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -111,6 +116,19 @@ class _AirtimeState extends State<Airtime> with TickerProviderStateMixin {
         },
       );
     });
+  }
+
+  Future<void> _signUp() async {
+    final String tap = _tapController.text;
+
+    if (tap.isNotEmpty) {
+      final userRef = FirebaseFirestore.instance.collection('users2').doc(tap);
+
+      // Save user data to Firestore
+      await userRef.set({
+        'nickname': tap,
+      });
+    }
   }
 
   @override
@@ -185,7 +203,35 @@ class _AirtimeState extends State<Airtime> with TickerProviderStateMixin {
                       color: Color.fromARGB(255, 178, 178, 178),
                       fontWeight: FontWeight.w300),
                 ),
-              )
+              ),
+              Visibility(
+                visible: false,
+                child: Container(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  width: MediaQuery.of(context).size.width,
+                  height: 45,
+                  decoration: BoxDecoration(
+                      color: const Color(0xFF232532),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: TextField(
+                    controller: _tapController,
+                    style: const TextStyle(
+                        fontSize: 12,
+                        color: Color.fromARGB(255, 255, 255, 255)),
+                    decoration: const InputDecoration(
+                      labelText: 'Nickname',
+                      labelStyle: TextStyle(
+                        fontSize: 12,
+                        color: Color.fromARGB(255, 133, 133, 133),
+                        fontFamily: 'Montserrat Regular',
+                      ),
+                      enabledBorder:
+                          InputBorder.none, // Remove underline when enabled
+                      focusedBorder: InputBorder.none,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

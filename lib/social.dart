@@ -204,50 +204,60 @@ class _Eligibility2State extends State<Eligibility2>
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 20),
-              Container(
-                height: 40,
-                width: 250,
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color.fromARGB(255, 243, 243, 243)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Copy Link',
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 143, 143, 143),
-                          fontFamily: 'Montserrat Regular',
-                          fontSize: 10),
-                    ),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Clipboard.setData(
-                          ClipboardData(text: textToCopy),
-                        );
-                        TopSnackBar.show(
-                          context,
-                          'Your link has successfully been copied',
-                        );
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(4),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: const Icon(
-                          Icons.copy,
-                          color: Color.fromARGB(255, 163, 163, 163),
-                          size: 15,
+              GestureDetector(
+                onTap: () async {
+                  const url = 'https://paystack.com/pay/ebuyxzte75';
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+                child: Container(
+                  height: 40,
+                  width: 250,
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: Color.fromARGB(255, 243, 243, 243)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Copy Link',
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 143, 143, 143),
+                            fontFamily: 'Montserrat Regular',
+                            fontSize: 10),
+                      ),
+                      const SizedBox(
+                        width: 4,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Clipboard.setData(
+                            ClipboardData(text: textToCopy),
+                          );
+                          TopSnackBar.show(
+                            context,
+                            'Your link has successfully been copied',
+                          );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: const Icon(
+                            Icons.copy,
+                            color: Color.fromARGB(255, 163, 163, 163),
+                            size: 15,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(
